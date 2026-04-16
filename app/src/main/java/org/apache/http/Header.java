@@ -1,6 +1,0 @@
-package org.apache.http;
-
-/* JADX INFO: loaded from: classes2.dex */
-public interface Header extends NameValuePair {
-    HeaderElement[] getElements() throws ParseException;
-}

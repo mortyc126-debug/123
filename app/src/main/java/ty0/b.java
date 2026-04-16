@@ -1,9 +1,0 @@
-package ty0;
-
-import v00.g;
-import v00.i;
-
-/* JADX INFO: compiled from: r8-map-id-9e936228ea1ea2cc679ed5186cc1349ef706487dc89ec4e25d4a3ea878769de6 */
-/* JADX INFO: loaded from: classes.dex */
-public interface b extends v00.b, g, i {
-}
