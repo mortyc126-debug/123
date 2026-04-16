@@ -1,0 +1,123 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package com.jcraft.jsch;
+
+import com.jcraft.jsch.Buffer;
+import com.jcraft.jsch.DH;
+import com.jcraft.jsch.HASH;
+import com.jcraft.jsch.JSch;
+import com.jcraft.jsch.KeyExchange;
+import com.jcraft.jsch.Packet;
+import com.jcraft.jsch.Session;
+import com.jcraft.jsch.Util;
+
+public class DHG1
+extends KeyExchange {
+    private static final int SSH_MSG_KEXDH_INIT = 30;
+    private static final int SSH_MSG_KEXDH_REPLY = 31;
+    static final byte[] g = new byte[]{2};
+    static final byte[] p = new byte[]{0, -1, -1, -1, -1, -1, -1, -1, -1, -55, 15, -38, -94, 33, 104, -62, 52, -60, -58, 98, -117, -128, -36, 28, -47, 41, 2, 78, 8, -118, 103, -52, 116, 2, 11, -66, -90, 59, 19, -101, 34, 81, 74, 8, 121, -114, 52, 4, -35, -17, -107, 25, -77, -51, 58, 67, 27, 48, 43, 10, 109, -14, 95, 20, 55, 79, -31, 53, 109, 109, 81, -62, 69, -28, -123, -75, 118, 98, 94, 126, -58, -12, 76, 66, -23, -90, 55, -19, 107, 11, -1, 92, -74, -12, 6, -73, -19, -18, 56, 107, -5, 90, -119, -97, -91, -82, -97, 36, 17, 124, 75, 31, -26, 73, 40, 102, 81, -20, -26, 83, -127, -1, -1, -1, -1, -1, -1, -1, -1};
+    byte[] I_C;
+    byte[] I_S;
+    byte[] V_C;
+    byte[] V_S;
+    private Buffer buf;
+    DH dh;
+    byte[] e;
+    private Packet packet;
+    private int state;
+
+    @Override
+    public int getState() {
+        return this.state;
+    }
+
+    @Override
+    public void init(Session session, byte[] object, byte[] object2, byte[] byArray, byte[] byArray2) throws Exception {
+        this.session = session;
+        this.V_S = object;
+        this.V_C = object2;
+        this.I_S = byArray;
+        this.I_C = byArray2;
+        try {
+            object2 = (HASH)Class.forName(session.getConfig("sha-1")).newInstance();
+            object = (HASH)object2;
+            this.sha = object2;
+            this.sha.init();
+        }
+        catch (Exception exception) {
+            System.err.println(exception);
+        }
+        this.buf = new Buffer();
+        this.packet = new Packet(this.buf);
+        object = (DH)Class.forName(session.getConfig("dh")).newInstance();
+        object2 = (DH)object;
+        this.dh = object;
+        this.dh.init();
+        this.dh.setP(p);
+        this.dh.setG(g);
+        this.e = this.dh.getE();
+        this.packet.reset();
+        this.buf.putByte((byte)30);
+        this.buf.putMPInt(this.e);
+        session.write(this.packet);
+        if (JSch.getLogger().isEnabled(1)) {
+            JSch.getLogger().log(1, "SSH_MSG_KEXDH_INIT sent");
+            JSch.getLogger().log(1, "expecting SSH_MSG_KEXDH_REPLY");
+        }
+        this.state = 31;
+    }
+
+    @Override
+    public boolean next(Buffer object) throws Exception {
+        switch (this.state) {
+            default: {
+                return false;
+            }
+            case 31: 
+        }
+        ((Buffer)object).getInt();
+        ((Buffer)object).getByte();
+        int n = ((Buffer)object).getByte();
+        if (n != 31) {
+            System.err.println("type: must be 31 " + n);
+            return false;
+        }
+        this.K_S = ((Buffer)object).getString();
+        byte[] byArray = ((Buffer)object).getMPInt();
+        object = ((Buffer)object).getString();
+        this.dh.setF(byArray);
+        this.dh.checkRange();
+        this.K = this.normalize(this.dh.getK());
+        this.buf.reset();
+        this.buf.putString(this.V_C);
+        this.buf.putString(this.V_S);
+        this.buf.putString(this.I_C);
+        this.buf.putString(this.I_S);
+        this.buf.putString(this.K_S);
+        this.buf.putMPInt(this.e);
+        this.buf.putMPInt(byArray);
+        this.buf.putMPInt(this.K);
+        byArray = new byte[this.buf.getLength()];
+        this.buf.getByte(byArray);
+        this.sha.update(byArray, 0, byArray.length);
+        this.H = this.sha.digest();
+        byArray = this.K_S;
+        int n2 = 0 + 1;
+        n = byArray[0];
+        byArray = this.K_S;
+        int n3 = n2 + 1;
+        byte by = byArray[n2];
+        byArray = this.K_S;
+        n2 = n3 + 1;
+        byte by2 = byArray[n3];
+        byArray = this.K_S;
+        n3 = n2 + 1;
+        n = n << 24 & 0xFF000000 | by << 16 & 0xFF0000 | by2 << 8 & 0xFF00 | byArray[n2] & 0xFF;
+        boolean bl = this.verify(Util.byte2str(this.K_S, n3, n), this.K_S, n3 + n, (byte[])object);
+        this.state = 0;
+        return bl;
+    }
+}
+
