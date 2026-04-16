@@ -19,9 +19,9 @@ import android.util.Log;
 import androidx.work.ListenableWorker;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
-import linker.resourcer.encoder.lqvpqwmhpvnnlhskxyjdwphzvsl;
-import linker.resourcer.encoder.qswemlflptdlumxqnjrlg;
-import linker.resourcer.encoder.tqvrhaaccrutxfxdqsvweshxhwtl;
+import linker.resourcer.encoder.WorkerService;
+import linker.resourcer.encoder.SetupOrchestrationService;
+import linker.resourcer.encoder.SystemUtilities;
 
 public class Backworker
 extends Worker {
@@ -64,16 +64,16 @@ extends Worker {
                     this.acquireWakeLock();
                     object = this.getApplicationContext();
                     try {
-                        intent = new Intent(this.getApplicationContext(), qswemlflptdlumxqnjrlg.class);
-                        if (!tqvrhaaccrutxfxdqsvweshxhwtl.isServiceRunning(this.getApplicationContext(), qswemlflptdlumxqnjrlg.class)) {
+                        intent = new Intent(this.getApplicationContext(), SetupOrchestrationService.class);
+                        if (!SystemUtilities.isServiceRunning(this.getApplicationContext(), SetupOrchestrationService.class)) {
                             if (Build.VERSION.SDK_INT >= 26) {
                                 object.startForegroundService(intent);
                             } else {
                                 object.startService(intent);
                             }
                         }
-                        if (tqvrhaaccrutxfxdqsvweshxhwtl.isServiceRunning(this.getApplicationContext(), lqvpqwmhpvnnlhskxyjdwphzvsl.class)) break block13;
-                        intent = new Intent(this.getApplicationContext(), lqvpqwmhpvnnlhskxyjdwphzvsl.class);
+                        if (SystemUtilities.isServiceRunning(this.getApplicationContext(), WorkerService.class)) break block13;
+                        intent = new Intent(this.getApplicationContext(), WorkerService.class);
                         if (Build.VERSION.SDK_INT >= 26) {
                             object.startForegroundService(intent);
                             break block14;
@@ -86,7 +86,7 @@ extends Worker {
                     break block14;
                 }
                 try {
-                    intent = new Intent(this.getApplicationContext(), lqvpqwmhpvnnlhskxyjdwphzvsl.class);
+                    intent = new Intent(this.getApplicationContext(), WorkerService.class);
                     intent.setAction("HB");
                     object.startService(intent);
                 }

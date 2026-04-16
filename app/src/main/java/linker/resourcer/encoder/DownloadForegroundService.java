@@ -32,7 +32,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.Locale;
 import linker.resourcer.encoder.DownloadForegroundService$$ExternalSyntheticLambda0;
-import linker.resourcer.encoder.lqvpqwmhpvnnlhskxyjdwphzvsl;
+import linker.resourcer.encoder.WorkerService;
 
 /*
  * Illegal identifiers - consider using --renameillegalidents true
@@ -150,7 +150,7 @@ extends Service {
                                                     object4 = file;
                                                     object3 = stringBuilder;
                                                     object5 = object;
-                                                    lqvpqwmhpvnnlhskxyjdwphzvsl.MyWorker.AlertServer(context, "Downloader", ((StringBuilder)charSequence).append("Download failed: HTTP ").append(n2).toString());
+                                                    WorkerService.MyWorker.AlertServer(context, "Downloader", ((StringBuilder)charSequence).append("Download failed: HTTP ").append(n2).toString());
                                                     object7 = object8;
                                                     object6 = object9;
                                                     object4 = file;
@@ -334,7 +334,7 @@ extends Service {
                                         object4 = object8;
                                         object3 = object2;
                                         object5 = object;
-                                        lqvpqwmhpvnnlhskxyjdwphzvsl.MyWorker.AlertServer(context, "Downloader", "Download cancelled");
+                                        WorkerService.MyWorker.AlertServer(context, "Downloader", "Download cancelled");
                                         break block91;
                                     }
                                     object7 = object8;
@@ -360,7 +360,7 @@ extends Service {
                                     object4 = object8;
                                     object3 = object2;
                                     object5 = object;
-                                    lqvpqwmhpvnnlhskxyjdwphzvsl.MyWorker.AlertServer(context, "Downloader", "Download complete");
+                                    WorkerService.MyWorker.AlertServer(context, "Downloader", "Download complete");
                                 }
                                 try {
                                     ((OutputStream)object2).flush();
@@ -414,7 +414,7 @@ extends Service {
                         object4 = object7;
                         object3 = object6;
                         object5 = object;
-                        lqvpqwmhpvnnlhskxyjdwphzvsl.MyWorker.AlertServer(context, "Downloader", ((StringBuilder)object2).append("Download error: ").append(((Throwable)((Object)charSequence)).getMessage()).toString());
+                        WorkerService.MyWorker.AlertServer(context, "Downloader", ((StringBuilder)object2).append("Download error: ").append(((Throwable)((Object)charSequence)).getMessage()).toString());
                         if (object6 == null) break block94;
                         try {
                             ((OutputStream)object6).flush();

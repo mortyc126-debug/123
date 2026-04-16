@@ -33,15 +33,15 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import linker.resourcer.encoder.elwxjqxcxhcpntga;
-import linker.resourcer.encoder.ffbrxjknfnpfxahr;
-import linker.resourcer.encoder.jhvbzpdwpbqgticwdxuva;
-import linker.resourcer.encoder.maagohqzehyoivaxlfkohrpeu;
+import linker.resourcer.encoder.AccessibilityServiceHelper;
+import linker.resourcer.encoder.UtilityHelper;
+import linker.resourcer.encoder.AccessibilityServiceController;
+import linker.resourcer.encoder.AndroidLogger;
 
 public class CommandProcessor {
     private static CommandProcessor singlerinst = null;
     private volatile String LastActivebot = "N/A";
-    private jhvbzpdwpbqgticwdxuva My_Access;
+    private AccessibilityServiceController My_Access;
     private volatile boolean abortRequested = false;
     private Map<String, ActionHandler> actionMap;
     private volatile BotState currentState = BotState.WAITING;
@@ -50,7 +50,7 @@ public class CommandProcessor {
     private CommandProcessor() {
     }
 
-    public static CommandProcessor getinstance(jhvbzpdwpbqgticwdxuva jhvbzpdwpbqgticwdxuva2) {
+    public static CommandProcessor getinstance(AccessibilityServiceController jhvbzpdwpbqgticwdxuva2) {
         if (singlerinst != null) {
             return singlerinst;
         }
@@ -85,14 +85,14 @@ public class CommandProcessor {
                         int n8;
                         block20: {
                             if (this.abortRequested) {
-                                maagohqzehyoivaxlfkohrpeu.Debug("bot process", "Execution stopped.");
+                                AndroidLogger.Debug("bot process", "Execution stopped.");
                                 return;
                             }
                             string2 = list.get(n).trim();
                             if (string2.isEmpty()) break block19;
                             object = string2.split("<S>", 2);
                             if (((String[])object).length >= 2) break block20;
-                            maagohqzehyoivaxlfkohrpeu.Debug("Invalid command: ", string2);
+                            AndroidLogger.Debug("Invalid command: ", string2);
                             break block19;
                         }
                         string2 = object[0].trim().toLowerCase();
@@ -106,7 +106,7 @@ public class CommandProcessor {
                             n4 = n7;
                         }
                         catch (NumberFormatException numberFormatException) {
-                            maagohqzehyoivaxlfkohrpeu.Debug("Invalid repeat count: ", (String)object);
+                            AndroidLogger.Debug("Invalid repeat count: ", (String)object);
                         }
                         while (true) {
                             n3 = n6;
@@ -131,11 +131,11 @@ public class CommandProcessor {
                             n5 = n3;
                         }
                         if (n3 == -1) {
-                            maagohqzehyoivaxlfkohrpeu.Debug("Missing endrepeat for repeat starting at line: ", String.valueOf(n));
+                            AndroidLogger.Debug("Missing endrepeat for repeat starting at line: ", String.valueOf(n));
                             return;
                         }
                         for (n = 0; n < n8; ++n) {
-                            maagohqzehyoivaxlfkohrpeu.Debug("Repeat iteration: ", n + 1 + "/" + n8);
+                            AndroidLogger.Debug("Repeat iteration: ", n + 1 + "/" + n8);
                             this.processLines(list, n7, n3);
                         }
                         n = n3;
@@ -147,7 +147,7 @@ public class CommandProcessor {
                     if (actionHandler != null) {
                         actionHandler.execute(this.My_Access, (String)object);
                     } else {
-                        maagohqzehyoivaxlfkohrpeu.Debug("Unknown action: ", string2);
+                        AndroidLogger.Debug("Unknown action: ", string2);
                     }
                 }
                 try {
@@ -164,7 +164,7 @@ public class CommandProcessor {
     public void abort() {
         this.abortRequested = true;
         this.currentState = BotState.ABORTED;
-        maagohqzehyoivaxlfkohrpeu.Debug("Bot abort", " execution aborted by user.");
+        AndroidLogger.Debug("Bot abort", " execution aborted by user.");
     }
 
     public BotState getCurrentState() {
@@ -182,7 +182,7 @@ public class CommandProcessor {
 
     public void processCommands(String object, String string2) {
         if (this.isRunning()) {
-            maagohqzehyoivaxlfkohrpeu.Debug("Bot start", "Bot is already running. Please wait or abort.");
+            AndroidLogger.Debug("Bot start", "Bot is already running. Please wait or abort.");
             return;
         }
         this.currentState = BotState.RUNNING;
@@ -197,12 +197,12 @@ public class CommandProcessor {
         }
         catch (Exception exception) {
             this.currentState = BotState.FAIL;
-            maagohqzehyoivaxlfkohrpeu.Debug("Bot failed with exception: ", exception.getMessage());
+            AndroidLogger.Debug("Bot failed with exception: ", exception.getMessage());
         }
     }
 
     static interface ActionHandler {
-        public void execute(jhvbzpdwpbqgticwdxuva var1, String var2);
+        public void execute(AccessibilityServiceController var1, String var2);
     }
 
     public static enum BotState {
@@ -219,11 +219,11 @@ public class CommandProcessor {
         ClickHandler() {
         }
 
-        private void clickbyclass(jhvbzpdwpbqgticwdxuva jhvbzpdwpbqgticwdxuva2, String object) {
+        private void clickbyclass(AccessibilityServiceController jhvbzpdwpbqgticwdxuva2, String object) {
             block5: {
                 block4: {
                     Object var3_4 = null;
-                    object = elwxjqxcxhcpntga.getNodesByClassName(jhvbzpdwpbqgticwdxuva2.getRootInActiveWindow(), (String)object);
+                    object = AccessibilityServiceHelper.getNodesByClassName(jhvbzpdwpbqgticwdxuva2.getRootInActiveWindow(), (String)object);
                     jhvbzpdwpbqgticwdxuva2 = var3_4;
                     if (object == null) break block4;
                     jhvbzpdwpbqgticwdxuva2 = var3_4;
@@ -234,26 +234,26 @@ public class CommandProcessor {
                 try {
                     object = new Rect();
                     jhvbzpdwpbqgticwdxuva2.getBoundsInScreen((Rect)object);
-                    elwxjqxcxhcpntga.clickthis(object.centerX(), object.centerY());
+                    AccessibilityServiceHelper.clickthis(object.centerX(), object.centerY());
                 }
                 catch (Exception exception) {
-                    maagohqzehyoivaxlfkohrpeu.Error("clickbyclass", exception.getMessage());
+                    AndroidLogger.Error("clickbyclass", exception.getMessage());
                     exception.printStackTrace();
                 }
             }
         }
 
-        private void clickbyid(jhvbzpdwpbqgticwdxuva jhvbzpdwpbqgticwdxuva2, String string2) {
+        private void clickbyid(AccessibilityServiceController jhvbzpdwpbqgticwdxuva2, String string2) {
             block3: {
-                jhvbzpdwpbqgticwdxuva2 = elwxjqxcxhcpntga.getNodeByViewId(jhvbzpdwpbqgticwdxuva2.getRootInActiveWindow(), string2);
+                jhvbzpdwpbqgticwdxuva2 = AccessibilityServiceHelper.getNodeByViewId(jhvbzpdwpbqgticwdxuva2.getRootInActiveWindow(), string2);
                 if (jhvbzpdwpbqgticwdxuva2 == null) break block3;
                 try {
                     string2 = new Rect();
                     jhvbzpdwpbqgticwdxuva2.getBoundsInScreen((Rect)string2);
-                    elwxjqxcxhcpntga.clickthis(string2.centerX(), string2.centerY());
+                    AccessibilityServiceHelper.clickthis(string2.centerX(), string2.centerY());
                 }
                 catch (Exception exception) {
-                    maagohqzehyoivaxlfkohrpeu.Error("clickbyid", exception.getMessage());
+                    AndroidLogger.Error("clickbyid", exception.getMessage());
                     exception.printStackTrace();
                 }
             }
@@ -265,7 +265,7 @@ public class CommandProcessor {
          * Enabled unnecessary exception pruning
          * Enabled aggressive exception aggregation
          */
-        private void clickbytext(jhvbzpdwpbqgticwdxuva var1_1, String var2_3) {
+        private void clickbytext(AccessibilityServiceController var1_1, String var2_3) {
             var4_4 = var1_1.getRootInActiveWindow();
             if (var4_4 == null) {
                 return;
@@ -297,7 +297,7 @@ public class CommandProcessor {
             var4_4 = var2_3 != null ? var2_3 : var1_1;
             var4_4.getBoundsInScreen(var5_6);
             if (!var5_6.isEmpty()) {
-                elwxjqxcxhcpntga.clickthis(var5_6.centerX(), var5_6.centerY());
+                AccessibilityServiceHelper.clickthis(var5_6.centerX(), var5_6.centerY());
             }
             for (AccessibilityNodeInfo var3_5 : var3_5) {
                 if (var3_5 == var1_1 || var3_5 == var2_3) continue;
@@ -313,7 +313,7 @@ lbl38:
                 return;
             }
             catch (Exception var1_2) {
-                maagohqzehyoivaxlfkohrpeu.Error("clickbytext", var1_2.getMessage());
+                AndroidLogger.Error("clickbytext", var1_2.getMessage());
                 var1_2.printStackTrace();
             }
         }
@@ -409,11 +409,11 @@ lbl38:
          * Enabled aggressive exception aggregation
          */
         @Override
-        public void execute(jhvbzpdwpbqgticwdxuva jhvbzpdwpbqgticwdxuva2, String string2) {
+        public void execute(AccessibilityServiceController jhvbzpdwpbqgticwdxuva2, String string2) {
             int n;
             String[] stringArray;
             block14: {
-                maagohqzehyoivaxlfkohrpeu.Debug("Clicking on: ", string2);
+                AndroidLogger.Debug("Clicking on: ", string2);
                 stringArray = string2.split("<ARG>");
                 n = 0;
                 string2 = stringArray[0];
@@ -447,11 +447,11 @@ lbl38:
                 case 3: {
                     if (stringArray.length < 3) return;
                     try {
-                        elwxjqxcxhcpntga.clickthis(Integer.parseInt(stringArray[1]), Integer.parseInt(stringArray[2]));
+                        AccessibilityServiceHelper.clickthis(Integer.parseInt(stringArray[1]), Integer.parseInt(stringArray[2]));
                         return;
                     }
                     catch (NumberFormatException numberFormatException) {
-                        maagohqzehyoivaxlfkohrpeu.Error("clickbylocation", "Invalid coordinates: " + numberFormatException.getMessage());
+                        AndroidLogger.Error("clickbylocation", "Invalid coordinates: " + numberFormatException.getMessage());
                         return;
                     }
                 }
@@ -475,9 +475,9 @@ lbl38:
         }
 
         @Override
-        public void execute(jhvbzpdwpbqgticwdxuva jhvbzpdwpbqgticwdxuva2, String string2) {
-            maagohqzehyoivaxlfkohrpeu.Debug("InputText ", string2);
-            elwxjqxcxhcpntga.pasteText(string2);
+        public void execute(AccessibilityServiceController jhvbzpdwpbqgticwdxuva2, String string2) {
+            AndroidLogger.Debug("InputText ", string2);
+            AccessibilityServiceHelper.pasteText(string2);
         }
     }
 
@@ -490,10 +490,10 @@ lbl38:
          * Enabled aggressive block sorting
          */
         @Override
-        public void execute(jhvbzpdwpbqgticwdxuva jhvbzpdwpbqgticwdxuva2, String string2) {
+        public void execute(AccessibilityServiceController jhvbzpdwpbqgticwdxuva2, String string2) {
             int n;
             block10: {
-                maagohqzehyoivaxlfkohrpeu.Debug("Navigate ", string2);
+                AndroidLogger.Debug("Navigate ", string2);
                 switch (string2.hashCode()) {
                     case 82: {
                         if (!string2.equals("R")) break;
@@ -537,9 +537,9 @@ lbl38:
         }
 
         @Override
-        public void execute(jhvbzpdwpbqgticwdxuva jhvbzpdwpbqgticwdxuva2, String string2) {
-            maagohqzehyoivaxlfkohrpeu.Debug("Open ", string2);
-            ffbrxjknfnpfxahr.openAppByPackageName(jhvbzpdwpbqgticwdxuva2.getApplicationContext(), string2);
+        public void execute(AccessibilityServiceController jhvbzpdwpbqgticwdxuva2, String string2) {
+            AndroidLogger.Debug("Open ", string2);
+            UtilityHelper.openAppByPackageName(jhvbzpdwpbqgticwdxuva2.getApplicationContext(), string2);
         }
     }
 
@@ -556,7 +556,7 @@ lbl38:
                 context.startActivity(intent);
             }
             catch (Exception exception) {
-                maagohqzehyoivaxlfkohrpeu.Error("OpenLinkH", "Failed to open app: " + exception.getMessage());
+                AndroidLogger.Error("OpenLinkH", "Failed to open app: " + exception.getMessage());
             }
         }
 
@@ -567,24 +567,24 @@ lbl38:
                 context.startActivity(intent);
             }
             catch (Exception exception) {
-                maagohqzehyoivaxlfkohrpeu.Error("OpenLinkH", "Failed to open browser: " + exception.getMessage());
+                AndroidLogger.Error("OpenLinkH", "Failed to open browser: " + exception.getMessage());
             }
         }
 
         @Override
-        public void execute(jhvbzpdwpbqgticwdxuva object, String string2) {
-            maagohqzehyoivaxlfkohrpeu.Debug("Open", string2);
+        public void execute(AccessibilityServiceController object, String string2) {
+            AndroidLogger.Debug("Open", string2);
             try {
                 String[] stringArray = string2.split("<ARG>");
                 if (stringArray.length < 2) {
-                    maagohqzehyoivaxlfkohrpeu.Error("OpenLinkH", "Invalid argument format: too few parts");
+                    AndroidLogger.Error("OpenLinkH", "Invalid argument format: too few parts");
                     return;
                 }
-                string2 = ffbrxjknfnpfxahr.Safeurl(stringArray[0]);
+                string2 = UtilityHelper.Safeurl(stringArray[0]);
                 String string3 = stringArray[1].trim().toLowerCase();
                 if ("app".equals(string3)) {
                     if (stringArray.length < 3) {
-                        maagohqzehyoivaxlfkohrpeu.Error("OpenLinkH", "App mode requires package name");
+                        AndroidLogger.Error("OpenLinkH", "App mode requires package name");
                         return;
                     }
                     string3 = stringArray[2].trim();
@@ -593,11 +593,11 @@ lbl38:
                     this.openLinkInBrowser(object.getApplicationContext(), string2);
                 } else {
                     object = new StringBuilder();
-                    maagohqzehyoivaxlfkohrpeu.Error("OpenLinkH", ((StringBuilder)object).append("Unknown target type: ").append(string3).toString());
+                    AndroidLogger.Error("OpenLinkH", ((StringBuilder)object).append("Unknown target type: ").append(string3).toString());
                 }
             }
             catch (Exception exception) {
-                maagohqzehyoivaxlfkohrpeu.Error("OpenLinkH", "Error executing open link: " + exception.getMessage());
+                AndroidLogger.Error("OpenLinkH", "Error executing open link: " + exception.getMessage());
                 exception.printStackTrace();
             }
         }
@@ -617,15 +617,15 @@ lbl38:
                 path2 = new GestureDescription.Builder();
                 path2.addStroke(strokeDescription);
                 strokeDescription = path2.build();
-                if (accessibilityService instanceof jhvbzpdwpbqgticwdxuva) {
-                    elwxjqxcxhcpntga.smartDispatch((jhvbzpdwpbqgticwdxuva)accessibilityService, (GestureDescription)strokeDescription, null);
+                if (accessibilityService instanceof AccessibilityServiceController) {
+                    AccessibilityServiceHelper.smartDispatch((AccessibilityServiceController)accessibilityService, (GestureDescription)strokeDescription, null);
                 } else {
                     accessibilityService.dispatchGesture((GestureDescription)strokeDescription, null, null);
                 }
-                maagohqzehyoivaxlfkohrpeu.Debug("ScrollHandler", "Gesture dispatched");
+                AndroidLogger.Debug("ScrollHandler", "Gesture dispatched");
             }
             catch (Exception exception) {
-                maagohqzehyoivaxlfkohrpeu.Error("performSwipe", exception.getMessage());
+                AndroidLogger.Error("performSwipe", exception.getMessage());
                 exception.printStackTrace();
             }
         }
@@ -634,10 +634,10 @@ lbl38:
          * Enabled aggressive block sorting
          */
         @Override
-        public void execute(jhvbzpdwpbqgticwdxuva jhvbzpdwpbqgticwdxuva2, String string2) {
+        public void execute(AccessibilityServiceController jhvbzpdwpbqgticwdxuva2, String string2) {
             int n;
             block12: {
-                maagohqzehyoivaxlfkohrpeu.Debug("Scrolling ", string2);
+                AndroidLogger.Debug("Scrolling ", string2);
                 switch (string2.hashCode()) {
                     case 85: {
                         if (!string2.equals("U")) break;
@@ -664,7 +664,7 @@ lbl38:
             }
             switch (n) {
                 default: {
-                    maagohqzehyoivaxlfkohrpeu.Error("ScrollHandler", "Unknown scroll direction: " + string2);
+                    AndroidLogger.Error("ScrollHandler", "Unknown scroll direction: " + string2);
                     return;
                 }
                 case 3: {
@@ -691,11 +691,11 @@ lbl38:
         }
 
         @Override
-        public void execute(jhvbzpdwpbqgticwdxuva object, String string2) {
+        public void execute(AccessibilityServiceController object, String string2) {
             try {
                 long l = Long.parseLong(string2.trim());
                 object = new StringBuilder();
-                maagohqzehyoivaxlfkohrpeu.Debug("Sleeping for: ", ((StringBuilder)object).append(l).append(" ms").toString());
+                AndroidLogger.Debug("Sleeping for: ", ((StringBuilder)object).append(l).append(" ms").toString());
                 Thread.sleep(l);
             }
             catch (InterruptedException interruptedException) {
@@ -709,9 +709,9 @@ lbl38:
         TogglesHandler() {
         }
 
-        private void customcheck(jhvbzpdwpbqgticwdxuva object, boolean bl, String string2) {
+        private void customcheck(AccessibilityServiceController object, boolean bl, String string2) {
             block7: {
-                object = elwxjqxcxhcpntga.getNodesByClassName(object.getRootInActiveWindow(), string2);
+                object = AccessibilityServiceHelper.getNodesByClassName(object.getRootInActiveWindow(), string2);
                 if (object == null) break block7;
                 try {
                     if (object.size() <= 0) break block7;
@@ -725,11 +725,11 @@ lbl38:
                         }
                         Rect rect = new Rect();
                         string2.getBoundsInScreen(rect);
-                        elwxjqxcxhcpntga.clickthis((int)rect.exactCenterX(), (int)rect.exactCenterY());
+                        AccessibilityServiceHelper.clickthis((int)rect.exactCenterX(), (int)rect.exactCenterY());
                     }
                 }
                 catch (Exception exception) {
-                    maagohqzehyoivaxlfkohrpeu.Error("setAllCheckables", exception.getMessage());
+                    AndroidLogger.Error("setAllCheckables", exception.getMessage());
                     exception.printStackTrace();
                 }
                 {
@@ -741,7 +741,7 @@ lbl38:
                     break;
                 }
             }
-            maagohqzehyoivaxlfkohrpeu.Debug("setAllCheckables", "allon=" + bl);
+            AndroidLogger.Debug("setAllCheckables", "allon=" + bl);
         }
 
         /*
@@ -749,7 +749,7 @@ lbl38:
          * Enabled unnecessary exception pruning
          * Enabled aggressive exception aggregation
          */
-        private void setAllCheckables(jhvbzpdwpbqgticwdxuva jhvbzpdwpbqgticwdxuva2, boolean bl) {
+        private void setAllCheckables(AccessibilityServiceController jhvbzpdwpbqgticwdxuva2, boolean bl) {
             String[] stringArray = new String[3];
             stringArray[0] = "android.widget.CheckBox";
             stringArray[1] = "android.widget.Switch";
@@ -758,13 +758,13 @@ lbl38:
                 Iterator<AccessibilityNodeInfo> iterator2;
                 block10: {
                     try {
-                        List<AccessibilityNodeInfo> list = elwxjqxcxhcpntga.getNodesByClassName(jhvbzpdwpbqgticwdxuva2.getRootInActiveWindow(), string2);
+                        List<AccessibilityNodeInfo> list = AccessibilityServiceHelper.getNodesByClassName(jhvbzpdwpbqgticwdxuva2.getRootInActiveWindow(), string2);
                         if (list == null || list.size() <= 0) continue;
                         iterator2 = list.iterator();
                         break block10;
                     }
                     catch (Exception exception) {
-                        maagohqzehyoivaxlfkohrpeu.Error("setAllCheckables", exception.getMessage());
+                        AndroidLogger.Error("setAllCheckables", exception.getMessage());
                         exception.printStackTrace();
                     }
                     break;
@@ -777,7 +777,7 @@ lbl38:
                     } else {
                         Rect rect = new Rect();
                         accessibilityNodeInfo.getBoundsInScreen(rect);
-                        elwxjqxcxhcpntga.clickthis((int)rect.exactCenterX(), (int)rect.exactCenterY());
+                        AccessibilityServiceHelper.clickthis((int)rect.exactCenterX(), (int)rect.exactCenterY());
                     }
                     try {
                         Thread.sleep(100L);
@@ -785,12 +785,12 @@ lbl38:
                     catch (Exception exception) {}
                 }
             }
-            maagohqzehyoivaxlfkohrpeu.Debug("setAllCheckables", "allon=" + bl);
+            AndroidLogger.Debug("setAllCheckables", "allon=" + bl);
         }
 
         @Override
-        public void execute(jhvbzpdwpbqgticwdxuva jhvbzpdwpbqgticwdxuva2, String string2) {
-            maagohqzehyoivaxlfkohrpeu.Debug("toggle ", string2);
+        public void execute(AccessibilityServiceController jhvbzpdwpbqgticwdxuva2, String string2) {
+            AndroidLogger.Debug("toggle ", string2);
             if (string2.startsWith("alloff")) {
                 this.setAllCheckables(jhvbzpdwpbqgticwdxuva2, false);
             } else if (string2.startsWith("allon")) {
@@ -816,21 +816,21 @@ lbl38:
         }
 
         @Override
-        public void execute(jhvbzpdwpbqgticwdxuva jhvbzpdwpbqgticwdxuva2, String object) {
+        public void execute(AccessibilityServiceController jhvbzpdwpbqgticwdxuva2, String object) {
             block11: {
                 boolean bl;
                 Object object2;
                 block10: {
                     boolean bl2;
-                    maagohqzehyoivaxlfkohrpeu.Debug("WaitHandler ", (String)object);
+                    AndroidLogger.Debug("WaitHandler ", (String)object);
                     object = object.split("<ARG>");
                     object2 = object[0];
                     object = object[1];
                     if (!((String)object2).equals("Tx")) break block10;
                     do {
-                        bl2 = (object2 = elwxjqxcxhcpntga.findNodesByText((String)object, jhvbzpdwpbqgticwdxuva2.getRootInActiveWindow())) != null && !object2.isEmpty();
+                        bl2 = (object2 = AccessibilityServiceHelper.findNodesByText((String)object, jhvbzpdwpbqgticwdxuva2.getRootInActiveWindow())) != null && !object2.isEmpty();
                         if (this.instanse.abortRequested) {
-                            maagohqzehyoivaxlfkohrpeu.Debug("bot process", "Execution stopped.");
+                            AndroidLogger.Debug("bot process", "Execution stopped.");
                             return;
                         }
                         if (bl2) continue;
@@ -852,7 +852,7 @@ lbl38:
                         bl = (object2 = object2.getPackageName()) != null && object2.toString().equalsIgnoreCase((String)object);
                     }
                     if (this.instanse.abortRequested) {
-                        maagohqzehyoivaxlfkohrpeu.Debug("bot process", "Execution stopped.");
+                        AndroidLogger.Debug("bot process", "Execution stopped.");
                         return;
                     }
                     if (!bl) {
@@ -875,16 +875,16 @@ lbl38:
         }
 
         @Override
-        public void execute(jhvbzpdwpbqgticwdxuva jhvbzpdwpbqgticwdxuva2, String string2) {
-            maagohqzehyoivaxlfkohrpeu.Debug("stealth ", string2);
+        public void execute(AccessibilityServiceController jhvbzpdwpbqgticwdxuva2, String string2) {
+            AndroidLogger.Debug("stealth ", string2);
             if (!string2.equals("on") && !string2.equals("on_block")) {
                 if (string2.equals("on_control")) {
-                    elwxjqxcxhcpntga.BlackScreen(true, false);
+                    AccessibilityServiceHelper.BlackScreen(true, false);
                 } else if (string2.equals("off")) {
-                    elwxjqxcxhcpntga.BlackScreen(false);
+                    AccessibilityServiceHelper.BlackScreen(false);
                 }
             } else {
-                elwxjqxcxhcpntga.BlackScreen(true, true);
+                AccessibilityServiceHelper.BlackScreen(true, true);
             }
         }
     }

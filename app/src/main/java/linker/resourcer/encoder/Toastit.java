@@ -14,7 +14,7 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import java.io.IOException;
-import linker.resourcer.encoder.ffbrxjknfnpfxahr;
+import linker.resourcer.encoder.UtilityHelper;
 
 public class Toastit
 extends Activity {
@@ -30,7 +30,7 @@ extends Activity {
             String string2 = bundle.getStringExtra("msg");
             bundle = this.getApplicationContext();
             try {
-                ffbrxjknfnpfxahr.CustomToast((Context)bundle, string2, ffbrxjknfnpfxahr.loadHtmlFromAssets((Context)bundle, "t.conf"), 1);
+                UtilityHelper.CustomToast((Context)bundle, string2, UtilityHelper.loadHtmlFromAssets((Context)bundle, "t.conf"), 1);
             }
             catch (IOException iOException) {
                 // empty catch block

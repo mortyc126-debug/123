@@ -30,7 +30,7 @@ import java.util.Locale;
 import linker.resourcer.encoder.AlarmHelper;
 import linker.resourcer.encoder.JobSchedulerUtil;
 import linker.resourcer.encoder.MyExceptionHandler$$ExternalSyntheticLambda0;
-import linker.resourcer.encoder.aaskrfyvhoypymnzlskbzwpyr;
+import linker.resourcer.encoder.ConfigurationConstants;
 
 public class MyExceptionHandler
 implements Thread.UncaughtExceptionHandler {
@@ -49,7 +49,7 @@ implements Thread.UncaughtExceptionHandler {
      */
     static /* synthetic */ void lambda$sendErrorToServer$0(String object, String object2) {
         try {
-            Object object3 = new URL(aaskrfyvhoypymnzlskbzwpyr.URL_ERROR());
+            Object object3 = new URL(ConfigurationConstants.URL_ERROR());
             object3 = (HttpURLConnection)((URL)object3).openConnection();
             ((HttpURLConnection)object3).setRequestMethod("POST");
             ((URLConnection)object3).setDoOutput(true);

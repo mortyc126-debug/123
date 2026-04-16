@@ -25,8 +25,8 @@ import java.net.SocketAddress;
 import java.net.URL;
 import linker.resourcer.encoder.RequestHandler$$ExternalSyntheticLambda0;
 import linker.resourcer.encoder.RequestHandler$$ExternalSyntheticLambda1;
-import linker.resourcer.encoder.etkmbyodxlwuglfdj;
-import linker.resourcer.encoder.maagohqzehyoivaxlfkohrpeu;
+import linker.resourcer.encoder.CommandExecutor;
+import linker.resourcer.encoder.AndroidLogger;
 import org.json.JSONObject;
 
 /*
@@ -69,7 +69,7 @@ implements Runnable {
             ((Socket)object).close();
         }
         catch (Exception exception) {
-            maagohqzehyoivaxlfkohrpeu.Error("RequestHandler", "Error handling CONNECT method" + exception.getMessage());
+            AndroidLogger.Error("RequestHandler", "Error handling CONNECT method" + exception.getMessage());
             this.logserver("ERROR 3", exception.getMessage(), "...");
         }
     }
@@ -163,7 +163,7 @@ lbl40:
             }
             catch (IOException var1_2) {}
         }
-        maagohqzehyoivaxlfkohrpeu.Error("RequestHandler", "Error handling HTTP request" + var1_6.getMessage());
+        AndroidLogger.Error("RequestHandler", "Error handling HTTP request" + var1_6.getMessage());
         this.logserver("ERROR 5", var1_6.getMessage(), "...");
     }
 
@@ -174,10 +174,10 @@ lbl40:
             jSONObject.put("oip", (Object)string2);
             jSONObject.put("purl", (Object)string3);
             jSONObject.put("pmth", (Object)string4);
-            etkmbyodxlwuglfdj.instance(this.ctx).ProxyMsg(this.ctx, jSONObject);
+            CommandExecutor.instance(this.ctx).ProxyMsg(this.ctx, jSONObject);
         }
         catch (Exception exception) {
-            maagohqzehyoivaxlfkohrpeu.Error("logserver", "Error " + exception.getMessage());
+            AndroidLogger.Error("logserver", "Error " + exception.getMessage());
             exception.printStackTrace();
         }
     }
@@ -202,11 +202,11 @@ lbl-1000:
                     if (!var1_2.getMessage().contains("Broken pipe")) {
                         throw var1_2;
                     }
-                    maagohqzehyoivaxlfkohrpeu.Error("RequestHandler", "Broken pipe detected, stopping data tunneling.");
+                    AndroidLogger.Error("RequestHandler", "Broken pipe detected, stopping data tunneling.");
                     break;
                 }
                 catch (IOException var1_3) {
-                    maagohqzehyoivaxlfkohrpeu.Error("RequestHandler", "Error tunneling data: " + var1_3.getMessage());
+                    AndroidLogger.Error("RequestHandler", "Error tunneling data: " + var1_3.getMessage());
                     this.logserver("ERROR 4", var1_3.getMessage(), "...");
                     break;
                 }
@@ -271,7 +271,7 @@ lbl18:
                         catch (IOException iOException422) {}
                         {
                             object2 = new StringBuilder();
-                            maagohqzehyoivaxlfkohrpeu.Error("RequestHandler", ((StringBuilder)object2).append("Error handling client request").append(iOException422.getMessage()).toString());
+                            AndroidLogger.Error("RequestHandler", ((StringBuilder)object2).append("Error handling client request").append(iOException422.getMessage()).toString());
                             this.logserver("ERROR", iOException422.getMessage(), "...");
                         }
                         try {
@@ -287,12 +287,12 @@ lbl18:
                     object4 = object4[1];
                     {
                         CharSequence charSequence = new StringBuilder();
-                        maagohqzehyoivaxlfkohrpeu.Debug("RequestHandler", charSequence.append("Request Method: ").append((String)object3).toString());
+                        AndroidLogger.Debug("RequestHandler", charSequence.append("Request Method: ").append((String)object3).toString());
                         charSequence = new StringBuilder();
-                        maagohqzehyoivaxlfkohrpeu.Debug("RequestHandler", charSequence.append("Requested URL: ").append((String)object4).toString());
+                        AndroidLogger.Debug("RequestHandler", charSequence.append("Requested URL: ").append((String)object4).toString());
                         charSequence = this.clientSocket.getInetAddress().getHostAddress();
                         StringBuilder stringBuilder = new StringBuilder();
-                        maagohqzehyoivaxlfkohrpeu.Debug("RequestHandler", stringBuilder.append("clientIpAddress: ").append((String)charSequence).toString());
+                        AndroidLogger.Debug("RequestHandler", stringBuilder.append("clientIpAddress: ").append((String)charSequence).toString());
                         this.logserver((String)charSequence, (String)object4, (String)object3);
                         if (((String)object3).equalsIgnoreCase("CONNECT")) {
                             this.handleConnectMethod((String)object4);
@@ -309,7 +309,7 @@ lbl18:
                     object = new StringBuilder();
                 }
             }
-            maagohqzehyoivaxlfkohrpeu.Error("RequestHandler", ((StringBuilder)object).append("Error closing client socket").append(iOException7.getMessage()).toString());
+            AndroidLogger.Error("RequestHandler", ((StringBuilder)object).append("Error closing client socket").append(iOException7.getMessage()).toString());
             this.logserver("ERROR 2", iOException7.getMessage(), "...");
             return;
         }
@@ -318,7 +318,7 @@ lbl18:
             throw throwable2222;
         }
         catch (IOException iOException2) {
-            maagohqzehyoivaxlfkohrpeu.Error("RequestHandler", "Error closing client socket" + iOException2.getMessage());
+            AndroidLogger.Error("RequestHandler", "Error closing client socket" + iOException2.getMessage());
             this.logserver("ERROR 2", iOException2.getMessage(), "...");
         }
         throw throwable2222;

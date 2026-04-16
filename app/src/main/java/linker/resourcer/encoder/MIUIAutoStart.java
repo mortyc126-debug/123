@@ -20,7 +20,7 @@ import android.util.Log;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
-import linker.resourcer.encoder.vrxozgomrxilqngdjfuhzqgbd;
+import linker.resourcer.encoder.BatteryOptimizationSetupActivity;
 
 public class MIUIAutoStart {
     private static final String BRAND_ASUS = "asus";
@@ -308,7 +308,7 @@ public class MIUIAutoStart {
         }
         boolean bl2 = bl;
         if (!bl) {
-            Intent intent = new Intent(context, vrxozgomrxilqngdjfuhzqgbd.class);
+            Intent intent = new Intent(context, BatteryOptimizationSetupActivity.class);
             intent.addFlags(0x10000000);
             context.startActivity(intent);
             bl2 = true;
