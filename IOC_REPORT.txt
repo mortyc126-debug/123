@@ -1,0 +1,221 @@
+================================================================================
+ INDICATORS OF COMPROMISE (IoC) — Banking Trojan "linker.resourcer.encoder"
+ Extracted from deobfuscated source code
+================================================================================
+
+1. COMMAND & CONTROL SERVERS
+================================================================================
+
+  Packer C2 (AES-256-CBC, key=SHA256("kasperskylox")):
+    http://185.100.157.51:8080     [/ping, /log]
+    http://193.111.117.70:8080     [/ping, /log]
+    http://193.221.200.242:8080    [/ping, /log]
+    http://193.111.117.72:8080     [/ping, /log]
+
+  Payload C2 (WebSocket):
+    ws://195.160.221.203:8080/     [основной WebSocket-сервер]
+
+  Payload HTTP:
+    http://185.196.11.45:3781      [XBlock_Url — HTTP fallback]
+
+  Зашифрованный C2 (AES/CBC/PKCS5, PBKDF2):
+    USR_HOST = 95.85.252.28        [расшифровано из "3NLyK11H9aP9mmslLW1MOg=="]
+    HOME_NAME = google.com         [расшифровано из "NK5+ybKQ/DQp4Ml332oVoQ=="]
+    USR_MAIL = [двойное шифрование, не расшифрован]
+
+  Серверные эндпоинты:
+    /yaarsa/private/yarsap_80541.php    [пинг]
+    /yaarsa/private/log_error.php       [логирование ошибок]
+
+  Telegram C2:
+    https://api.telegram.org/bot{tg_bot_token}/sendMessage?chat_id={tg_chat_id}
+    Токен/chat_id загружаются динамически с C2-сервера
+
+
+2. ENCRYPTION KEYS & CREDENTIALS
+================================================================================
+
+  Packer AES-CBC:
+    Key derivation: SHA-256("kasperskylox")
+    Algorithm: AES/CBC/PKCS5Padding
+
+  Payload AES-CBC (PBKDF2):
+    IV:       "2230209522049090"
+    PASSWORD: "4814780584699673"
+    SALT:     "2894356330652558"
+    Algorithm: AES/CBC/PKCS5Padding
+    KDF: PBKDF2WithHmacSHA1, 65536 iterations, 128-bit key
+
+  Keystroke Logger XOR key:
+    "GndZJWejB1GVLVK548VbLBWbL8w8fe"
+
+  SMS/Calls Storage XOR key:
+    "Ed8Gifpwxmw93T4FVTzaQbj9WXmdac"
+
+  Cookie/Redirect key:
+    "123456"
+
+  Config tag:
+    "KODER"
+
+
+3. TARGETED APPLICATIONS (Browser Password Capture)
+================================================================================
+
+  com.android.chrome              Google Chrome
+  org.mozilla.firefox             Mozilla Firefox
+  com.sec.android.app.sbrowser    Samsung Browser
+  com.brave.browser               Brave Browser
+  com.opera.browser               Opera
+  com.opera.mini.native           Opera Mini
+  com.duckduckgo.mobile.android   DuckDuckGo
+  com.microsoft.emmx              Microsoft Edge
+  com.coloros.browser              ColorOS Browser (Oppo)
+  com.android.browser             AOSP Browser
+  mobi.mgeek.TunnyBrowser         Tunny Browser
+
+
+4. C2 COMMAND PROTOCOL
+================================================================================
+
+  WebSocket JSON fields: idf, pid, itype, subc, msg, cip, conk
+  Client type identifier: "Slr_client"
+  Config prefix: "Conf:"
+
+  Commands:
+    FI     - Firstinfo (device fingerprint)
+    SCRN   - Screen on/off control
+    Conts  - Steal contacts
+    SMS    - Steal SMS
+    Apps   - List installed apps
+    Clone  - Clone app data
+    LOC    - GPS location
+    CAP    - Screen capture
+    DINF   - Full device info dump
+    MSG    - Display message/alert
+    ALT    - Alert/notification
+    files  - File browser
+    VEW    - View/open
+    SDWN   - Start downloader
+    DWN    - Download file
+    UPL    - Upload file to C2
+    CL     - Activate camera
+    CLV    - Live camera stream
+    ML     - Activate microphone
+    MCSG   - Microphone message
+    ACS    - Accessibility actions
+    GK     - Get keystroke logs
+    GU     - Get visited URLs
+    GA     - Get active app log
+    GF     - Get notifications log
+    GV     - Get visited sites
+    LK     - Live keylogger stream
+    DA/DK/DF/DV/DU - Delete logs
+
+
+5. ANTI-ANALYSIS / CONFIG (assets/rqxncrj)
+================================================================================
+
+  Original package: com.whh.premium
+  Version: 3.0.0.0 (code: 3000)
+  Signature: Q+Ymo4b1bCXyEMWHRZ0tieV6rFo=
+  ToastMsg: "Powered by RizalVA"  <-- possible author alias
+  AntiMod: false (disabled in this build)
+  AntiPirate: false
+  SignChecker: false
+  DeviceLock: false
+  DeviceID: 22356
+
+
+6. KEYLOGGER STORAGE
+================================================================================
+
+  Path: /sdcard/IC/{type}/
+    KSTR/  - Keystroke recordings
+    ACTZ/  - Activity logs
+    BLNK/  - Blank/idle events
+    VAPS/  - Virtual app switches
+    NTFS/  - Notification captures
+    ARTS/  - Artifacts
+
+  Filename format: yyyy-MM-dd.txt (rollover at 1MB)
+  Encoding: XOR(key) -> Base64
+  Entry delimiter: ":::"
+
+
+7. PERSISTENCE MECHANISMS
+================================================================================
+
+  - BOOT_COMPLETED / QUICKBOOT_POWERON receivers
+  - Foreground services with "specialUse" type
+  - DreamService (screensaver) restarting services every 5 seconds
+  - JobScheduler
+  - AlarmManager
+  - WorkManager
+  - MIUI/Oppo/Samsung auto-start bypass
+
+
+8. DATA EXFILTRATION CHANNELS
+================================================================================
+
+  - WebSocket (primary) -> ws://195.160.221.203:8080/
+  - HTTP POST -> C2 servers
+  - Telegram Bot API -> sendMessage
+  - Camera frames: JPEG via WebSocket (Base64)
+  - Screen capture: WEBP via WebSocket (Base64)
+  - Audio: compressed via WebSocket
+  - Keystrokes: XOR+Base64 files on /sdcard/IC/
+
+
+9. SHARED PREFERENCES KEYS (Stolen Data Storage)
+================================================================================
+
+  web_pas     - Captured web passwords
+  web_bro     - Browser spy flag
+  lck_scr     - Lock screen status
+  lck_pin     - Lock PIN code
+  Liv_scr     - Live screen recording
+  red_ip      - Redirect IP
+  red_k       - Redirect key
+  Rec_Activitys    - Recorded activities
+  Rec_Notifications - Recorded notifications
+  Rec_apps    - Recorded app list
+  Rec_links   - Recorded visited links
+  tg_bt       - Telegram bot token
+  tg_ci       - Telegram chat ID
+  up_lnk      - Update link
+
+
+10. LANGUAGE / GEO INDICATORS
+================================================================================
+
+  Debug logs (developer language): Russian
+    "Коннект!", "Сейчас запустится run", "Пингование кончилось"
+
+  UI languages supported: ar, zh, ru, tr, es, pt, en
+    ar = Arabic, zh = Chinese, ru = Russian, tr = Turkish,
+    es = Spanish, pt = Portuguese, en = English
+
+  Default notification text: Russian
+    "Настройка сети" (Network Configuration)
+    "Доступно обновление сети" (Network update available)
+    "Служба доступности" (Accessibility Service)
+
+  Geo-ban: controlled via C2 server response (is_banned flag)
+    State file: geo_state.dat (1=allowed, 2=banned)
+
+  Possible author alias: "RizalVA" (from config ToastMsg)
+
+  Manufacturer-specific code for:
+    Xiaomi (MIUI), Samsung, Oppo/ColorOS, Vivo, OnePlus,
+    Huawei/Honor, Asus, Meizu, Nokia
+
+
+11. FILE HASHES
+================================================================================
+
+  app.zip (original archive):  see git history
+  Encrypted DEX payload:       assets/cvjdnlsf/vgwmtwekqeblhl
+    Compressed:   3,101,960 bytes
+    Decompressed: 7,513,180 bytes (valid DEX 037)
+    Compression:  zlib (header 78 9C)
