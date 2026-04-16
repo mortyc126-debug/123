@@ -1,3 +1,27 @@
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  MALWARE ANALYSIS — DEOBFUSCATED MANIFEST                   ║
+  ║  Package: linker.resourcer.encoder                           ║
+  ║  Version: 4.0.1 ("desserpmoc" = "compressed" reversed)      ║
+  ║  Type: Banking trojan / spyware with packer                  ║
+  ║                                                              ║
+  ║  C2 SERVERS:                                                 ║
+  ║    http://185.100.157.51:8080                                ║
+  ║    http://193.111.117.70:8080                                ║
+  ║    http://193.221.200.242:8080                               ║
+  ║    http://193.111.117.72:8080                                ║
+  ║  C2 CRYPTO: AES-256-CBC, key=SHA256("kasperskylox")         ║
+  ║                                                              ║
+  ║  KEY CAPABILITIES:                                           ║
+  ║    - SMS interception (priority 999)                         ║
+  ║    - Call interception (InCallService)                       ║
+  ║    - Accessibility service abuse                             ║
+  ║    - Screen capture (MediaProjection)                        ║
+  ║    - Overlay attacks                                         ║
+  ║    - Boot persistence                                        ║
+  ║    - Geo-banning (refuses to run in certain regions)         ║
+  ╚══════════════════════════════════════════════════════════════╝
+-->
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     android:versionCode="401"
@@ -40,20 +64,26 @@
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false"/>
+    <!-- ===== DANGEROUS PERMISSIONS ===== -->
+    <!-- Storage: full file system access for data exfiltration -->
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!-- Camera + Audio: covert surveillance -->
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <!-- SMS: intercept 2FA codes, send premium SMS -->
     <uses-permission android:name="android.permission.SEND_SMS"/>
     <uses-permission android:name="android.permission.READ_PHONE_NUMBERS"/>
     <uses-permission android:name="android.permission.READ_SMS"/>
+    <!-- Location: track victim -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+    <!-- Foreground services: persistent background execution -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC"/>
@@ -119,6 +149,7 @@
         android:label="@string/str_ez2a5z"
         android:icon="@drawable/r_3ck6iq"
         android:name="TJANu601f538RbOB.TJANu28ebd7fRbOB.TJANu221acc9RbOB.TJANu357b19bRbOB"
+        <!-- DEOBFUSCATED: malware.loader.MalwareApplication — packer/loader entry point -->
         android:manageSpaceActivity=".Vsbjtwxrb"
         android:debuggable="true"
         android:allowBackup="true"
@@ -141,6 +172,7 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/r_19389t"/>
         </provider>
+        <!-- MAIN LAUNCHER ACTIVITY (transparent, hidden from recents) -->
         <activity
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:name="linker.resourcer.encoder.Vwfkyqppf"
@@ -206,7 +238,7 @@
             android:hardwareAccelerated="true"/>
         <activity
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:label="Lock"
+            android:label="Lock"  <!-- SCREEN LOCKER — ransomware-style lock screen -->
             android:icon="@android:color/transparent"
             android:name="linker.resourcer.encoder.gqzcedqwhiflurlhzg"
             android:enabled="true"
@@ -378,12 +410,16 @@
             android:enabled="true"
             android:exported="false"/>
         <service
+            <!-- SCREEN CAPTURE SERVICE — records victim's screen via MediaProjection -->
             android:name="linker.resourcer.encoder.jcavdzvncdstlcwvoszkepac"
             android:enabled="true"
             android:exported="false"
             android:foregroundServiceType="mediaProjection"/>
         <service
             android:label="@string/str_ez2a5z"
+            <!-- ACCESSIBILITY SERVICE — core of the banking trojan.
+                 Monitors UI events, auto-clicks, reads screen content,
+                 performs overlay injection on banking apps -->
             android:name="linker.resourcer.encoder.jhvbzpdwpbqgticwdxuva"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
             android:enabled="true"
@@ -417,6 +453,7 @@
                 <action android:name="MY_CUSTOM_ACTION"/>
             </intent-filter>
         </receiver>
+        <!-- BOOT RECEIVER — persistence: restarts malware after reboot -->
         <receiver
             android:name="linker.resourcer.encoder.Vtbpdyukd"
             android:enabled="true"
@@ -505,6 +542,7 @@
         </activity>
         <service
             android:label="@string/str_ez2a5z"
+            <!-- DREAM SERVICE — acts as screensaver to maintain persistent presence -->
             android:name="linker.resourcer.encoder.Msss"
             android:permission="android.permission.BIND_DREAM_SERVICE"
             android:exported="true">
@@ -518,6 +556,7 @@
         </service>
         <activity
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            <!-- DEFAULT DIALER REPLACEMENT — intercepts tel: intents -->
             android:name="linker.resourcer.encoder.defaultsactivity"
             android:exported="true"
             android:showWhenLocked="true"
@@ -545,6 +584,7 @@
         <meta-data
             android:name="REPLACESMS"
             android:value="99999999"/>
+        <!-- SMS INTERCEPTOR — priority 999, steals incoming SMS (2FA codes) -->
         <receiver
             android:name="linker.resourcer.encoder.Voadet"
             android:permission="android.permission.BROADCAST_SMS"
@@ -589,6 +629,7 @@
             android:name="REPLACECALLS"
             android:value="99999999"/>
         <service
+            <!-- CALL INTERCEPTOR — replaces default dialer, intercepts calls -->
             android:name="linker.resourcer.encoder.MyInCallService"
             android:permission="android.permission.BIND_INCALL_SERVICE"
             android:exported="true">
