@@ -1,0 +1,331 @@
+================================================================================
+ ТЕХНИЧЕСКИЙ ОТЧЁТ: МЕХАНИЗМЫ ОБХОДА ЗАЩИТ ANDROID
+ Банковский троян "linker.resourcer.encoder"
+ Дата анализа: 2026-04-16
+================================================================================
+
+СОДЕРЖАНИЕ:
+  1. Маскировка и скрытность
+  2. Обход системы разрешений
+  3. Злоупотребление Accessibility Service
+  4. Перехват коммуникаций
+  5. Обход защит производителей
+  6. Персистентность (выживаемость)
+  7. Блокировка устройства (ransomware)
+  8. Скрытое управление (RAT)
+  9. Эксплуатируемые уязвимости Android
+  10. Рекомендации по закрытию
+
+================================================================================
+1. МАСКИРОВКА И СКРЫТНОСТЬ
+================================================================================
+
+1.1 СКРЫТИЕ ИКОНКИ ИЗ ЛАУНЧЕРА
+    Файл: UtilityHelper.java → hideme()
+    Метод: PackageManager.setComponentEnabledSetting() отключает ActivityAlias
+    Слабость Android: приложение может отключить свои компоненты без разрешений
+    Результат: иконка исчезает, приложение остаётся установленным
+
+1.2 СКРЫТИЕ ИЗ СПИСКА НЕДАВНИХ ПРИЛОЖЕНИЙ
+    Файл: UtilityHelper.java → excludeFromTaskList()
+    Метод: ActivityManager.AppTask.setExcludeFromRecents(true)
+    Слабость Android: API доступен без специальных разрешений
+    Результат: пользователь не видит приложение в переключателе задач
+
+1.3 МАСКИРОВКА ПОД СИСТЕМНЫЕ НАСТРОЙКИ
+    Файл: AndroidManifest.xml → activity-alias "Vauplisa"
+    Метод: intent-filter com.android.settings.action.IA_SETTINGS
+           meta-data: com.android.settings.category.ia.development
+    Слабость Android: любое приложение может заявить обработку Settings-интентов
+    Результат: малварь отображается как подраздел в Настройках
+
+1.4 ПОДМЕНА ЭКРАНА УПРАВЛЕНИЯ ХРАНИЛИЩЕМ
+    Файл: AndroidManifest.xml → android:manageSpaceActivity=".Vsbjtwxrb"
+    Метод: при нажатии "Хранилище" в настройках приложения открывается
+           фейковый экран вместо стандартного системного
+    Слабость Android: ОС безоговорочно запускает указанную Activity
+    Результат: пользователь не может очистить данные через настройки
+
+1.5 ФЕЙКОВОЕ "УДАЛЕНИЕ"
+    Файл: IncompatibilityNotificationActivity.java
+    Метод: показывает "Версия несовместима с устройством" на 10 языках
+           кнопка "Удалить" на самом деле скрывает иконку и запускает сервисы
+    Слабость: социальная инженерия
+    Результат: жертва думает что удалила приложение
+
+================================================================================
+2. ОБХОД СИСТЕМЫ РАЗРЕШЕНИЙ
+================================================================================
+
+2.1 ПРИНУДИТЕЛЬНОЕ ПРЕДОСТАВЛЕНИЕ РАЗРЕШЕНИЙ
+    Файл: PermissionsRequestActivity.java
+    Метод: при отказе в разрешении выполняет:
+           - Runtime.exec("pm clear " + packageName) — очистка данных
+           - Удаление cache, files, databases
+           - System.exit(1) — крах приложения
+           Повторяет запрос при следующем запуске
+    Слабость Android: приложение может удалять свои данные как "наказание"
+    Результат: пользователь вынужден дать разрешения чтобы не терять данные
+
+2.2 АВТОМАТИЧЕСКИЙ КЛИК ПО ДИАЛОГАМ РАЗРЕШЕНИЙ
+    Файл: SetupOrchestrationService.java
+    Метод: устанавливает флаги:
+           AccessibilityServiceController.FOR_PRIMS = true
+           AccessibilityServiceController.Auto_Click = true
+           AccessibilityServiceController.req_hidp = true (чёрный экран)
+    Слабость Android: Accessibility Service может кликать по системным диалогам
+    Результат: разрешения выдаются автоматически пока экран чёрный
+
+2.3 ПОЛУЧЕНИЕ OVERLAY-РАЗРЕШЕНИЯ
+    Файл: DrawOverlayPermissionActivity.java
+    Метод: если Accessibility уже есть — напрямую открывает Settings
+           иначе — фейковый диалог с иконкой Google Play
+    Слабость Android: MANAGE_OVERLAY_PERMISSION открывается как обычный Intent
+    Результат: пользователь думает что это системный запрос
+
+2.4 ЗАМЕНА SMS/ЗВОНКОВ ПО УМОЛЧАНИЮ
+    Файл: DefaultDialerSmsActivity.java
+    Метод: RoleManager API (Android 10+) для запроса роли default SMS/Dialer
+           Legacy: android.telecom.action.CHANGE_DEFAULT_DIALER
+    Слабость Android: пользователь не осознаёт последствия смены приложения
+    Результат: полный перехват SMS и звонков
+
+================================================================================
+3. ЗЛОУПОТРЕБЛЕНИЕ ACCESSIBILITY SERVICE
+================================================================================
+
+3.1 ПОЛУЧЕНИЕ ДОСТУПА
+    Файл: AccessibilityPromptActivity.java
+    Метод: WebView-диалог "Разрешите доступ для работы приложения"
+           Кнопка "Включить" → открывает Настройки Accessibility
+           Кнопка "Назад" перехвачена (onKeyDown возвращает true)
+    Результат: пользователь не может закрыть диалог без включения
+
+3.2 СИНТЕТИЧЕСКИЕ ЖЕСТЫ
+    Файл: AccessibilityServiceHelper.java → clickthis(x, y)
+    Метод: GestureDescription.Builder + dispatchGesture()
+    Применение: автоматический клик по любой точке экрана
+    Результат: имитация касаний пользователя в любом приложении
+
+3.3 ПЕРЕХВАТ PIN/ПАРОЛЯ БЛОКИРОВКИ
+    Файл: AccessibilityServiceController.java
+    Метод: мониторинг TYPE_VIEW_CLICKED на экране блокировки
+           describePatternCells() — захват графического ключа
+           checkpass() — захват цифрового PIN
+    Слабость Android: Accessibility видит все UI-события включая ввод пароля
+    Результат: PIN/пароль устройства отправляется на C2
+
+3.4 ЧЁРНЫЙ ЭКРАН + БЛОКИРОВКА КАСАНИЙ
+    Файл: AccessibilityServiceHelper.java
+    Метод: BlackScreen_ON — чёрный оверлей поверх всего
+           TouchBlockOverlay — перехват всех касаний
+    Применение: пока пользователь видит чёрный экран,
+                малварь кликает по диалогам разрешений
+    Результат: полностью невидимые действия
+
+3.5 СКРИНШОТЫ БЕЗ УВЕДОМЛЕНИЯ
+    Файл: AccessibilityServiceController.java → takeScreenshot()
+    Метод: AccessibilityService.takeScreenshot() (Android 11+)
+    Слабость Android: Accessibility Service может делать скриншоты без
+                      уведомления пользователя (в отличие от MediaProjection)
+    Результат: скрытый захват экрана
+
+================================================================================
+4. ПЕРЕХВАТ КОММУНИКАЦИЙ
+================================================================================
+
+4.1 ПЕРЕХВАТ SMS (приоритет 999)
+    Файл: SmsInterceptorReceiver.java (Voadet)
+    Метод: BroadcastReceiver с priority="999" на SMS_DELIVER и SMS_RECEIVED
+    Слабость Android: приоритетный приёмник получает SMS раньше стандартного
+    Результат: все входящие SMS (включая 2FA-коды) перехватываются
+
+4.2 ПЕРЕХВАТ ЗВОНКОВ
+    Файл: MyInCallService.java
+    Метод: BIND_INCALL_SERVICE + замена стандартного диалера
+    Результат: контроль над входящими/исходящими вызовами
+
+4.3 ПЕРЕАДРЕСАЦИЯ ЗВОНКОВ
+    Файл: CallForwardingManager.java
+    Метод: USSD-команды через TelephonyManager.sendUssdRequest()
+           *#21# — проверка, **21*{номер}# — установка, #21# — отмена
+    Результат: звонки жертвы перенаправляются на номер атакующего
+
+4.4 КЕЙЛОГГЕР
+    Файл: KeystrokeLogger.java
+    Метод: Accessibility TYPE_VIEW_TEXT_CHANGED + TYPE_VIEW_FOCUSED
+           XOR-шифрование ключом "GndZJWejB1GVLVK548VbLBWbL8w8fe"
+           Хранение: /sdcard/IC/KSTR/yyyy-MM-dd.txt
+    Результат: все нажатия клавиш записываются и шифруются
+
+================================================================================
+5. ОБХОД ЗАЩИТ ПРОИЗВОДИТЕЛЕЙ
+================================================================================
+
+5.1 XIAOMI (MIUI) — автозапуск
+    Файл: MIUIAutoStart.java
+    Метод: Intent → com.miui.securitycenter/.AutoStartManagementActivity
+    Обход: напрямую открывает экран автозапуска + Accessibility кликает "разрешить"
+
+5.2 OPPO/COLOROS — автозапуск
+    Метод: com.coloros.safecenter/.StartupAppListActivity
+    Плюс 3 резервных Intent если основной не работает
+
+5.3 ONEPLUS
+    Метод: com.oneplus.security/.ChainLaunchAppListActivity
+
+5.4 HUAWEI/HONOR
+    Метод: com.huawei.systemmanager/.startupmgr.ui.StartupNormalAppListActivity
+    Плюс 4 резервных пути
+
+5.5 VIVO/IQOO
+    Метод: com.iqoo.secure/.ui.phoneoptimize.AddWhiteListActivity
+
+5.6 SAMSUNG
+    Метод: com.samsung.android.sm/.app.dashboard.SmartManagerDashBoardActivity
+    
+5.7 ОБХОД BATTERY OPTIMIZATION
+    Файл: BatteryOptimizationSetupActivity.java
+    Метод: пошаговая инструкция-обманка с картинками для OPPO
+           реально открывает APPLICATION_DETAILS_SETTINGS
+
+5.8 ОБХОД DATA SAVER
+    Файл: DataSaverPromptActivity.java
+    Метод: Intent IGNORE_BACKGROUND_DATA_RESTRICTIONS_SETTINGS
+
+================================================================================
+6. ПЕРСИСТЕНТНОСТЬ (ВЫЖИВАЕМОСТЬ)
+================================================================================
+
+6.1 ПЕРЕЗАГРУЗКА УСТРОЙСТВА
+    Файл: BootCompletedReceiver.java
+    Триггеры: BOOT_COMPLETED, QUICKBOOT_POWERON, REBOOT
+
+6.2 WORKMANAGER (каждые 15 минут)
+    Файл: Backworker.java
+    Метод: PeriodicWorkRequest перезапускает убитые сервисы
+
+6.3 JOBSCHEDULER
+    Файл: WorkSchedulerJobService.java
+    Метод: BIND_JOB_SERVICE для гарантированного выполнения
+
+6.4 ALARMMANAGER
+    Файл: AlarmBroadcastReceiver.java
+    Метод: периодические alarm для перезапуска
+
+6.5 DREAM SERVICE (скринсейвер)
+    Файл: PersistentDreamService.java
+    Метод: перезапускает сервисы каждые 5 секунд когда устройство
+           заряжается и экран выключен
+
+6.6 СИСТЕМНЫЕ СОБЫТИЯ
+    Файл: BatterySystemReceiver.java
+    Триггеры: BATTERY_LOW, BATTERY_OKAY, LOCALE_CHANGED,
+              TIMEZONE_CHANGED, POWER_CONNECTED, POWER_DISCONNECTED
+    Каждое событие перезапускает сервисы
+
+6.7 ПРЕДОТВРАЩЕНИЕ УДАЛЕНИЯ
+    Метод: AccessibilityServiceController.PreventDelete = true
+           Accessibility мониторит открытие настроек приложения
+           и автоматически нажимает "Назад"
+
+================================================================================
+7. БЛОКИРОВКА УСТРОЙСТВА (RANSOMWARE)
+================================================================================
+
+7.1 ЭКРАН БЛОКИРОВКИ
+    Файл: LockScreenActivity.java
+    Метод: полноэкранный WebView с перехватом ВСЕХ клавиш
+           HOME, BACK, MENU, RECENT — все возвращают true (поглощены)
+    PIN хранится в SharedPreferences, устанавливается с C2
+
+7.2 НЕВИДИМЫЙ ОВЕРЛЕЙ
+    Файл: OverlayActivity.java
+    Метод: чёрный View с brightness=0.0f поверх всего
+           setShowWhenLocked(true) — работает даже на экране блокировки
+           WakeLock — не даёт экрану выключиться
+
+================================================================================
+8. СКРЫТОЕ УПРАВЛЕНИЕ (RAT)
+================================================================================
+
+8.1 КАМЕРА
+    Файл: CameraStreamingService.java
+    Метод: Camera API → YuvImage → JPEG → Base64 → WebSocket
+    Стриминг кадров камеры в реальном времени
+
+8.2 МИКРОФОН
+    Файл: Microphone.java
+    Метод: скрытая запись аудио, передача на C2
+
+8.3 ЭКРАН
+    Файл: ScreenCaptureService.java
+    Метод: MediaProjection → VirtualDisplay → ImageReader → Base64 → WebSocket
+    Требует однократное разрешение пользователя
+
+8.4 СКРЫТЫЙ БРАУЗЕР
+    Файл: HiddenBrowserService.java
+    Метод: WebView создаётся БЕЗ добавления в UI (layout 720x1280 off-screen)
+           setAllowFileAccessFromFileURLs(true) — доступ к файлам устройства
+           Удалённое управление через WebSocket: load, click, text, scroll
+           Скриншоты WebView → WEBP → Base64 → C2
+
+8.5 УДАЛЁННЫЙ ШЕЛЛ
+    Файлы: SshShell.java, TelnetShell.java, CShell.java
+    Метод: полноценный reverse shell на устройстве
+
+8.6 DOS-МОДУЛЬ
+    Файл: DOSEngine.java
+    Метод: DDoS-атаки с заражённого устройства
+
+8.7 ПРОКСИ-СЕРВЕР
+    Файл: ProxyServerService.java
+    Метод: SOCKS-прокси на случайном порту, конфигурация отправляется на C2
+
+================================================================================
+9. ЭКСПЛУАТИРУЕМЫЕ УЯЗВИМОСТИ ANDROID
+================================================================================
+
+#  | Уязвимость                                    | CVE/Тип
+---|-----------------------------------------------|------------------
+1  | Accessibility Service может кликать по         | Design flaw
+   | системным диалогам разрешений                  |
+2  | setComponentEnabledSetting() без разрешений    | Design flaw
+3  | setExcludeFromRecents() без разрешений         | Design flaw
+4  | IA_SETTINGS intent может заявить любое         | Design flaw
+   | приложение                                     |
+5  | manageSpaceActivity не валидируется ОС          | Design flaw
+6  | BroadcastReceiver priority позволяет           | Design flaw
+   | перехватить SMS раньше системного приложения    |
+7  | AccessibilityService.takeScreenshot()          | Design flaw
+   | без уведомления пользователя                    |
+8  | WebView off-screen рендеринг с file:// доступом| Design flaw
+9  | dispatchKeyEvent() может поглотить HOME/BACK   | Design flaw
+10 | setShowWhenLocked() доступен для любой Activity | Design flaw
+11 | DreamService запускает код на locked screen     | Design flaw
+
+Примечание: все обходы основаны на архитектурных слабостях Android,
+а не на конкретных CVE. Это делает их актуальными на большинстве
+версий Android 7-14.
+
+================================================================================
+10. РЕКОМЕНДАЦИИ ПО ЗАКРЫТИЮ
+================================================================================
+
+10.1 Google/Android:
+     - Запретить Accessibility кликать по системным диалогам разрешений
+     - Требовать подтверждение пользователя для setComponentEnabledSetting()
+     - Уведомлять пользователя при takeScreenshot() через Accessibility
+     - Ограничить off-screen WebView с file:// доступом
+     - Запретить перехват HOME/BACK в пользовательских Activity
+
+10.2 Производители (Xiaomi, Oppo, Samsung и др.):
+     - Защитить экраны автозапуска от автоматического клика
+     - Добавить подтверждение биометрией для критичных настроек
+
+10.3 Пользователи:
+     - Не давать Accessibility Service непроверенным приложениям
+     - Проверять список Accessibility → Настройки → Специальные возможности
+     - Установить антивирус с мониторингом Accessibility
+
+================================================================================
