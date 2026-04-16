@@ -1,0 +1,15 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package androidx.core.content;
+
+import androidx.core.content.IntentSanitizer;
+import androidx.core.util.Predicate;
+
+public final class IntentSanitizer$Builder$$ExternalSyntheticLambda14
+implements Predicate {
+    public final boolean test(Object object) {
+        return IntentSanitizer.Builder.lambda$new$3((String)object);
+    }
+}
+
