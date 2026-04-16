@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="0x7f090108"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
+    android:layout_marginTop="39.5dp"
+    app:cardUseCompatPadding="true"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="?unknown_attr_ref: 7f040051"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <cm.aptoide.aptoideviews.skeleton.SkeletonView
+            android:id="0x7f090246"
+            android:layout_width="63dp"
+            android:layout_height="63dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintBottom_toTopOf="0x7f090108"
+            app:layout_constraintLeft_toLeftOf="0x7f090108"
+            app:layout_constraintRight_toRightOf="0x7f090108"
+            app:layout_constraintTop_toTopOf="0x7f090108"
+            app:skeleton_color="?unknown_attr_ref: 7f04039c"
+            app:skeleton_corner_radius="32dp"/>
+        <RelativeLayout
+            android:id="0x7f090256"
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp">
+                <cm.aptoide.aptoideviews.skeleton.SkeletonView
+                    android:textStyle="normal"
+                    android:id="0x7f09042c"
+                    android:layout_width="205dp"
+                    android:layout_height="19dp"
+                    android:layout_marginBottom="7dp"
+                    android:textAlignment="center"
+                    app:skeleton_color="?unknown_attr_ref: 7f04039c"/>
+                <cm.aptoide.aptoideviews.skeleton.SkeletonView
+                    android:textStyle="normal"
+                    android:id="0x7f09042d"
+                    android:layout_width="301dp"
+                    android:layout_height="19dp"
+                    android:layout_marginBottom="7dp"
+                    android:textAlignment="center"
+                    app:skeleton_color="?unknown_attr_ref: 7f04039c"/>
+                <cm.aptoide.aptoideviews.skeleton.SkeletonView
+                    android:textStyle="normal"
+                    android:id="0x7f09042e"
+                    android:layout_width="247dp"
+                    android:layout_height="19dp"
+                    android:textAlignment="center"
+                    app:skeleton_color="?unknown_attr_ref: 7f04039c"/>
+            </LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true">
+                <cm.aptoide.aptoideviews.skeleton.SkeletonView
+                    android:id="0x7f090181"
+                    android:layout_width="83dp"
+                    android:layout_height="19dp"
+                    android:layout_marginRight="26dp"
+                    app:skeleton_color="?unknown_attr_ref: 7f04039c"
+                    style="0x7f120020"/>
+                <cm.aptoide.aptoideviews.skeleton.SkeletonView
+                    android:id="0x7f090045"
+                    android:layout_width="52dp"
+                    android:layout_height="19dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginEnd="30dp"
+                    app:skeleton_color="?unknown_attr_ref: 7f04039c"
+                    style="0x7f12001f"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

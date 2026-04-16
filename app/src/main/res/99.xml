@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <gradient
+        android:startColor="@dimen/abc_dialog_fixed_width_minor"
+        android:endColor="@dimen/abc_dialog_list_padding_top_no_title"
+        android:angle="0"
+        android:type="linear"/>
+</shape>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:state_focused="false"
+        android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <corners android:radius="@drawable/r_4t9la7"/>
+            <solid android:color="@dimen/def_drawer_elevation"/>
+        </shape>
+    </item>
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="@drawable/r_4t9la7"/>
+            <solid android:color="@dimen/design_appbar_elevation"/>
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="@drawable/r_4t9la7"/>
+            <solid android:color="@dimen/compat_notification_large_icon_max_width"/>
+        </shape>
+    </item>
+</selector>

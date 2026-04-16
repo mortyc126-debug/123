@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:state_window_focused="false"
+        android:state_enabled="true"
+        android:drawable="@+id/save_non_transition_alpha"/>
+    <item
+        android:state_window_focused="false"
+        android:state_enabled="false"
+        android:drawable="@+id/right_side"/>
+    <item
+        android:state_pressed="true"
+        android:drawable="@+id/save_overlay_view"/>
+    <item
+        android:state_focused="true"
+        android:state_enabled="true"
+        android:drawable="@+id/rounded"/>
+    <item
+        android:state_enabled="true"
+        android:drawable="@+id/save_non_transition_alpha"/>
+    <item
+        android:state_focused="true"
+        android:drawable="@+id/right_icon"/>
+    <item android:drawable="@+id/right_side"/>
+</selector>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="str_u8w98k">Navegar para a página inicial</string>
+    <string name="str_8taqlc">Navegar para cima</string>
+    <string name="str_so3i4e">Mais opções</string>
+    <string name="str_07mihr">Concluído</string>
+    <string name="str_5sghk5">Ver tudo</string>
+    <string name="str_0uii0x">Selecionar um app</string>
+    <string name="str_ixmulz">DESATIVADO</string>
+    <string name="str_cbzhob">ATIVADO</string>
+    <string name="str_kfa5ix">Alt+</string>
+    <string name="str_ybo6v9">Ctrl+</string>
+    <string name="str_9qjpg1">delete</string>
+    <string name="str_alzab0">enter</string>
+    <string name="str_pasv4d">Function+</string>
+    <string name="str_1l8vk6">Meta+</string>
+    <string name="str_rhche8">Shift+</string>
+    <string name="str_3b08vr">espaço</string>
+    <string name="str_sf0bbd">Sym+</string>
+    <string name="str_1h917z">Menu+</string>
+    <string name="str_z9c4lf">Pesquisar…</string>
+    <string name="str_0h6s5s">Limpar consulta</string>
+    <string name="str_t1tx1u">Consulta de pesquisa</string>
+    <string name="str_5k7a9c">Pesquisar</string>
+    <string name="str_11ss7s">Enviar consulta</string>
+    <string name="str_qlkl46">Pesquisa por voz</string>
+    <string name="str_23ttj6">Compartilhar com</string>
+    <string name="str_0edlre">Compartilhar com %s</string>
+    <string name="str_jradpu">Recolher</string>
+    <string name="str_tiawja">Atender</string>
+    <string name="str_qt2wip">Vídeo</string>
+    <string name="str_uhau9t">Recusar</string>
+    <string name="str_lhgun9">Desligar</string>
+    <string name="str_tu4kqa">Chamada recebida</string>
+    <string name="str_mnfdfj">Chamada em andamento</string>
+    <string name="str_b07c1r">Filtrando uma ligação recebida</string>
+    <string name="str_ynj2tb">Pesquisar</string>
+    <string name="str_yisavi">999+</string>
+</resources>

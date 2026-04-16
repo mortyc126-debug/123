@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:clickable="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="0x7f120421">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="?unknown_attr_ref: 7f040050">
+        <ImageView
+            android:id="0x7f090246"
+            android:padding="8dp"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="0x7f090246"
+            android:layout_toEndOf="0x7f090246">
+            <TextView
+                android:id="0x7f0902d4"
+                android:padding="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="?android:attr/textAppearanceMedium"/>
+            <TextView
+                android:id="0x7f090425"
+                android:padding="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="0x7f0903e5"
+                android:padding="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>

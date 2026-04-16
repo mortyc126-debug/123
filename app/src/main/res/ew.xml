@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:id="0x7f0902b2"
+    android:paddingTop="0x7f070110"
+    android:paddingBottom="0x7f07010e"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <com.google.android.material.button.MaterialButton
+            android:gravity="start|center_vertical"
+            android:layout_gravity="start"
+            android:id="0x7f0902b3"
+            android:layout_width="wrap_content"
+            android:layout_height="0x7f07010f"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            app:icon="0x7f0802cc"
+            app:iconGravity="textEnd"
+            app:iconPadding="4dp"/>
+    </FrameLayout>
+    <com.google.android.material.button.MaterialButton
+        android:gravity="center"
+        android:id="0x7f0902b5"
+        android:layout_width="0x7f070148"
+        android:layout_height="0x7f07010f"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:contentDescription="0x7f11027e"
+        app:icon="0x7f0802ca"/>
+    <com.google.android.material.button.MaterialButton
+        android:gravity="center"
+        android:id="0x7f0902b4"
+        android:layout_width="0x7f070148"
+        android:layout_height="0x7f07010f"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:contentDescription="0x7f11027d"
+        app:icon="0x7f0802cb"/>
+</LinearLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
+    <gradient
+        android:startColor="@dimen/m3_comp_secondary_navigation_tab_focus_state_layer_opacity"
+        android:endColor="@dimen/m3_comp_secondary_navigation_tab_pressed_state_layer_opacity"
+        android:angle="0"
+        android:type="linear"/>
+</shape>

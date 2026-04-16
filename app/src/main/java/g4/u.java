@@ -1,0 +1,29 @@
+package g4;
+
+import q.q2;
+
+/* JADX INFO: compiled from: r8-map-id-9e936228ea1ea2cc679ed5186cc1349ef706487dc89ec4e25d4a3ea878769de6 */
+/* JADX INFO: loaded from: classes.dex */
+public final class u extends c0 {
+    public final float c;
+
+    public u(float f2) {
+        super(3);
+        this.c = f2;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        return (obj instanceof u) && Float.compare(this.c, ((u) obj).c) == 0;
+    }
+
+    public final int hashCode() {
+        return Float.hashCode(this.c);
+    }
+
+    public final String toString() {
+        return q2.l(new StringBuilder("RelativeHorizontalTo(dx="), this.c, ')');
+    }
+}

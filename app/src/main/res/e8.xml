@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?unknown_attr_ref: 7f040051"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <cm.aptoide.aptoideviews.skeleton.SkeletonView
+        android:id="0x7f0900d3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:skeleton_border_color="?unknown_attr_ref: 7f04039c"
+        app:skeleton_color="?unknown_attr_ref: 7f04039c"/>
+    <RelativeLayout
+        android:background="?unknown_attr_ref: 7f040051"
+        android:paddingTop="7dp"
+        android:paddingBottom="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignBottom="0x7f0900d3">
+        <cm.aptoide.aptoideviews.skeleton.SkeletonView
+            android:id="0x7f0903be"
+            android:layout_width="32dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="16dp"
+            android:layout_centerVertical="true"
+            app:skeleton_color="?unknown_attr_ref: 7f04039c"
+            app:skeleton_corner_radius="12dp"/>
+        <cm.aptoide.aptoideviews.skeleton.SkeletonView
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_marginLeft="-10dp"
+            android:cropToPadding="true"
+            android:layout_toRightOf="0x7f0903c0"
+            android:layout_centerVertical="true"
+            app:skeleton_border_color="?unknown_attr_ref: 7f04039c"
+            app:skeleton_border_thickness="2dp"
+            app:skeleton_color="?unknown_attr_ref: 7f04039c"
+            app:skeleton_corner_radius="12dp"/>
+        <cm.aptoide.aptoideviews.skeleton.SkeletonView
+            android:id="0x7f0903c0"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_marginLeft="-10dp"
+            android:layout_toRightOf="0x7f0903bf"
+            android:layout_centerVertical="true"
+            app:skeleton_border_color="?unknown_attr_ref: 7f04039c"
+            app:skeleton_border_thickness="2dp"
+            app:skeleton_color="?unknown_attr_ref: 7f04039c"
+            app:skeleton_corner_radius="12dp"/>
+        <cm.aptoide.aptoideviews.skeleton.SkeletonView
+            android:id="0x7f0903bf"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_marginLeft="9dp"
+            android:layout_toRightOf="0x7f0903be"
+            android:layout_centerVertical="true"
+            app:skeleton_border_color="?unknown_attr_ref: 7f04039c"
+            app:skeleton_border_thickness="2dp"
+            app:skeleton_color="?unknown_attr_ref: 7f04039c"
+            app:skeleton_corner_radius="12dp"/>
+        <cm.aptoide.aptoideviews.skeleton.SkeletonView
+            android:layout_width="82dp"
+            android:layout_height="19dp"
+            android:layout_marginRight="16dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            app:skeleton_border_color="?unknown_attr_ref: 7f04039c"
+            app:skeleton_color="?unknown_attr_ref: 7f04039c"
+            app:skeleton_corner_radius="2dp"/>
+    </RelativeLayout>
+</RelativeLayout>

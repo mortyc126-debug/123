@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="0x7f0901df"
+    android:background="?unknown_attr_ref: 7f040051"
+    android:layout_width="match_parent"
+    android:layout_height="344dp"
+    android:layout_marginTop="16dp"
+    style="?unknown_attr_ref: 7f040050">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp">
+        <TextView
+            android:textStyle="bold"
+            android:id="0x7f09042c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="19dp"
+            app:layout_constraintBottom_toTopOf="0x7f090167"
+            app:layout_constraintStart_toEndOf="0x7f0900dd"
+            app:layout_constraintTop_toTopOf="0x7f0900dd"
+            app:layout_constraintVertical_chainStyle="packed"
+            style="0x7f120052"/>
+        <TextView
+            android:id="0x7f090167"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="5dp"
+            android:maxLines="2"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="0x7f09042c"
+            app:layout_constraintTop_toBottomOf="0x7f09042c"
+            style="0x7f120062"/>
+        <android.widget.Button
+            android:id="0x7f0903a3"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="0x7f110383"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="0x7f0900ae"
+            style="0x7f12001e"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:orientation="horizontal"
+            android:id="0x7f0900ae"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="0x7f0900dd"/>
+        <ImageView
+            android:id="0x7f0900dd"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@+id/escape"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:placeholder_color="?unknown_attr_ref: 7f040055"/>
+        <cm.aptoide.aptoideviews.skeleton.SkeletonView
+            android:id="0x7f090431"
+            android:visibility="gone"
+            android:layout_width="230dp"
+            android:layout_height="20dp"
+            app:layout_constraintBottom_toBottomOf="0x7f09042c"
+            app:layout_constraintStart_toStartOf="0x7f09042c"
+            app:layout_constraintTop_toTopOf="0x7f09042c"
+            app:skeleton_color="?unknown_attr_ref: 7f040055"
+            app:skeleton_corner_radius="2dp"/>
+        <cm.aptoide.aptoideviews.skeleton.SkeletonView
+            android:id="0x7f0900dc"
+            android:visibility="gone"
+            android:layout_width="82dp"
+            android:layout_height="72dp"
+            android:translationX="-16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:skeleton_color="?unknown_attr_ref: 7f040055"
+            app:skeleton_corner_radius="16dp"/>
+        <cm.aptoide.aptoideviews.skeleton.SkeletonView
+            android:id="0x7f09016b"
+            android:visibility="gone"
+            android:layout_width="150dp"
+            android:layout_height="14dp"
+            app:layout_constraintBottom_toBottomOf="0x7f090167"
+            app:layout_constraintStart_toStartOf="0x7f090167"
+            app:layout_constraintTop_toTopOf="0x7f090167"
+            app:skeleton_color="?unknown_attr_ref: 7f040055"
+            app:skeleton_corner_radius="2dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:clipChildren="false"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp">
+    <include layout="0x7f0c00bb"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:orientation="horizontal"
+        android:id="0x7f0900ae"
+        android:clipChildren="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

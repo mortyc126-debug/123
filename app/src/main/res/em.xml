@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:paddingLeft="0x7f0700f8"
+    android:paddingTop="16dp"
+    android:paddingRight="0x7f0700f8"
+    android:paddingBottom="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="0x7f0902ce"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="0x7f110294"
+            android:inputType="date"
+            android:imeOptions="flagNoExtractUi"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <Space
+        android:layout_width="8dp"
+        android:layout_height="0dp"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="0x7f0902cd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="0x7f110293"
+            android:inputType="date"
+            android:imeOptions="flagNoExtractUi"/>
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>

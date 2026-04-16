@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <gradient
+        android:startColor="@dimen/design_snackbar_action_inline_max_width"
+        android:endColor="@dimen/design_snackbar_background_corner_radius"
+        android:angle="0"
+        android:type="linear"/>
+    <corners android:radius="4dp"/>
+</shape>

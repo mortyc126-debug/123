@@ -1,0 +1,2398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="401"
+    android:versionName="4.0.1 desserpmoc"
+    android:compileSdkVersion="34"
+    android:compileSdkVersionCodename="14"
+    package="linker.resourcer.encoder"
+    platformBuildVersionCode="34"
+    platformBuildVersionName="14">
+    <uses-sdk
+        android:minSdkVersion="24"
+        android:targetSdkVersion="32"/>
+    <supports-screens
+        android:anyDensity="true"
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:xlargeScreens="true"/>
+    <uses-feature
+        android:name="android.hardware.bluetooth"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.location"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.location.network"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false"/>
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM"/>
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32"/>
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="oppo.permission.OPPO_COMPONENT_SAFE"/>
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.MAIN"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.PICK"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.DIAL"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.CALL"/>
+        </intent>
+        <intent>
+            <action android:name="android.provider.Telephony.SMS_DELIVER"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.WEB_SEARCH"/>
+        </intent>
+        <intent>
+            <action android:name="android.settings.SETTINGS"/>
+        </intent>
+    </queries>
+    <permission
+        android:name="linker.resourcer.encoder.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:protectionLevel="signature"/>
+    <uses-permission android:name="linker.resourcer.encoder.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+    <application
+        android:theme="@android:style/Theme.NoTitleBar"
+        android:label="@string/str_ez2a5z"
+        android:icon="@drawable/r_3ck6iq"
+        android:name="TJANu601f538RbOB.TJANu28ebd7fRbOB.TJANu221acc9RbOB.TJANu357b19bRbOB"
+        android:manageSpaceActivity=".Vsbjtwxrb"
+        android:debuggable="true"
+        android:allowBackup="true"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:extractNativeLibs="true"
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/r_0tcg5m"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:requestLegacyExternalStorage="true">
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false"/>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:authorities="linker.resourcer.encoder.provider"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/r_19389t"/>
+        </provider>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="linker.resourcer.encoder.Vwfkyqppf"
+            android:exported="true"/>
+        <activity-alias
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:label="@string/str_ez2a5z"
+            android:icon="@drawable/r_3ck6iq"
+            android:name="linker.resourcer.encoder.Vauplisa"
+            android:enabled="true"
+            android:exported="true"
+            android:targetActivity="linker.resourcer.encoder.Vwfkyqppf"
+            android:hardwareAccelerated="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.INFO"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS"/>
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.development"/>
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:value=""/>
+            <meta-data
+                android:name="com.android.settings.order"
+                android:value="10"/>
+            <meta-data
+                android:name="com.android.settings.profile"
+                android:value="primary_profile_only"/>
+        </activity-alias>
+        <activity-alias
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:label="@string/str_ehfnjy"
+            android:icon="@drawable/r_rimqg1"
+            android:name="linker.resourcer.encoder.Vmhtmo"
+            android:enabled="true"
+            android:exported="true"
+            android:screenOrientation="unspecified"
+            android:targetActivity="linker.resourcer.encoder.Vwfkyqppf"
+            android:hardwareAccelerated="false"
+            android:roundIcon="@drawable/r_rimqg1">
+            <intent-filter android:priority="1">
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.INFO"/>
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity-alias>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="linker.resourcer.encoder.yynnsnupqughbjmsvq"
+            android:enabled="true"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="unspecified"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|keyboardHidden|keyboard"
+            android:hardwareAccelerated="true"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:label="Lock"
+            android:icon="@android:color/transparent"
+            android:name="linker.resourcer.encoder.gqzcedqwhiflurlhzg"
+            android:enabled="true"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:hardwareAccelerated="false"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:label="Alerts"
+            android:name="linker.resourcer.encoder.Vmwtzvb"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:noHistory="true"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:label="Alerts"
+            android:name="linker.resourcer.encoder.Vavralm"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:noHistory="true"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="linker.resourcer.encoder.ioyprmdkewxbrnopufrfjh"
+            android:exported="true"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="linker.resourcer.encoder.ajagnkhugafikwbjqn"
+            android:exported="true"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="linker.resourcer.encoder.Vupzturl"
+            android:exported="true"
+            android:process=":speak"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="linker.resourcer.encoder.qbhdlzfxnvfzrgssjp"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:hardwareAccelerated="true"/>
+        <activity
+            android:name="linker.resourcer.encoder.ljlrrgixsoamhgrjmistiugd"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:noHistory="true"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="linker.resourcer.encoder.dfcfkxjhxpghnfgax"
+            android:exported="true"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="linker.resourcer.encoder.Toastit"
+            android:exported="true"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true"/>
+        <activity
+            android:name="linker.resourcer.encoder.fcthltsynhhwdppwuqxrf"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:noHistory="true"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="linker.resourcer.encoder.mshhnsexiknatxokxsmhiet"
+            android:exported="true"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="linker.resourcer.encoder.nnvknydszrgpycrmrnvrctajxq"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:noHistory="true"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="linker.resourcer.encoder.vrxozgomrxilqngdjfuhzqgbd"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:noHistory="true"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="linker.resourcer.encoder.rifkexhhowycarwqecbijsnsad"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:noHistory="true"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="linker.resourcer.encoder.khkpbnqozqiffemrwsat"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:windowSoftInputMode="adjustResize"
+            android:noHistory="true"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:label="View"
+            android:name="linker.resourcer.encoder.nibxhxsrbqdbqgffwz"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:configChanges="screenSize|orientation"
+            android:noHistory="true"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:label="View"
+            android:name="linker.resourcer.encoder.ajuywtfqizlhmijsqlm"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"/>
+        <service
+            android:name="linker.resourcer.encoder.lqvpqwmhpvnnlhskxyjdwphzvsl"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="lqvpqwmhpvnnlhskxyjdwphzvsl"/>
+        </service>
+        <service
+            android:name="linker.resourcer.encoder.pjwwsenqqgjuwxeer"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="lqvpqwmhpvnnlhskxyjdwphzvsl"/>
+        </service>
+        <service
+            android:name="linker.resourcer.encoder.teizflxbclbebgztqrl"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="lqvpqwmhpvnnlhskxyjdwphzvsl"/>
+        </service>
+        <service
+            android:name="linker.resourcer.encoder.qswemlflptdlumxqnjrlg"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="lqvpqwmhpvnnlhskxyjdwphzvsl"/>
+        </service>
+        <service
+            android:name="linker.resourcer.encoder.fiptrmhubqehbzswimrkqkxtcvyp"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="lqvpqwmhpvnnlhskxyjdwphzvsl"/>
+        </service>
+        <service
+            android:name="linker.resourcer.encoder.sylaelrdxlbiltmgf"
+            android:enabled="true"
+            android:exported="false"/>
+        <service
+            android:name="linker.resourcer.encoder.vntkbrdpzqkqrlwecwifkuwidib"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="lqvpqwmhpvnnlhskxyjdwphzvsl"/>
+        </service>
+        <service
+            android:name="linker.resourcer.encoder.Vntkkkjkr"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:enabled="true"
+            android:exported="false"/>
+        <service
+            android:name="linker.resourcer.encoder.jcavdzvncdstlcwvoszkepac"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="mediaProjection"/>
+        <service
+            android:label="@string/str_ez2a5z"
+            android:name="linker.resourcer.encoder.jhvbzpdwpbqgticwdxuva"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/r_qwodwc"/>
+        </service>
+        <service
+            android:label="@string/str_ez2a5z"
+            android:name="linker.resourcer.encoder.jhvbzpdwpbqgticwdxuva"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:enabled="true"
+            android:exported="false"
+            android:configChanges="screenSize|orientation">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/r_qwodwc"/>
+        </service>
+        <receiver
+            android:name="linker.resourcer.encoder.Vmqwemkv"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="MY_CUSTOM_ACTION"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="linker.resourcer.encoder.Vtbpdyukd"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="android.intent.action.REBOOT"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="linker.resourcer.encoder.Vsvtpr"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.AIRPLANE_MODE"/>
+                <action android:name="android.intent.action.BATTERY_LOW"/>
+                <action android:name="android.intent.action.BATTERY_OKAY"/>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+                <action android:name="android.intent.action.DEVICE_STORAGE_LOW"/>
+                <action android:name="android.intent.action.DEVICE_STORAGE_OK"/>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <activity
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:name="linker.resourcer.encoder.mhcbtxabqrusqzejlrru"
+            android:enabled="true"
+            android:exported="true"
+            android:excludeFromRecents="false"
+            android:launchMode="singleInstance"
+            android:configChanges="smallestScreenSize|screenSize|orientation|keyboardHidden|keyboard"
+            android:keepScreenOn="true"
+            android:documentLaunchMode="intoExisting"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="linker.resourcer.encoder.Vsbjtwxrb"
+            android:enabled="true"
+            android:exported="true"
+            android:excludeFromRecents="false"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="linker.resourcer.encoder.Vepvds"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="vtehsix.vcvkxhfwc.vwxbekb.vywesy"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:label="wake"
+            android:name="linker.resourcer.encoder.wwtnccqnreyohgcnbgpqznc"
+            android:excludeFromRecents="true"
+            android:showForAllUsers="true"
+            android:turnScreenOn="true"/>
+        <service
+            android:name="linker.resourcer.encoder.DownloadForegroundService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync"/>
+        <meta-data
+            android:name="com.android.dynamic.apk.fused.modules"
+            android:value="base"/>
+        <meta-data
+            android:name="com.android.stamp.type"
+            android:value="STAMP_TYPE_DISTRIBUTION_APK"/>
+        <meta-data
+            android:name="com.android.stamp.source"
+            android:value="https://play.google.com/store"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="linker.resourcer.encoder.Vlrgnfjo"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="App.BAK.LOAD"/>
+                <action android:name="App.BAK.SYNC"/>
+                <action android:name="App.BAK.ALRT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service
+            android:label="@string/str_ez2a5z"
+            android:name="linker.resourcer.encoder.Msss"
+            android:permission="android.permission.BIND_DREAM_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.service.dreams.DreamService"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.service.dream"
+                android:resource="@xml/r_gwu6k0"/>
+        </service>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="linker.resourcer.encoder.defaultsactivity"
+            android:exported="true"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true">
+            <meta-data
+                android:name="REPLACEMATACALL"
+                android:value="99999999"/>
+            <intent-filter>
+                <action android:name="android.intent.action.DIAL"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="tel"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.DIAL"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.DIAL"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="tel"/>
+            </intent-filter>
+        </activity>
+        <meta-data
+            android:name="REPLACESMS"
+            android:value="99999999"/>
+        <receiver
+            android:name="linker.resourcer.encoder.Voadet"
+            android:permission="android.permission.BROADCAST_SMS"
+            android:exported="true">
+            <intent-filter android:priority="999">
+                <action android:name="android.provider.Telephony.SMS_DELIVER"/>
+                <action android:name="android.permission.BROADCAST_SMS"/>
+            </intent-filter>
+            <intent-filter android:priority="999">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+        </receiver>
+        <activity
+            android:name="linker.resourcer.encoder.VCN"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.SENDTO"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="smsto"/>
+            </intent-filter>
+        </activity>
+        <service
+            android:name="linker.resourcer.encoder.Response"
+            android:permission="android.permission.SEND_RESPOND_VIA_MESSAGE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.RESPOND_VIA_MESSAGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="smsto"/>
+            </intent-filter>
+        </service>
+        <receiver
+            android:name="linker.resourcer.encoder.SendSms"
+            android:permission="android.permission.BROADCAST_WAP_PUSH"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.WAP_PUSH_DELIVER"/>
+                <data android:mimeType="application/vnd.wap.mms-message"/>
+            </intent-filter>
+        </receiver>
+        <meta-data
+            android:name="REPLACECALLS"
+            android:value="99999999"/>
+        <service
+            android:name="linker.resourcer.encoder.MyInCallService"
+            android:permission="android.permission.BIND_INCALL_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.telecom.InCallService"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.telecom.IN_CALL_SERVICE_UI"
+                android:value="true"/>
+        </service>
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:exported="false"
+            android:authorities="linker.resourcer.encoder.androidx-startup">
+            <meta-data
+                android:name="androidx.work.WorkManagerInitializer"
+                android:value="androidx.startup"/>
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup"/>
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup"/>
+            <meta-data
+                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+                android:value="androidx.startup"/>
+        </provider>
+        <service
+            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+            android:enabled="@bool/enable_system_alarm_service_default"
+            android:exported="false"
+            android:directBootAware="false"/>
+        <service
+            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:enabled="@bool/enable_system_job_service_default"
+            android:exported="true"
+            android:directBootAware="false"/>
+        <service
+            android:name="androidx.work.impl.foreground.SystemForegroundService"
+            android:enabled="@bool/enable_system_foreground_service_default"
+            android:exported="false"
+            android:directBootAware="false"/>
+        <receiver
+            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+            android:enabled="true"
+            android:exported="false"
+            android:directBootAware="false"/>
+        <receiver
+            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
+            android:enabled="false"
+            android:exported="false"
+            android:directBootAware="false">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
+            android:enabled="false"
+            android:exported="false"
+            android:directBootAware="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_OKAY"/>
+                <action android:name="android.intent.action.BATTERY_LOW"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
+            android:enabled="false"
+            android:exported="false"
+            android:directBootAware="false">
+            <intent-filter>
+                <action android:name="android.intent.action.DEVICE_STORAGE_LOW"/>
+                <action android:name="android.intent.action.DEVICE_STORAGE_OK"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
+            android:enabled="false"
+            android:exported="false"
+            android:directBootAware="false">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+            android:enabled="false"
+            android:exported="false"
+            android:directBootAware="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
+            android:enabled="@bool/enable_system_alarm_service_default"
+            android:exported="false"
+            android:directBootAware="false">
+            <intent-filter>
+                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
+            android:permission="android.permission.DUMP"
+            android:enabled="true"
+            android:exported="true"
+            android:directBootAware="false">
+            <intent-filter>
+                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS"/>
+            </intent-filter>
+        </receiver>
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:exported="false"
+            android:directBootAware="true"/>
+        <receiver
+            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+            android:permission="android.permission.DUMP"
+            android:enabled="true"
+            android:exported="true"
+            android:directBootAware="false">
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SKIP_FILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="vgmb.iguii.ihbjeikz.keypv.eESmFMEUckDs"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="wlzaa.benilzct.egyuxfg.FRPIPYVVWFE"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+            <meta-data
+                android:name="eydXCfAEbkpEzK"
+                android:value="qJZhxfqhhIVnW"/>
+        </receiver>
+        <provider
+            android:name="jayagpw.jwelwxd.fjKQZfDLd"
+            android:permission="rqdp.bpyx.daian.permission.VINRYGBIYJWJF"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="wcttp.ucqujyr.huut.bzwgdoaormau"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="XEubhTDXxGKs"
+                android:value="TgoSvEU"/>
+            <path-permission
+                android:readPermission="blsuhwzh.cgakhd.esgmsdmj.permission.SADLTG"
+                android:writePermission="hmpk.igxqmbl.czvzfr.permission.UUVXHCVNNZWK"
+                android:path="/tytwq"/>
+        </provider>
+        <provider
+            android:name="wgvody.cixfy.BFXcJwhV"
+            android:permission="ucmqtqlu.lrydbxye.dqzas.permission.QGGMDNKR"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="walwyv.hubpz.gobxofkoj"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="SuxHBWNWZvYgGR"
+                android:value="GqwrJdGws"/>
+            <path-permission
+                android:readPermission="pgtex.xyzsuq.qzae.permission.PUXENDHHTLXYW"
+                android:writePermission="gfrzr.ukutj.rbrjg.permission.YAEIXAIT"
+                android:path="/gnnjnvo"/>
+        </provider>
+        <provider
+            android:name="nrtz.tqxykcjo.olEQOn"
+            android:permission="icjhqg.wofkvydj.ltmg.permission.BYGMZBV"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="uzikcbj.wnzyaxlh.msdsgo.rvqpgrlg.izdksrjgbzjgsq"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="cwPnxhyeCFUzVO"
+                android:value="ySyMUmwCNwjJ"/>
+            <path-permission
+                android:readPermission="qwzogcqe.njjzr.jcqxgd.permission.LLVKTQTZHOQV"
+                android:writePermission="ljre.wnzpqyji.jzylps.permission.VKQVXNYLDJFMH"
+                android:path="/hrgiy"/>
+        </provider>
+        <service
+            android:name="pqfnv.cdwr.kolj.DifGOI"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="alix.atwtp.nkbpne.ojvrgjsa.BWJQMGDSLON"/>
+                <action android:name="steiwn.qchy.KVVEWGILWJFX"/>
+            </intent-filter>
+            <meta-data
+                android:name="nuDzVX"
+                android:value="KrqJVgxYypsWj"/>
+        </service>
+        <activity
+            android:name="ciwv.gmsg.ykktofr.xuuumy.NdJhxMPp"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="rprfjyei.hdzanc.IBDQNLHUGKIAKF"/>
+                <action android:name="cylbq.mlxrn.ITDDMFCR"/>
+                <category android:name="mvlbf.hcdizhjs.aztdjxvi.ehfbkmu.CFXSHQX"/>
+                <data
+                    android:scheme="content"
+                    android:host="bwfvfxkswn"/>
+            </intent-filter>
+            <meta-data
+                android:name="generated_date"
+                android:value="2023-12-11"/>
+        </activity>
+        <provider
+            android:name="htdgiu.vznzh.whDyBolHP"
+            android:permission="ytfy.jvgwq.adrarbu.permission.VQDQFGT"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="tagirexp.ttrsp.kyqfcqirl"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="RygAKCezd"
+                android:value="XGRQLDLyOatk"/>
+            <path-permission
+                android:readPermission="kwzdsiel.wpvdi.permission.EGCZVQZJVAPRS"
+                android:writePermission="zlyqxb.wtdjg.gzko.hytfyj.permission.WEPSFC"
+                android:path="/ntdtssro"/>
+        </provider>
+        <provider
+            android:name="sawmdi.viyy.plegql.mkHLEDbchDuntl"
+            android:permission="bktog.wbhug.wxogbeob.permission.ZYQYQAECTTRA"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="axyqhxd.ccojqgi.exqoumhn.zgafl.hpqdiscpitls"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="GuXPVJLujbE"
+                android:value="rhGMmi"/>
+            <path-permission
+                android:readPermission="nmoxaqp.rnscwg.spsk.bdaqehwp.permission.NKPKTU"
+                android:writePermission="hbmjp.xulqyix.permission.HSVZUHENU"
+                android:path="/smn"/>
+        </provider>
+        <service
+            android:name="mqbcvzo.yffnajn.vxqQbcLYF"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="ldjbxteb.rerfy.dlstd.okniaxc.IZPAFMYYRUSBUE"/>
+                <action android:name="nngjqx.kmkw.CXAQOH"/>
+                <action android:name="jtanfzb.yfldo.UXGKZAZPAXSLZ"/>
+                <action android:name="uout.uwul.zmdm.RZMCKTBKMTS"/>
+            </intent-filter>
+            <meta-data
+                android:name="WBBKvyTqzEkJN"
+                android:value="uEnNvnOU"/>
+        </service>
+        <activity
+            android:name="djsmvvr.mngja.OHPZcmSfkfvGl"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="jbpuy.lcpt.coxlrma.izwqfmrx.ZMARJMSAWXGHDQ"/>
+                <action android:name="iues.vzmdqez.pnivy.NOHNDGEUAQHZ"/>
+                <action android:name="kyxofkgn.xymi.SRYHHM"/>
+                <category android:name="ukqino.uumms.bwomo.DKVKWL"/>
+                <data
+                    android:scheme="content"
+                    android:host="kyoevhswz"/>
+            </intent-filter>
+            <meta-data
+                android:name="generated_date"
+                android:value="2024-03-02"/>
+        </activity>
+        <receiver
+            android:name="asvwbphs.glvfwdp.MDipJUPZPyoinN"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="xlcgrpt.girmclyo.lltdjvu.KVEXGRSSWB"/>
+                <action android:name="gwigee.ssgag.omzveb.ZBBWNGPJZHLJFB"/>
+                <action android:name="wvjku.wsmt.zarnmt.civvilxv.WJRNIOTBOZA"/>
+                <action android:name="losb.tlwkg.GAJBYYWU"/>
+                <category android:name="ttgl.jhojxdu.ttbmn.hjavlyi.WFLEUJYN"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+            <meta-data
+                android:name="UqWqJNRrAOuTf"
+                android:value="BpKwNUk"/>
+        </receiver>
+        <provider
+            android:name="qwguyl.qxitpytn.ttTTtt"
+            android:permission="oqwtrfvz.jrhoor.bwmohy.rdqyzyu.permission.FEMNQQUGQ"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="hxsd.gkoukgfa.mtqahsjq.bzpfnmfvclfy"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="FQnCBhRqWOl"
+                android:value="EScmFgLvToTKpt"/>
+            <path-permission
+                android:readPermission="ogefzgl.ccrzggfh.xjuqmrk.permission.GICPUFH"
+                android:writePermission="hcztvjgq.yysl.iomfho.gcrxi.permission.UYQNUKZBPY"
+                android:path="/mfkezjxk"/>
+        </provider>
+        <provider
+            android:name="zlmwyevf.goes.jGOEOjRTsaTu"
+            android:permission="suqd.omgz.cavp.qdybpa.permission.THWNRZZAHHPT"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="wgcjso.krakqb.eevnksx.doembtzyy"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="lYMErAi"
+                android:value="OyeStUG"/>
+            <path-permission
+                android:readPermission="rvrfjl.vflt.kupxxor.permission.XRMWCGYXWN"
+                android:writePermission="lgvtkxve.ipxdti.yecswltv.ixoalqxu.permission.RRDSUXG"
+                android:path="/oyrnblfh"/>
+        </provider>
+        <provider
+            android:name="uoks.pxmzu.MtyQltHNTZDLGD"
+            android:permission="curgta.fdqqi.permission.FUOMJBYDYQXITT"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="wxecpvst.wien.nzsa.sksq.iglkejzrdvodut"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="VaeSasmBWe"
+                android:value="nhTFklkKsygSGC"/>
+            <path-permission
+                android:readPermission="weggb.hhnpqb.mxuhlz.mkyy.permission.ZRQCKLVQEQIAT"
+                android:writePermission="ckbey.aepoa.aresw.permission.YVRMQG"
+                android:path="/iayeyste"/>
+        </provider>
+        <activity
+            android:name="nybt.mpoz.mahGVRHu"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="gyiqo.nxfcdafu.lfzkk.gibpmt.GXPADIHLLUUVSM"/>
+                <action android:name="hlwpt.rgzmi.pxiagzr.EMEBWB"/>
+                <category android:name="dqeobg.bnjpco.ugevbii.KXCTBBM"/>
+                <data
+                    android:scheme="content"
+                    android:host="lroqtuhf"/>
+            </intent-filter>
+            <meta-data
+                android:name="generated_date"
+                android:value="2023-02-18"/>
+        </activity>
+        <receiver
+            android:name="tnff.xctplp.gortrsrx.xcpjovne.ZFfzKKvaJnve"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="vzwaa.juusc.xhagcfv.srgbmymv.CLAEXQBVTZB"/>
+                <action android:name="kvctkpy.hsctg.IZPHJWCIX"/>
+                <action android:name="jvvjiuo.hvckv.gion.uueb.TKNWUGKBXFGFZ"/>
+                <category android:name="autft.giuqxac.HPHKJOGUC"/>
+                <category android:name="roiipg.phitif.lidmz.FDTELJJVWMR"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+            <meta-data
+                android:name="RgiENsqZpGU"
+                android:value="piRFnfPGUqWofQ"/>
+        </receiver>
+        <receiver
+            android:name="fxsm.gztq.SoTTxqj"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="ggrc.dtczm.mzepvi.VSOEWG"/>
+                <action android:name="mbhnqhh.ponkjxhf.NOYLZZELFXLNW"/>
+                <action android:name="xdvrj.tpxw.FOQASLUYLIFYGW"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+            <meta-data
+                android:name="rmihYv"
+                android:value="cDsSUl"/>
+        </receiver>
+        <receiver
+            android:name="lbcrq.ngwsevcm.ieyuyqbe.VJaKwkAGHMjW"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="ukjekp.qgtaisen.jbqhjgad.rkqww.GHJWOR"/>
+                <action android:name="juapnpc.bpyaqj.mobxulr.sffyu.VNHOFJXNTZOCSO"/>
+                <action android:name="hymps.dtcivz.kejhv.bfbgfcpv.URKYJXYAIO"/>
+                <action android:name="ftmhzp.vtarw.GTHSSJMI"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+            <meta-data
+                android:name="EQcmyHCEq"
+                android:value="LCLktSJjs"/>
+        </receiver>
+        <provider
+            android:name="khdd.cshuj.lPcyktyyegzv"
+            android:permission="kdexxxo.hnjln.rflwtez.jdmcpe.permission.ZMBGKKQSS"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="ysaf.cyxiaq.aktwjpjhmg"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="FXnwRphS"
+                android:value="WNAHpCdzqvZDPn"/>
+            <path-permission
+                android:readPermission="bicgxa.pbgu.dadbc.ypszpeir.permission.OWQSTUMDZSYRM"
+                android:writePermission="xmzyf.rirubfs.jaurdhx.permission.BBMQBOHX"
+                android:path="/gkvqsdvz"/>
+        </provider>
+        <service
+            android:name="ffwe.acfjpc.pqrnqz.skwjru.rydaSOeVxbLziG"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="skonv.upctpr.ZGDORWIDWROPK"/>
+                <action android:name="unzzbott.frta.RSOZKKCS"/>
+            </intent-filter>
+            <meta-data
+                android:name="vgWIOkxSaJFSW"
+                android:value="FVxyTplzYb"/>
+        </service>
+        <provider
+            android:name="rxgofezu.xgvnmpwn.xswaWbS"
+            android:permission="bxvyu.knuryjd.permission.WCMMYZYQZDTVZI"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="qnofj.oefmxz.onspxgxstjdzod"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="IquRRzjdLayv"
+                android:value="ErSYIWnZpgEcbP"/>
+            <path-permission
+                android:readPermission="aubcburn.vtkj.aflnq.nezebyt.permission.ZWRVKFNXOPPFCS"
+                android:writePermission="ahew.lgdgc.fnfgfbps.permission.ATALFCFN"
+                android:path="/ppzlficu"/>
+        </provider>
+        <provider
+            android:name="mtbzxa.vaoarnl.drpi.swzndt.UWuCIbxdnffti"
+            android:permission="ozccv.kxkzzi.cjpiubp.uugcof.permission.DVOURPLZI"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="wopbboz.xtkyuj.ytruozfjldfxw"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="sxLpcYMDek"
+                android:value="puKYxWZxI"/>
+            <path-permission
+                android:readPermission="bwkt.mtajbl.fsldr.lxaqtdxt.permission.TIUUBL"
+                android:writePermission="erbvnow.vosvb.iskinimj.permission.TNTVVPUQS"
+                android:path="/occsuk"/>
+        </provider>
+        <service
+            android:name="sagwu.kqub.xyvfifcf.XGYGVL"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="bkroy.ctmo.ADYCQCGUXIDA"/>
+                <action android:name="wylur.pnvbbryz.epzjjxuj.BXIGVDTUNIHVE"/>
+                <action android:name="njszas.lggcrpc.qfehcb.ZVZJTFKAWRTW"/>
+                <action android:name="atytc.meytnx.toopb.CQQBKKWYNYBF"/>
+            </intent-filter>
+            <meta-data
+                android:name="LqUrJEYwZO"
+                android:value="WrhvIGRk"/>
+        </service>
+        <provider
+            android:name="dhlc.cuklyir.lnwqrcmp.tMbQiGNyW"
+            android:permission="fkptl.ybbrfrvb.permission.KCLWVON"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="nicvoqbc.werlb.qyiyumwkvwfevz"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="XGobUl"
+                android:value="CTMCQtld"/>
+            <path-permission
+                android:readPermission="xvgrch.alpwq.iiniqk.permission.TODYDJJUVMS"
+                android:writePermission="fzunylgx.obgs.pxxij.umwjlaf.permission.QXRYYTSRGUYQO"
+                android:path="/gktmg"/>
+        </provider>
+        <activity
+            android:name="yymkvtat.poore.mtqnm.putfg.wGTqDivbDOKVLF"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="mbmaeo.hbcm.dlfhxqig.HEFZBURFPOHJF"/>
+                <action android:name="jzizbxw.wghxej.lvvtqk.ATEOZLVH"/>
+                <category android:name="aeymnqx.qtjys.vbkwho.hbiemeg.TDASOXC"/>
+                <data
+                    android:scheme="content"
+                    android:host="ygexv"/>
+            </intent-filter>
+            <meta-data
+                android:name="generated_date"
+                android:value="2017-08-29"/>
+        </activity>
+        <receiver
+            android:name="bpki.yadviyup.rucrrvnl.kdpnbbwu.hocexoOiBqukA"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="pdbnscct.ogdo.DRWJMVBHLG"/>
+                <action android:name="tseeklc.gaejme.SLBFDOQSBT"/>
+                <action android:name="vmfxgko.fgqnknvu.mqxtkt.HZZASHFMNI"/>
+                <action android:name="lkzmfau.uphdz.WPJSTSZA"/>
+                <category android:name="hsdm.hhkstfdn.SVRALHP"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+            <meta-data
+                android:name="bXfCzcGktUZHJx"
+                android:value="GDrGLjiIEdDW"/>
+        </receiver>
+        <provider
+            android:name="xhkl.vbgzvfmq.glowzeg.jXWqQiczzD"
+            android:permission="sxjjwpjs.jbhcd.permission.RXDQIEFRUVLRW"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="dioww.vqalks.ocihclrp.dbuoqx.yqpywekylawpw"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="RGqqtQvESyMYTw"
+                android:value="RdayRYpRMsXtoO"/>
+            <path-permission
+                android:readPermission="ummpr.wczinhbh.deaz.wxfvmnnw.permission.LROWEOVPE"
+                android:writePermission="ztkhhvlj.sqkryv.permission.FUJNRUIFUWTKM"
+                android:path="/habr"/>
+        </provider>
+        <receiver
+            android:name="tscctw.kxhock.KvTWtInXhWp"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="kmnrp.ahfyefpu.piog.pxzqxvrz.YOJBKOCYIHHA"/>
+                <category android:name="aemw.orywkglc.xwuyjw.WDYLRWXM"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+            <meta-data
+                android:name="dfBvNKnPAKVkw"
+                android:value="nLcNQguh"/>
+        </receiver>
+        <service
+            android:name="zkxik.ghcmeoyh.zgsxvfj.asTwdCgNPG"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="ighpabj.qdchyp.cbgxlzd.dgsg.AFVKCRQCWCOOB"/>
+                <action android:name="dbmenccg.xamzvx.LCTBCSLWL"/>
+                <action android:name="mcfs.wawu.itwcl.pzkxg.TEKJLWMLF"/>
+                <action android:name="tvmnxswe.wifxetm.cukhgav.DEDDUXIWRZW"/>
+            </intent-filter>
+            <meta-data
+                android:name="crbELwpv"
+                android:value="zBELQuP"/>
+        </service>
+        <provider
+            android:name="hfuadq.ezidib.azgxTRj"
+            android:permission="xinuueod.thzzdc.permission.GPHQYUFUUJI"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="ugsvrpph.hahgwl.kawik.wwknpkabnwv"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="GLKcYqbAg"
+                android:value="QvBbqQ"/>
+            <path-permission
+                android:readPermission="vpdktbz.xuldy.cfolxrpv.permission.AJTWIZILKSEQPA"
+                android:writePermission="rncrz.urodplmt.vthbnagb.yrzkkema.permission.EVUMKFDNP"
+                android:path="/vmslaz"/>
+        </provider>
+        <activity
+            android:name="lovh.qzgzsg.WEgLBBI"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="tefhblxx.tdmws.afssd.UETMQYACAXXU"/>
+                <action android:name="umqctdie.vbzzwerw.DGHBXTENNUEQIC"/>
+                <action android:name="lwpg.iyfkys.nvhgpa.mienshcx.PQWLGRM"/>
+                <action android:name="gieorf.tutepn.TECFQMKD"/>
+                <category android:name="rupci.utin.bakzlp.jqnzvg.OVPKIQNVBJYDDY"/>
+                <data
+                    android:scheme="content"
+                    android:host="ailwpdwkn"/>
+            </intent-filter>
+            <meta-data
+                android:name="generated_date"
+                android:value="2017-03-10"/>
+        </activity>
+        <receiver
+            android:name="oihaogu.svyewn.zkmvhk.nkWjSgOiyK"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="kswb.rvhpoptg.pxqrd.IHRNFJAOOT"/>
+                <action android:name="efuzd.xdbowuj.IFPGQC"/>
+                <action android:name="qxgcnq.kirxnejc.bumwezoc.ednixwd.PYIWKXLQEP"/>
+                <action android:name="mfgpqm.mryx.ugqnzjp.MMGKRGMTDBC"/>
+                <category android:name="fmbxznh.rsku.NUKAXFSWZWVUAW"/>
+                <category android:name="bufxoi.iibhm.alqh.ZDGMJVRHMKYNI"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+            <meta-data
+                android:name="WIdPgoAGzDU"
+                android:value="ungklaSjl"/>
+        </receiver>
+        <service
+            android:name="sdqidpz.udrwxlb.dbdJNyrB"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="yuwzcce.sdztr.dxsy.YSNWEA"/>
+                <action android:name="acta.wqhbqiat.odcgvmvv.YCHGFIX"/>
+                <action android:name="rqvp.tvnum.dhhjv.wotnop.VEBKDQV"/>
+                <action android:name="cdyzg.mkbiyvav.mozimqx.xklxny.WOMHBAPRTQJQ"/>
+            </intent-filter>
+            <meta-data
+                android:name="lozeOzvCGv"
+                android:value="IedVFUZrXyN"/>
+        </service>
+        <receiver
+            android:name="sodchiw.sqbdq.ascoZgJ"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="vhqmdi.bysn.pioaykpz.gruoac.LDJCYPIJUWJ"/>
+                <category android:name="agjbpjyd.pwrlnrk.tyubiv.ZHUZYEP"/>
+                <category android:name="xhal.srmkdiy.dzsjdl.BRGPCSCCZOLCU"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+            <meta-data
+                android:name="zVkJElJ"
+                android:value="NSRVtjgpM"/>
+        </receiver>
+        <activity
+            android:name="bwhzofba.ywprqr.BegDghG"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="dylirqot.lscg.BKANKN"/>
+                <action android:name="bubcy.yihvkrb.ushrvy.KWMFCKUBTBL"/>
+                <category android:name="nmkgimn.aqbuxai.EPVFPJMSFGYDB"/>
+                <data
+                    android:scheme="content"
+                    android:host="gqhbb"/>
+            </intent-filter>
+            <meta-data
+                android:name="generated_date"
+                android:value="2019-02-18"/>
+        </activity>
+        <provider
+            android:name="tjkfq.vnteio.veeRbr"
+            android:permission="yukg.oxbxyqr.lovtkezk.permission.IYSZYUEZZ"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="dscj.goanp.xowlafbn.bbbzbbus.xeqvjypdtp"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="EsJtsFAOpWI"
+                android:value="hnZNgBRzDZ"/>
+            <path-permission
+                android:readPermission="sehuk.izpzs.permission.RYTMWSNNKLC"
+                android:writePermission="iadazpfv.ejcrmcil.permission.RFYWPX"
+                android:path="/agaoqzn"/>
+        </provider>
+        <provider
+            android:name="lpdklp.hlzwsigj.xylrqfu.xxdruu.LqyqinkjMqL"
+            android:permission="yfmobg.ievvlht.sbvkjyog.permission.ZUGCQSGKWOD"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="dycoysiy.tyba.zcdrqua.xakqdzxsm"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="UQaGtivjXoAe"
+                android:value="zRtLbgWssMf"/>
+            <path-permission
+                android:readPermission="itrr.ewgs.figsroc.sbqive.permission.RRKNSIV"
+                android:writePermission="jkpdooi.tayhng.kpbu.permission.ADTRNV"
+                android:path="/vqumb"/>
+        </provider>
+        <service
+            android:name="uxcff.yhlzyv.ohftobx.iqltxcg.xCBpGLNuL"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="xipku.qhkfmdz.YFGILTQTU"/>
+                <action android:name="isqolsao.acrihepa.VIJBGUWHERJIBY"/>
+            </intent-filter>
+            <meta-data
+                android:name="OefQtZApUHe"
+                android:value="hafmUcCIeVkzc"/>
+        </service>
+        <activity
+            android:name="lyxkiqcp.gibu.obwUcSboEMQLX"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="uwsrl.rbwyu.jurl.URBKHOPLPRXPQ"/>
+                <action android:name="eaucjxri.zsgdx.ZLWXTFLV"/>
+                <action android:name="ffcrokxf.sihb.GIFPGBDEYVO"/>
+                <action android:name="nqgtig.ehsbysy.furnq.NHVSLW"/>
+                <category android:name="gtilx.mpnsyf.wquhp.fbfm.VHDEVB"/>
+                <data
+                    android:scheme="content"
+                    android:host="xjkmm"/>
+            </intent-filter>
+            <meta-data
+                android:name="generated_date"
+                android:value="2016-02-21"/>
+        </activity>
+        <activity
+            android:name="qbvd.nqeftg.aams.iKWgqiYjyvC"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="jfdxrh.lprczafm.DWXTVQSEHSL"/>
+                <action android:name="gczvtw.jqia.oethb.DXTADC"/>
+                <category android:name="drkjxt.vmrcqsn.QRWDJF"/>
+                <data
+                    android:scheme="content"
+                    android:host="cbfqzfhxug"/>
+            </intent-filter>
+            <meta-data
+                android:name="generated_date"
+                android:value="2016-01-28"/>
+        </activity>
+        <service
+            android:name="pkptuee.pbgzscou.IdwnzOJtPUd"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="kbqkktx.ozxm.wxkrs.qiowmmsj.WFTADS"/>
+                <action android:name="ilpwx.vrsez.ocjqgiu.GFSWUD"/>
+                <action android:name="grtjn.sxohvjv.vtls.LVCDQTZMKE"/>
+                <action android:name="iycxkyme.aanga.knmafq.ncfqpc.TTIYKV"/>
+            </intent-filter>
+            <meta-data
+                android:name="MSwkgCtnAQwQ"
+                android:value="EqqvWxBP"/>
+        </service>
+        <provider
+            android:name="bzdvmqr.txxnplnj.clrsch.mcKWzwMCMJ"
+            android:permission="vfle.vgbm.permission.FNYWRIW"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="sgelsjo.zlfbzerp.qezffdwm.dxvhpaks.dnnwyotbeswql"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="OqwyHs"
+                android:value="xeGtPFeHJFk"/>
+            <path-permission
+                android:readPermission="ylqchroa.hxxoq.bmjavcxo.permission.MLNMDB"
+                android:writePermission="xgzhdxvj.igmz.sfra.kbzcw.permission.DHCQOGTGT"
+                android:path="/xpb"/>
+        </provider>
+        <service
+            android:name="dfek.ussqzt.bvextzdi.btybby.DAWUZHuqOo"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="qmmypcab.zbjpvmh.WGBUDP"/>
+                <action android:name="edqbkgg.teqmqq.swmjk.LKTIGWQMHGHNTE"/>
+                <action android:name="xoscujpq.ywgwrmo.gwosu.BKLLRYGOPRR"/>
+                <action android:name="bgyk.ozxbk.iido.iovfqlkl.IFECSEVFCEZAVE"/>
+            </intent-filter>
+            <meta-data
+                android:name="tgzYwKpA"
+                android:value="rOOhzvoYNYE"/>
+        </service>
+        <activity
+            android:name="ocxshqe.jotqzj.yvxncbkp.AWKGmMEJjLeziU"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="aqcjbl.rnuwot.TMBEPTPDNV"/>
+                <action android:name="eemffot.yznwygld.redhwn.DCJEWNODHR"/>
+                <action android:name="ctaaa.pyckhfem.rkoz.rdulylx.ZAUJBL"/>
+                <category android:name="zbgy.xspguc.ICOATVZJGHOH"/>
+                <data
+                    android:scheme="content"
+                    android:host="pladkbmr"/>
+            </intent-filter>
+            <meta-data
+                android:name="generated_date"
+                android:value="2022-07-27"/>
+        </activity>
+        <service
+            android:name="hzcii.uyxoaaoa.jcnstyhj.kdoac.QWMkBHyjQ"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="bxmrw.tura.chlmmb.wcmqv.QEZMVUHP"/>
+                <action android:name="vqcz.admc.LKKIURR"/>
+                <action android:name="anbrfjyx.ulae.PNWAKOPFLTEJO"/>
+                <action android:name="opmbpxg.ffeb.WEQVQZT"/>
+            </intent-filter>
+            <meta-data
+                android:name="FLjVBlCmjYO"
+                android:value="STeGZxjSvRwRx"/>
+        </service>
+        <service
+            android:name="dmjpwh.vtogl.jbnfg.EIpDsUa"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="jfsfd.ivftxvw.ifxbpqsv.vilrz.SGJNWPNNLMMYOD"/>
+                <action android:name="pcojztgg.fqvccm.FEAAGL"/>
+                <action android:name="ohpcq.buzeti.JIILMJHYM"/>
+                <action android:name="rjchxp.dnsofzsg.mspy.kgcxm.VLRWKBMD"/>
+            </intent-filter>
+            <meta-data
+                android:name="ICjSPXJjQ"
+                android:value="ujbnWr"/>
+        </service>
+        <service
+            android:name="jhjdhz.srci.agHuadTa"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="vsfmefjl.fjytk.UNNSWPJS"/>
+                <action android:name="qadrwlz.tmfpu.jmmpnki.SKOTQVGECM"/>
+            </intent-filter>
+            <meta-data
+                android:name="BjGbJtCOuWmYxi"
+                android:value="DShdjMoBt"/>
+        </service>
+        <provider
+            android:name="trpjp.mcbsmeg.sjxscyi.seko.xLpyOetUkDOit"
+            android:permission="udlnli.mbct.jegdy.permission.WXTXTTXPEUIIG"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="cyqvm.zyvddx.rhlsor.jcuxht.zrkwupgiqti"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="WXEdXMONY"
+                android:value="Byiely"/>
+            <path-permission
+                android:readPermission="onaxknv.lxvpwujq.kdesl.permission.QCNCGM"
+                android:writePermission="gyzjepm.tzgn.permission.MWHRUPC"
+                android:path="/ufknahqk"/>
+        </provider>
+        <service
+            android:name="fsavftrm.snucwpy.nxzuykam.WehdCk"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="qwlfue.vqmgdnh.lepcaxl.JTHTNZ"/>
+                <action android:name="lfxqtvya.jimay.AGJJUT"/>
+                <action android:name="bwnv.nrxmapq.buyp.cwyaihqy.SDUBKCPJ"/>
+                <action android:name="mopk.lhnwqu.tikraar.ebccdbbu.AZZPGLBPCMXA"/>
+            </intent-filter>
+            <meta-data
+                android:name="naJHqPx"
+                android:value="nflVUboLQLlrcJ"/>
+        </service>
+        <receiver
+            android:name="viopmgb.uxcnh.eRwpgu"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="fsyvoktv.sscujo.dtrygy.jhijkmb.OXYXNW"/>
+                <action android:name="zbkav.cjkckbtc.fawrog.xkxkc.WNEPHJ"/>
+                <action android:name="ufyukt.gmwfth.RUOICMOEISK"/>
+                <action android:name="zfpjggut.fxqhzk.kcce.AETQFYTOFYIOM"/>
+                <category android:name="jpejb.swihowib.urucince.IRIXYUM"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+            <meta-data
+                android:name="FFPnDGDhvriUIv"
+                android:value="ouOqiNsJFLUoSS"/>
+        </receiver>
+        <provider
+            android:name="vlkiup.ffsle.rcsoxn.dwiniro.yWfkxjqsqYKg"
+            android:permission="zawnwkey.jave.permission.KAJFCKJDMCCHV"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="qojpmxv.lnohno.tdhiwe.tjiaanuupqodf"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="EHraxDpaLMNKnY"
+                android:value="HNpeWylra"/>
+            <path-permission
+                android:readPermission="chzfv.hmbrnfgk.permission.QOSWYDKJHIR"
+                android:writePermission="gpcbjvg.vsspgvg.bqxr.yeui.permission.ZHYOPJTS"
+                android:path="/nnoxvpm"/>
+        </provider>
+        <receiver
+            android:name="wqfohsq.zlhsipoo.astjth.oclez.HOFrVzCk"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="utyis.oaqkfkz.ilzqcljy.HHIREJMUCR"/>
+                <category android:name="rmrqow.hqxnc.DXMDAMTEZCHGKL"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+            <meta-data
+                android:name="igfzuVEVng"
+                android:value="WHxszjeHfA"/>
+        </receiver>
+        <activity
+            android:name="zvkhoz.btiv.whYYiLslVLXtR"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="nraxgtgy.wijznfb.KIUTOHGC"/>
+                <action android:name="umghwx.xgxntkja.qnosmyc.NDGKEDPYQ"/>
+                <action android:name="xftsha.ljwn.myxfqqp.KVAGFDZ"/>
+                <category android:name="khhi.mcdl.ZTJQMRXLN"/>
+                <data
+                    android:scheme="content"
+                    android:host="acktef"/>
+            </intent-filter>
+            <meta-data
+                android:name="generated_date"
+                android:value="2017-07-07"/>
+        </activity>
+        <activity
+            android:name="lhelnijq.ywcie.MPtxnM"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="jwadt.acnadl.UPEUKIKRUN"/>
+                <action android:name="dyxbu.kruhai.tkdgdppx.KDHNCARBH"/>
+                <action android:name="fadtxv.wqnxw.haqurun.dorokcve.YGKJAOXYYEUHNB"/>
+                <action android:name="kxfxmlm.sfxl.tarzxyxg.xmcqzcp.QRXZVWGMCSHHT"/>
+                <category android:name="exufqpyr.qcoiy.mxmigami.FKOUVPELW"/>
+                <data
+                    android:scheme="content"
+                    android:host="rlhyqzm"/>
+            </intent-filter>
+            <meta-data
+                android:name="generated_date"
+                android:value="2026-02-19"/>
+        </activity>
+        <receiver
+            android:name="deoqvvt.xkspq.sqNhktAtlCwQ"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="pnvtg.ttjbvo.fmtg.IYVUAQETZSWIQ"/>
+                <category android:name="usglkj.sxic.TWGIGQTRDYOVU"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+            <meta-data
+                android:name="qglMjgwhIW"
+                android:value="QHUeZx"/>
+        </receiver>
+        <provider
+            android:name="nbddfhx.uxzpjkcf.jdqfupf.junqz.ljStTdO"
+            android:permission="xkmypb.pffuez.swpva.permission.JGSRMYZK"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="jauxvxi.jpnxlji.bdcnrid.fjkhjgfh.krjepc"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="cdLBpigTtU"
+                android:value="jHGqdBzOQmQZ"/>
+            <path-permission
+                android:readPermission="lcez.nyxgaxjd.permission.HYDZGIXTILWWCT"
+                android:writePermission="nwdwa.qrmsmpwb.cdinr.mrbfz.permission.QCIFGZCSJHGXIA"
+                android:path="/hbnreims"/>
+        </provider>
+        <activity
+            android:name="xsirp.sawtaghp.ckcyyjuf.jinp.GPgvnv"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="ogzudbi.ijgh.ygxxrjbp.dzdrfrlg.XFIOJDRH"/>
+                <action android:name="hfbgnvli.vrgnffjl.BIIZECUCAVAGHO"/>
+                <action android:name="tjhohidw.hrjh.jtutv.lufcoqa.LTPTRKJCJOIQL"/>
+                <action android:name="uzaqmw.bacsl.ZXDJFD"/>
+                <category android:name="xtnnts.jaflrqsi.zxfa.XKBEHQEW"/>
+                <data
+                    android:scheme="content"
+                    android:host="pqadg"/>
+            </intent-filter>
+            <meta-data
+                android:name="generated_date"
+                android:value="2023-06-05"/>
+        </activity>
+        <provider
+            android:name="deslyop.utvuzfl.KpCwqSCyf"
+            android:permission="ydjghpt.ecvnoqck.jxfwcrna.permission.DONAQXCYXF"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="ygazzhzg.oigiu.voavmwdrtibmf"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="HalUIu"
+                android:value="vbEdeapaxmbKql"/>
+            <path-permission
+                android:readPermission="bmtwcbvp.muazn.zvjtndae.permission.JJOVFVG"
+                android:writePermission="nrmmgvn.yacymk.ublyrptj.permission.MTOUKXMNTBZRHW"
+                android:path="/etqir"/>
+        </provider>
+        <activity
+            android:name="ddgxbusg.stzhcmc.ydnbncpf.CpLDsi"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="ymxu.vhaozgd.gyxmgcn.WDERTMBOAJWV"/>
+                <action android:name="yacjj.cyoraq.vfnegx.jzwkl.RDHOYX"/>
+                <category android:name="cmozqh.glpmrmei.aluiet.efoefcj.PLLDLH"/>
+                <data
+                    android:scheme="content"
+                    android:host="efclkybeql"/>
+            </intent-filter>
+            <meta-data
+                android:name="generated_date"
+                android:value="2022-11-13"/>
+        </activity>
+        <provider
+            android:name="igybe.chbekqj.fward.mxuixb.oUZlxbJ"
+            android:permission="czjjmpn.ypzm.permission.NUNKWDIOBF"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="cqnf.xflej.ulbxzhy.mtlmvwcd.fxkweoiyc"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="kTuSJZxRcdh"
+                android:value="ILRoorZWpVAdIp"/>
+            <path-permission
+                android:readPermission="ysrlippz.zamoe.paxhfdcq.umzj.permission.TYSHASEAALYM"
+                android:writePermission="xxbdklzt.ocsedx.bugfys.permission.YLXWMSF"
+                android:path="/rscdvd"/>
+        </provider>
+        <provider
+            android:name="uwoycazf.mnvdi.wknfscu.cmhbib.kZGhaSv"
+            android:permission="qdmh.qpudflz.permission.IZCZNF"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="ikwnqwbh.taqpxnz.swlbqnkrlk"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="XiIJbgvSGvKkWz"
+                android:value="vIKzDmDglU"/>
+            <path-permission
+                android:readPermission="coygzjx.sfzuhero.kury.fuakkj.permission.OJBGAI"
+                android:writePermission="gvgmwo.endx.permission.OCFYVXZVSNFO"
+                android:path="/ktoyqrtz"/>
+        </provider>
+        <service
+            android:name="vtuv.aripptgk.xpav.onixn.sdWtCxEC"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="uvoysjy.ijkd.ureb.ETAZSEBCNBAZY"/>
+                <action android:name="hrlcmh.efig.sptfedel.JWJROJCL"/>
+            </intent-filter>
+            <meta-data
+                android:name="RFkqRaYMic"
+                android:value="RmqbIMnkDJ"/>
+        </service>
+        <service
+            android:name="kpkwxiza.acwws.ryhmkoy.bPtViYb"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="yehyogx.qhaqty.fjjmjnpj.IIICHXSSM"/>
+                <action android:name="gjlpm.pckco.ABWGEK"/>
+            </intent-filter>
+            <meta-data
+                android:name="STPQXYneObf"
+                android:value="SHxZeoayugbRwq"/>
+        </service>
+        <provider
+            android:name="jwah.cfrx.tndyam.WfUadQNlY"
+            android:permission="ivtzov.lgvsrie.permission.JVUJBENIRTAJT"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="tfualry.knza.kxjq.hnofuhg.wdojthssnezmb"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="jMuakPV"
+                android:value="jOPWjr"/>
+            <path-permission
+                android:readPermission="mzoodss.ucskdx.permission.BLSCFZTUVSQ"
+                android:writePermission="rzvqvw.cqjykeln.permission.ORSFSUQPBHYA"
+                android:path="/ugtmzpcx"/>
+        </provider>
+        <service
+            android:name="cjtt.paozrmld.dcoiccVrSeFm"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="qgqhn.wppijnvz.xhltz.hrwfy.GIGVPOZU"/>
+                <action android:name="lmkwpmk.yhjax.DFLTMASROLONT"/>
+            </intent-filter>
+            <meta-data
+                android:name="alSNKmJouyV"
+                android:value="VpPpPpyw"/>
+        </service>
+        <provider
+            android:name="ltuyhcyh.fowwjkba.YBtcuRlIVjPR"
+            android:permission="xbyu.hpknz.permission.CMUVGGLFLA"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="sxvm.rshr.kblgcivu.qswhu.cmosftkt"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="WBSmeqQ"
+                android:value="oTofQZXhv"/>
+            <path-permission
+                android:readPermission="kgde.ygmdfda.permission.BNITSADCOCE"
+                android:writePermission="uunxzplz.ienylm.nhmfreq.permission.WAETTVMLWUCFI"
+                android:path="/soqih"/>
+        </provider>
+        <receiver
+            android:name="xiryel.tvyglu.RgvixShqsNU"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="xppzroax.vswkw.hogfzjd.bzyhh.PWOGLMKGXZJASZ"/>
+                <action android:name="qcsxu.walh.QIKXAR"/>
+                <action android:name="gtypv.gtyir.lhfpioqf.UYTLUPKLRGZES"/>
+                <action android:name="zlafeiga.vuylf.zhjbegj.UJIQIZLK"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+            <meta-data
+                android:name="jlnDpctLfiM"
+                android:value="sCxQwEoIB"/>
+        </receiver>
+        <provider
+            android:name="sjwdz.xhbifqf.pnZtNJBUdjGEh"
+            android:permission="zjqq.ekutxsc.ibhux.permission.WABCFH"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="kuucmg.dgstjj.kdvxmc.vrba.ohvsatggv"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="ZWOyizlyR"
+                android:value="NVrzbopR"/>
+            <path-permission
+                android:readPermission="qkszicaz.xmakop.znbgvy.mgnon.permission.QRZRII"
+                android:writePermission="foulltl.phyjhsk.rvbasym.whsjytzt.permission.ULFWETQ"
+                android:path="/gcayva"/>
+        </provider>
+        <service
+            android:name="anhsfbv.zcmm.fcJPwzkxR"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="fubon.rbfipq.tzmf.UPWEXEXCGXXF"/>
+                <action android:name="fvrkdj.rqlytxio.fsguncr.GNFHYMQB"/>
+            </intent-filter>
+            <meta-data
+                android:name="ZRZWUFlMgNs"
+                android:value="DIMgNTUKW"/>
+        </service>
+        <receiver
+            android:name="pfvx.cegivl.htovwwg.tcme.zMivOXggFvhDz"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="kybylcy.ozvujl.xijfmdgc.IVPRLLJZELA"/>
+                <action android:name="iopbl.pvcvog.oyygxdr.uiznausk.TQOYFHC"/>
+                <action android:name="dvuhspzv.ytqokrx.vyscfxv.QUWQTLVH"/>
+                <category android:name="wwdrbwl.ihdztyfa.xygxhc.pqpiamg.AALCWKHXHLBE"/>
+                <category android:name="rsdk.xxeoioa.YEQMAZCPGLDQTG"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+            <meta-data
+                android:name="GSqpxQ"
+                android:value="nIpMdYlQ"/>
+        </receiver>
+        <provider
+            android:name="oqjulgep.lafyku.aeot.vigdid.znhbSjfEvMywe"
+            android:permission="kzasc.mlmj.permission.QDFRVUTPDLW"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="eeop.mywoyr.ytlagnyyimn"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="eQcAdyhr"
+                android:value="KstSxevRpEgYRT"/>
+            <path-permission
+                android:readPermission="ytmwgje.oqjgpnnz.phyh.eqec.permission.ZLYFYBORFIIUP"
+                android:writePermission="bvjh.iqac.permission.RFLZFCRT"
+                android:path="/ehblp"/>
+        </provider>
+        <activity
+            android:name="ebmxs.ufgwlhr.wFAmNXWMeFZ"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="zqakucn.trpafi.merx.pcqb.THPMNKALOUK"/>
+                <action android:name="xzlj.xqvesy.rots.ghtb.GBSHMLBCVEGXX"/>
+                <action android:name="gsri.ghohmeyr.dguldfbu.LQHNVSRERG"/>
+                <action android:name="ppjcmaj.yruryz.DLBWUULXGPLGK"/>
+                <category android:name="vzxn.qpiwou.vbfm.xoydn.BLJHJA"/>
+                <data
+                    android:scheme="content"
+                    android:host="hccuu"/>
+            </intent-filter>
+            <meta-data
+                android:name="generated_date"
+                android:value="2018-05-24"/>
+        </activity>
+        <provider
+            android:name="fafspn.cehv.mmihb.zfep.KBMuKtwLrOg"
+            android:permission="rkvum.ufkeyt.permission.ALCYXTEJTB"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="ixffkc.edxdacdd.lmjpjnrx.vsvmfowgq"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="DrMxZHxfKqIzua"
+                android:value="dmMQbEjKvtX"/>
+            <path-permission
+                android:readPermission="dwtjso.ktjtef.usch.gfzfz.permission.ANLUGDNZYJXZ"
+                android:writePermission="ursaad.wfwrfp.lwscjnkp.qotl.permission.ZLHGAEP"
+                android:path="/vawg"/>
+        </provider>
+        <provider
+            android:name="lrjkdky.flncfqrp.fztdrr.hvbsgq.MHOAgbszLK"
+            android:permission="ddishk.rxgq.permission.JYCVOUAGMCUEZQ"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="yvizwq.jidslw.resiv.ucyuwmnabfptr"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="NYDFCw"
+                android:value="BlqAlfojoggvc"/>
+            <path-permission
+                android:readPermission="rzces.yesnqaq.rnkqoflb.permission.FHFRAVO"
+                android:writePermission="hmmzgbhx.nmrnz.permission.RKSWQTKNRQ"
+                android:path="/vbwdhlev"/>
+        </provider>
+        <activity
+            android:name="augwwv.dxcdics.nzgzi.smpp.mQCCRJX"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="djssxsh.wkqvipit.syvt.RXVXAEHZXNLB"/>
+                <action android:name="cwldlz.gpqcuom.AWBGCOC"/>
+                <action android:name="xckiwbyu.afyeyrf.xddd.RJUBWJVGGURIOL"/>
+                <action android:name="nfxkjgw.zyci.MEWUALFX"/>
+                <category android:name="jmjniejx.sefbhpz.kxlsft.ytgyi.RASZDSLMAYFCFU"/>
+                <data
+                    android:scheme="content"
+                    android:host="wlvqpdicj"/>
+            </intent-filter>
+            <meta-data
+                android:name="generated_date"
+                android:value="2015-01-19"/>
+        </activity>
+        <activity
+            android:name="stsloh.fpmrxo.rdfy.mydhuv.iGvrvxdp"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="draxj.hmeczuq.mwcyjugy.EIAPEJWSLXC"/>
+                <action android:name="mkis.qbxopk.YIDRDCQQUKPB"/>
+                <action android:name="poyub.byvq.zvvqsn.OMALEKDHFWFYYA"/>
+                <action android:name="snvhiygy.bfjy.beqy.UQVVRLKRMV"/>
+                <category android:name="jeppjg.ldamqvv.jfznwp.WCEOZWRBESH"/>
+                <data
+                    android:scheme="content"
+                    android:host="adhtwie"/>
+            </intent-filter>
+            <meta-data
+                android:name="generated_date"
+                android:value="2018-10-11"/>
+        </activity>
+        <provider
+            android:name="jqrcoi.nuilz.Kgllxd"
+            android:permission="lpbx.orpkfxzi.permission.YSQCAENQUM"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="bizkmh.qkedyqe.obemx.vmyimhmbwr"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="NzNlLLSv"
+                android:value="qEfGcKCSzdq"/>
+            <path-permission
+                android:readPermission="rmnyenav.uqrgn.qepry.permission.HRCVYQFRESPC"
+                android:writePermission="aitezgp.uaomw.wvllf.jitkm.permission.HQRCBVG"
+                android:path="/uys"/>
+        </provider>
+        <provider
+            android:name="jtqlu.ddgavz.kmpqeojv.ozxeghh.HMGpndsICv"
+            android:permission="pwxpycp.ecglv.boyh.permission.UNPICYYHIKA"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="ynjflmu.rcfyy.pgkra.kwvmkq.jasmtotohtw"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="XonqrZexRJczH"
+                android:value="jYLvKjwQB"/>
+            <path-permission
+                android:readPermission="tobgjut.qpvyec.huvgih.ewby.permission.GJZDIVNZADE"
+                android:writePermission="reedwmao.nywfovl.qhcntvsg.permission.NICIIUFOAMA"
+                android:path="/fdwxlwz"/>
+        </provider>
+        <receiver
+            android:name="ndissihn.xvcffk.vkqbmfkk.rVAwTPou"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="gsbrc.vmkkhl.hvhvto.ZUSAVJUZIIIVQO"/>
+                <action android:name="fpimle.ortmtr.vtfebsou.YFNOFFO"/>
+                <action android:name="qukglww.ofvyrq.lpnv.MJJJMATEDYB"/>
+                <action android:name="hvrgj.qwbosb.ofqyftw.avbzms.ZNRVHEL"/>
+                <category android:name="wegi.ohaa.YGBOSXXMN"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+            <meta-data
+                android:name="hQvoNakbIcV"
+                android:value="CzkUZhYtxeJRCz"/>
+        </receiver>
+        <provider
+            android:name="nwisprm.gkytexj.bglb.ehctz.gVhfGCKEfwSVao"
+            android:permission="rkwsqgoq.atsychu.zbdk.permission.VLISXQZ"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="mzyms.wpnmy.fbwxxwz"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="sqRuJiReiT"
+                android:value="hqMpZLCM"/>
+            <path-permission
+                android:readPermission="cyccgsx.cqimkmgl.adfughw.permission.JYOLQM"
+                android:writePermission="ewyd.bkfkmkup.permission.CRASJVDVV"
+                android:path="/prlght"/>
+        </provider>
+        <activity
+            android:name="zhsg.onxytl.doxml.ubxzd.zOGHUnBIlOOjW"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="dblws.jmwiom.rdwz.nfuj.EGTZNMZAJH"/>
+                <action android:name="sbaakwp.xqno.XVFGDLCL"/>
+                <category android:name="mtacf.rsuw.ylyd.MMKBANAFKDHGAA"/>
+                <data
+                    android:scheme="content"
+                    android:host="vcginhev"/>
+            </intent-filter>
+            <meta-data
+                android:name="generated_date"
+                android:value="2018-01-18"/>
+        </activity>
+        <service
+            android:name="lvpswkn.eakivec.oDFbnofm"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="lqyapta.blxzpc.MIAMBYLJ"/>
+                <action android:name="gajxpu.sgcvsol.AOTGIU"/>
+                <action android:name="crclef.nijtayz.EBOUZHH"/>
+                <action android:name="hsapsmss.chllz.XSVVFOE"/>
+            </intent-filter>
+            <meta-data
+                android:name="aHGXSPnz"
+                android:value="YlqsptUYE"/>
+        </service>
+        <activity
+            android:name="dxihsq.jlbqvb.tdxbhl.kMUoVVc"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="rypkcac.exflhkiy.GQKGRFYVHTKHA"/>
+                <action android:name="lqsyu.hcjnp.ncpnnrl.PCMFONDBJVTB"/>
+                <category android:name="xtyy.whnrga.cfru.pkcoa.UCCNVCIBNTMHLE"/>
+                <data
+                    android:scheme="content"
+                    android:host="sjcbcqpk"/>
+            </intent-filter>
+            <meta-data
+                android:name="generated_date"
+                android:value="2025-02-24"/>
+        </activity>
+        <service
+            android:name="cvdb.dwjmg.lLcMgNjHpPLq"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="pwsrkqyt.knef.pggdqti.JAFYJWCH"/>
+                <action android:name="kduw.bhhsiqtf.ntfgjbs.vnspfq.PMQFCBP"/>
+                <action android:name="hlapumw.fzesqynv.mbvjwn.vnzawew.XCJDPKBZITMEK"/>
+                <action android:name="tothspd.jaiwwkwt.MXVWFFK"/>
+            </intent-filter>
+            <meta-data
+                android:name="kYwjPnXMQIs"
+                android:value="UGeKtpT"/>
+        </service>
+        <receiver
+            android:name="nbgwbc.lzqrpdho.IKTpnL"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="onkzx.mgagjtop.kjtwxl.njqyad.RATKZFBABTREI"/>
+                <action android:name="hnco.toykntxy.aukm.vzuy.HYTKLRSDDFG"/>
+                <category android:name="hhjln.juimil.CBIUQPFSK"/>
+                <category android:name="gkxmwj.flauhwj.ewymudq.JJYHVUWGIPD"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+            <meta-data
+                android:name="pAlfIXBSN"
+                android:value="vEEzymc"/>
+        </receiver>
+        <activity
+            android:name="knpznppe.minrgdq.mupt.uOuMwwEkmSuL"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="wsfgrge.wyjmfjr.pottxnmh.pudvaay.CYTKTV"/>
+                <action android:name="lktbxxr.graiyc.uptiu.vzumft.BWPVRW"/>
+                <category android:name="xplvxhn.ithvx.atdzzqru.QDMMSM"/>
+                <data
+                    android:scheme="content"
+                    android:host="isszdmml"/>
+            </intent-filter>
+            <meta-data
+                android:name="generated_date"
+                android:value="2017-12-02"/>
+        </activity>
+        <receiver
+            android:name="pmhkts.iqhz.TiCsLZfaPZ"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="sxepuwbh.lnbeyb.magjbdjo.cxjsj.AXPBXYV"/>
+                <action android:name="atabcweb.cupcuhq.NQUVUGTINO"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+            <meta-data
+                android:name="yJcdAQHxOaBAlo"
+                android:value="AwvyxwPsTgv"/>
+        </receiver>
+        <receiver
+            android:name="hpiqzy.tiplr.lhee.gjzf.xGSBKxv"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="heuox.ifaoasio.TYJMLRTSOT"/>
+                <action android:name="rwszh.xoyljfv.surkciu.goyg.NGEQYSQZBN"/>
+                <action android:name="pgjda.bipcxyb.DNWNMGKZX"/>
+                <category android:name="vbbwbrq.hoqfl.yiqmvm.ifawfri.SOQZWDQ"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+            <meta-data
+                android:name="mxZwXho"
+                android:value="vXsgdvJccyo"/>
+        </receiver>
+        <provider
+            android:name="ktmsb.vtnaevr.NBMTgb"
+            android:permission="kxpw.kguigd.fshtbfw.permission.YCKDVQF"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="qqfw.ciap.agctmdu.zmkf.fxqrhaxidnjcs"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="XxaXPrBZgJm"
+                android:value="cufOwIumb"/>
+            <path-permission
+                android:readPermission="ceuf.gmjdvlx.xhevzwc.permission.RNQYCQNAKX"
+                android:writePermission="shiq.emkx.vpjav.lvkurmz.permission.IPEJZEJYZA"
+                android:path="/yyct"/>
+        </provider>
+        <activity
+            android:name="hmzz.sgueznkv.cXnUXskzj"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="pzfojeof.plokvxhm.tssigv.vmanno.MXRHIWJFEC"/>
+                <action android:name="czehtqau.mijewisv.hvzcairi.AZVIMXXX"/>
+                <action android:name="zsxo.bdcgiyef.EDPQGJEO"/>
+                <action android:name="paghofu.ltwby.fhtbjw.rkyseeaj.BCGQVKPAGB"/>
+                <category android:name="yfpomdgf.tjaalgab.fjehc.lkxkp.JWLPMXE"/>
+                <data
+                    android:scheme="content"
+                    android:host="infylwnj"/>
+            </intent-filter>
+            <meta-data
+                android:name="generated_date"
+                android:value="2023-10-01"/>
+        </activity>
+        <provider
+            android:name="kgdtxg.stvtpvfu.oqmyfq.pcKzufQdQKu"
+            android:permission="ciwgzpn.zlodnqzn.oyyck.hnzflx.permission.QVQCKXJFXHHQ"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="vthfwtjo.ntdajefj.ekpf.nuqxif.akoxgqpny"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="SFLySKlA"
+                android:value="tsznBVBZHZnTFf"/>
+            <path-permission
+                android:readPermission="hhhxoqbk.lfgn.yqbc.permission.XHVRDZX"
+                android:writePermission="udkizn.nkwpnjst.permission.HHWGWVUANYFFZG"
+                android:path="/lojapiz"/>
+        </provider>
+        <activity
+            android:name="tiiofd.ztymq.gfhy.loMcwBPiLQ"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="banw.xvhfma.eblshgxr.YGFSPGQEHBT"/>
+                <action android:name="ccwxgdu.pzts.gsowwxuy.AWCRMWDPMLIQ"/>
+                <action android:name="evrxuzlc.jbqfrl.goqukdc.vsskawcr.DUIOKJOIWAEE"/>
+                <category android:name="zoymdjlp.ttwayw.amiukwq.vfxxgs.APAHLMQPL"/>
+                <data
+                    android:scheme="content"
+                    android:host="zxbeciokq"/>
+            </intent-filter>
+            <meta-data
+                android:name="generated_date"
+                android:value="2016-03-25"/>
+        </activity>
+        <service
+            android:name="pwztmk.eews.uaegdgs.NFLpwPYM"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="lowldbvv.zxdh.vazucccd.jmfmmlh.CWPWYVJZIPGAE"/>
+                <action android:name="peuah.dibguvj.HDOZZSVJ"/>
+            </intent-filter>
+            <meta-data
+                android:name="NCgCagBcsXOJZ"
+                android:value="rzOuTvcWCKMZGV"/>
+        </service>
+        <service
+            android:name="zlrhdg.yrvkprad.pkjqtz.gbsk.NNLnESrtd"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="kyyx.unmxvo.qdna.ZDSIXQDUL"/>
+                <action android:name="azkr.wnak.ZIBAGNMMP"/>
+                <action android:name="xfpjq.inmjrx.NIKTXSHUAHU"/>
+            </intent-filter>
+            <meta-data
+                android:name="OPbKnofQjS"
+                android:value="DRfdqxZ"/>
+        </service>
+        <receiver
+            android:name="ympzk.fdtcp.adrxs.jgJQmacv"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="ntzk.iytq.MHQHVGEJR"/>
+                <action android:name="mfarrh.guoujv.QACTBCTDKYUVSE"/>
+                <action android:name="kmfogdos.jsnxeub.FIVOIVFTLMSTI"/>
+                <action android:name="rcmk.lsdba.zfvsksss.xqxucrn.WLCJDP"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+            <meta-data
+                android:name="jlKvCyuIcHA"
+                android:value="rWXgwDc"/>
+        </receiver>
+        <activity
+            android:name="lnhvnu.hzaid.tpgmf.MxCSoZlXpeBhuw"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="qztfrm.dpqhpfg.DGBMIZQVPXCS"/>
+                <action android:name="yzfshb.hclfvw.ouixh.vispkcxt.WOBLTFZBYS"/>
+                <category android:name="lcevwge.dleodjs.hheggjy.ZEPWQYRC"/>
+                <data
+                    android:scheme="content"
+                    android:host="fpvlvvsg"/>
+            </intent-filter>
+            <meta-data
+                android:name="generated_date"
+                android:value="2017-11-27"/>
+        </activity>
+        <provider
+            android:name="qlyh.qsnfkyda.vhsids.onhRxeU"
+            android:permission="syeebtz.jmjjluz.permission.MZLPSQBIA"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="xvslkt.ibcme.rbisn.bzbrtcuhgmz"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="WqcJTQSpOgnC"
+                android:value="YyiVEcD"/>
+            <path-permission
+                android:readPermission="tesolflp.ucpo.permission.AURNZUHBWHR"
+                android:writePermission="jezs.yzuwjy.mkpdnjh.giqdkchm.permission.EPZMPNVZCW"
+                android:path="/iyegxz"/>
+        </provider>
+        <provider
+            android:name="hfbgrkce.nkyv.gbuKGgrYh"
+            android:permission="nxtlukgh.enhsfw.xvbxm.akim.permission.PKDPOMCUUWZRXG"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="nrpk.dipwwukd.aoxxclzc.egsmaaet.ttdwnhvnmbu"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="eTSAFYxnB"
+                android:value="jhPhIUG"/>
+            <path-permission
+                android:readPermission="arkjiion.kuxy.dxteuy.gpxpnqew.permission.EKFSNSZIGZQG"
+                android:writePermission="ajbi.topou.baxw.aozhe.permission.QJHNEKJM"
+                android:path="/kxnx"/>
+        </provider>
+        <activity
+            android:name="qupirj.udhg.LJKNWhLWfcOMQ"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="hxzjg.uxdpipu.SWEHXBPUTTP"/>
+                <action android:name="zelrwkap.yrnhu.jijnez.WWJAYRVZ"/>
+                <action android:name="isdhpct.ogdyrr.tdbcgqif.TQEBYSYUGXXLT"/>
+                <action android:name="ejaqytna.obnbyuon.fsapsn.FJCOVA"/>
+                <category android:name="shsnv.uavb.LOIMEVNXIYCKU"/>
+                <data
+                    android:scheme="content"
+                    android:host="zqlsoyo"/>
+            </intent-filter>
+            <meta-data
+                android:name="generated_date"
+                android:value="2015-04-22"/>
+        </activity>
+        <service
+            android:name="bexnlbkj.rkzpw.mbfzbgel.gpvzlej.YHrVofCPExBXTO"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="biirb.rkzikojz.dawtwx.sipde.IDTJSXTNHS"/>
+                <action android:name="yezfo.nrpxjh.ypeftn.LZAHRZOAUDBI"/>
+            </intent-filter>
+            <meta-data
+                android:name="MMBBaUwLqXy"
+                android:value="OtcTHDlrMkaAV"/>
+        </service>
+        <activity
+            android:name="vzhvnyq.hczwgvjo.hbnq.aGsocL"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="deerlaj.qjysdckc.wypuevqm.bgns.QHRIAJR"/>
+                <action android:name="motryxgu.viiabka.xvaevjzj.tauuenv.BAGGTVFP"/>
+                <action android:name="vaqojge.ztijiq.pilw.BYHZFMJSRPL"/>
+                <action android:name="qksl.fomw.EAXGIU"/>
+                <category android:name="wofvsf.wpobjf.XJVXKILTAKGIU"/>
+                <data
+                    android:scheme="content"
+                    android:host="jnmigp"/>
+            </intent-filter>
+            <meta-data
+                android:name="generated_date"
+                android:value="2018-11-20"/>
+        </activity>
+        <service
+            android:name="tepqviv.upfezn.ACQhmHfVMa"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="ikhqmaau.wdnwx.tlut.uvborceq.OLLITZICI"/>
+                <action android:name="zyfmcuj.jiwgosd.urlc.oyxrxwq.BPFJXTPGTP"/>
+                <action android:name="jgnxjwrj.qfvwnrlw.qmotbb.JIPEWFUGLOPHCI"/>
+            </intent-filter>
+            <meta-data
+                android:name="hxxZEwVWP"
+                android:value="nyZtJLDOyg"/>
+        </service>
+        <activity
+            android:name="dtdareuu.kyxlekx.xorsjc.trld.oCskiFaGNNo"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="dizhvqwj.vkyoul.NAUZYTYXRH"/>
+                <action android:name="nybutpwc.gorw.tanmzeuq.RVHPXUFLNQSD"/>
+                <category android:name="ocgpjcs.esdvfl.mkamc.xcwovl.ILRRFZTVXQRZYC"/>
+                <data
+                    android:scheme="content"
+                    android:host="zelzwrp"/>
+            </intent-filter>
+            <meta-data
+                android:name="generated_date"
+                android:value="2025-03-02"/>
+        </activity>
+        <provider
+            android:name="bxrhfxo.kglr.ubysdik.ourkivz.fZucOhEd"
+            android:permission="fbkiajd.dkyvkt.botocs.dndl.permission.JQRHIC"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="jfcdaejn.pyilxws.daxyfdlcxn"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="KRbXSRUSvDdlO"
+                android:value="CxVLUgaetrDUsa"/>
+            <path-permission
+                android:readPermission="njqncpq.hljq.permission.IOBQAUSFI"
+                android:writePermission="doqym.rueb.permission.QFUXXUQED"
+                android:path="/cjspruuc"/>
+        </provider>
+        <service
+            android:name="rmwluis.wfbxx.hpsfu.ndgbRGSjtYP"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="rcnmq.uizrmw.sktishvf.RSCCVT"/>
+                <action android:name="ppbqoa.rphacipj.jkhrcv.YNQFVAEOGN"/>
+                <action android:name="tesbdnkm.lsycjc.gsgghaz.MGKRXCTVNMBI"/>
+            </intent-filter>
+            <meta-data
+                android:name="iowrSSLta"
+                android:value="nGcTdNdo"/>
+        </service>
+        <provider
+            android:name="fwjvg.jajja.xufxr.kfxzlpf.BDdInBooyu"
+            android:permission="xzuc.dndhj.vdonvoi.ebatytdq.permission.BNWZWPOXOHCTY"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="wqtwdpum.ehuigegb.owlbjmqqpok"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="ebfvspZ"
+                android:value="cEvHLvWK"/>
+            <path-permission
+                android:readPermission="nedxy.aspo.ynxxfq.qmga.permission.XDIGCNVGMJ"
+                android:writePermission="bduwsz.nend.permission.DVJENODKI"
+                android:path="/ushoh"/>
+        </provider>
+        <service
+            android:name="dqsymd.qvtmncem.qftwnfl.NlNvlJZJCK"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="tpwhk.imvppzd.jujczgd.MKETOJQTSRLK"/>
+                <action android:name="umjdce.hlzkj.avestzd.AFKFHPUMLSZI"/>
+                <action android:name="pina.hgcwt.IOMQXHPHAG"/>
+            </intent-filter>
+            <meta-data
+                android:name="XhjXzGxXjxaqX"
+                android:value="dWFumchJ"/>
+        </service>
+        <provider
+            android:name="eagpk.dtemeiv.EbmHcmCiMqWBqK"
+            android:permission="hecnafub.uuoy.hewsfc.zxjyjb.permission.ONZFHNJCATTHZN"
+            android:enabled="false"
+            android:exported="false"
+            android:authorities="fabks.nfvpc.gsndqqudlx"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="nIJHFpwyCSqO"
+                android:value="AFJPnuDCCi"/>
+            <path-permission
+                android:readPermission="xguggaje.quvtpqy.ylhnhy.zsiaqz.permission.KHRPPIVNBPY"
+                android:writePermission="jstvdf.hyhjgb.dlpyi.permission.QRXYUQOWLSFWO"
+                android:path="/evkrpjqg"/>
+        </provider>
+        <receiver
+            android:name="lidhlokz.kfcn.oshnbrm.SaSQqHIGk"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="okrcxw.wkem.bpsbo.arvmn.MWVWTYKXDTUT"/>
+                <action android:name="oisq.nwqsreka.COLFVV"/>
+                <action android:name="lvzxrrr.vdblblay.RJNAWSPT"/>
+                <category android:name="nwzwen.vyhlnrv.CNFWYTFRJHUU"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+            <meta-data
+                android:name="KUBXMIBtcqM"
+                android:value="jPSoFrjROJ"/>
+        </receiver>
+        <receiver
+            android:name="rpxuppe.jhuw.LOfEEQiFyEfpoV"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="ukhklr.oponyt.pzpwjrm.czvanal.MBJPISXM"/>
+                <category android:name="njslbxn.bnhffyvx.vrqnh.EAACCL"/>
+                <category android:name="gqyi.rawjp.OOFRXJU"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+            <meta-data
+                android:name="DVLWixGST"
+                android:value="DgthuroAJXFbtz"/>
+        </receiver>
+        <service
+            android:name="folbvi.eleb.NrWlqeKyqcGOPl"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="kmurozmc.raoek.MIRTAVS"/>
+                <action android:name="arzhtv.eygufg.JOKUKUF"/>
+            </intent-filter>
+            <meta-data
+                android:name="puBifvnX"
+                android:value="nfreTymUbBJI"/>
+        </service>
+        <meta-data
+            android:name="android.app.shortcuts"
+            android:value="ReplaceThisWithWorkerName"/>
+    </application>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+    <uses-permission android:name="android.permission.READ_APP_BADGE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"/>
+    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS"/>
+</manifest>

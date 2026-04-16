@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objectAnimator xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt"
+    android:duration="@integer/mtrl_switch_thumb_pre_morphing_duration"
+    android:valueFrom="@string/str_zj4nyt"
+    android:valueTo="@string/str_ck88y7"
+    android:valueType="pathType"
+    android:propertyName="pathData"/>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="0x7f090121"
+    android:visibility="visible"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+    <android.widget.Button
+        android:layout_gravity="center_vertical"
+        android:id="0x7f090120"
+        android:background="@dimen/m3_comp_slider_active_handle_leading_space"
+        android:padding="0dp"
+        android:layout_width="74dp"
+        android:layout_height="wrap_content"
+        android:text="CLEAR"
+        style="0x7f120021"/>
+    <View
+        android:layout_gravity="center"
+        android:background="?unknown_attr_ref: 7f040385"
+        android:layout_width="1dp"
+        android:layout_height="16dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginEnd="12dp"/>
+</LinearLayout>

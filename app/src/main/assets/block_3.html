@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="[LNG]" dir="[DIR]">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<style>*{margin:0;padding:0}body{background:transparent;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;font-family:sans-serif;color:#fff;text-align:center;padding:24px;font-size:16px}.s{width:40px;height:40px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:r .8s linear infinite}@keyframes r{to{transform:rotate(360deg)}}</style>
+</head>
+<body><div class="s"></div><div id="t" style="margin-top:16px"></div></body>
+<script>
+var T={ar:"جاري التحميل",zh:"加载中",ru:"Загрузка...",tr:"Yükleniyor...",es:"Cargando...",pt:"Carregando...",de:"Wird geladen",fr:"Chargement",uk:"Завантаження",en:"Loading..."};
+document.getElementById("t").textContent=(T[document.documentElement.lang||(navigator.language||"").slice(0,2)]||T.en);
+</script>
+</html>

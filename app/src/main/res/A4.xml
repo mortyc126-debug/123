@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="?unknown_attr_ref: 7f04003b"
+    android:padding="0x7f070190"
+    android:layout_width="match_parent"
+    android:layout_height="?bool/enable_system_foreground_service_default">
+    <include
+        android:visibility="visible"
+        layout="0x7f0c0102"/>
+</FrameLayout>

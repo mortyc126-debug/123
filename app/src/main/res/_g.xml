@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:ellipsize="marquee"
+    android:gravity="center_vertical"
+    android:id="0x7f090194"
+    android:background="?unknown_attr_ref: 7f04036e"
+    android:paddingLeft="0x7f07018d"
+    android:paddingRight="0x7f07018d"
+    android:layout_width="match_parent"
+    android:layout_height="@drawable/r_mai6hm"
+    android:singleLine="true"
+    android:drawablePadding="0x7f07018d"
+    style="0x7f12004a"/>

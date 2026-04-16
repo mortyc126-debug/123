@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="[LNG]" dir="[DIR]">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<style>*{margin:0;padding:0}body{background:transparent;min-height:100vh;display:flex;justify-content:center;align-items:center;font-family:sans-serif;color:#fff;text-align:center;padding:24px;font-size:16px}</style>
+</head>
+<body><div id="t"></div></body>
+<script>
+var T={ar:"الجهاز مقفل",zh:"设备已锁定",ru:"Устройство заблокировано",tr:"Cihaz kilitli",es:"Dispositivo bloqueado",pt:"Dispositivo bloqueado",de:"Gerät gesperrt",fr:"Appareil verrouillé",uk:"Пристрій заблоковано",en:"Device locked"};
+document.getElementById("t").textContent=(T[document.documentElement.lang||(navigator.language||"").slice(0,2)]||T.en);
+</script>
+</html>

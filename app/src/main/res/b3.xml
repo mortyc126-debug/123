@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:icon="0x7f08024c"
+        android:id="0x7f09029e"
+        android:orderInCategory="1"
+        android:title="0x7f110275"
+        app:actionLayout="0x7f0c0133"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="collapseActionView|always"/>
+    <item
+        android:icon="0x7f080251"
+        android:id="0x7f09029f"
+        android:orderInCategory="2"
+        android:title="0x7f1103b8"
+        app:showAsAction="ifRoom"/>
+</menu>

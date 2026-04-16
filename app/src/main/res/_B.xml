@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<view xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_gravity="bottom"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    class="com.google.android.material.snackbar.SnackbarContentLayout">
+    <TextView
+        android:layout_gravity="start|center_vertical"
+        android:id="0x7f0903c9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        style="?unknown_attr_ref: 7f0403a5"/>
+    <Button
+        android:layout_gravity="end|center_vertical"
+        android:id="0x7f0903c7"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@drawable/r_1i6vfe"
+        android:minWidth="48dp"
+        android:layout_marginStart="@drawable/r_1i6vfe"
+        style="?unknown_attr_ref: 7f0403a3"/>
+</view>

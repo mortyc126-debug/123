@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector>
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <gradient
+                android:startColor="@dimen/abc_search_view_preferred_height"
+                android:endColor="@dimen/abc_progress_bar_height_material"
+                android:angle="90"
+                android:type="linear"/>
+        </shape>
+    </item>
+</selector>

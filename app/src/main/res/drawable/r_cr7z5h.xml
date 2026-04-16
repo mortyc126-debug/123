@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:state_checked="true"
+        android:id="@+id/checked"
+        android:drawable="@drawable/r_7i58ut"/>
+    <item
+        android:id="@+id/indeterminate"
+        android:drawable="@drawable/r_k6z6fq"
+        app:state_indeterminate="true"/>
+    <item
+        android:state_checked="false"
+        android:id="@+id/unchecked"
+        android:drawable="@android:color/transparent"/>
+    <transition
+        android:drawable="@drawable/r_c7zg2j"
+        android:toId="@+id/unchecked"
+        android:fromId="@+id/checked"/>
+    <transition
+        android:drawable="@drawable/r_n74y66"
+        android:toId="@+id/checked"
+        android:fromId="@+id/unchecked"/>
+    <transition
+        android:drawable="@drawable/r_0717ft"
+        android:toId="@+id/unchecked"
+        android:fromId="@+id/indeterminate"/>
+    <transition
+        android:drawable="@drawable/r_2letis"
+        android:toId="@+id/indeterminate"
+        android:fromId="@+id/unchecked"/>
+    <transition
+        android:drawable="@drawable/r_imehvc"
+        android:toId="@+id/checked"
+        android:fromId="@+id/indeterminate"/>
+    <transition
+        android:drawable="@drawable/r_96505u"
+        android:toId="@+id/indeterminate"
+        android:fromId="@+id/checked"/>
+</animated-selector>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:state_checked="true"
+        android:id="@+id/checked"
+        android:drawable="@drawable/r_f5l9lv"/>
+    <item
+        android:id="@+id/unchecked"
+        android:drawable="@drawable/r_udixau"/>
+    <transition
+        android:drawable="@drawable/r_ys6yjp"
+        android:toId="@+id/checked"
+        android:fromId="@+id/unchecked"/>
+    <transition
+        android:drawable="@drawable/r_zqny0k"
+        android:toId="@+id/unchecked"
+        android:fromId="@+id/checked"/>
+</animated-selector>

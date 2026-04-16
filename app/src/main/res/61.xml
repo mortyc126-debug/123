@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:state_window_focused="false"
+        android:state_enabled="true"
+        android:drawable="@+id/forever"/>
+    <item
+        android:state_window_focused="false"
+        android:state_enabled="false"
+        android:drawable="@+id/fixed"/>
+    <item
+        android:state_pressed="true"
+        android:drawable="@+id/fragment_container_view_tag"/>
+    <item
+        android:state_focused="true"
+        android:state_enabled="true"
+        android:drawable="@+id/flip"/>
+    <item
+        android:state_enabled="true"
+        android:drawable="@+id/forever"/>
+    <item
+        android:state_focused="true"
+        android:drawable="@+id/fitXY"/>
+    <item android:drawable="@+id/fixed"/>
+</selector>

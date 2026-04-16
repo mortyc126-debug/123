@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:textStyle="bold"
+    android:textColor="@dimen/m3_comp_slider_disabled_inactive_track_opacity"
+    android:background="@+id/deltaRelative"
+    android:paddingLeft="6dp"
+    android:paddingTop="3dp"
+    android:paddingRight="6dp"
+    android:paddingBottom="3dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="0x7f11004e"
+    style="0x7f12009b"/>
